@@ -1,0 +1,4 @@
+twig:
+    paths:
+        # allows to use nrj/templates/ dir in the NrjKernel
+        "%kernel.project_dir%/src/Nrj/templates": ~

@@ -1,0 +1,44 @@
+{
+    "devDependencies": {
+        "@symfony/webpack-encore": "^0.22.0",
+        "autoprefixer": "^9.4.7",
+        "bootstrap-4-grid": "^2.4.1",
+        "eslint": "^5.13.0",
+        "eslint-loader": "^2.1.2",
+        "node-sass": "^4.11.0",
+        "postcss-loader": "^3.0.0",
+        "prettier": "^1.16.4",
+        "prettier-loader": "^2.1.1",
+        "reset-css": "^4.0.1",
+        "sass-loader": "^7.0.1",
+        "stylelint": "^9.10.1",
+        "stylelint-config-standard": "^18.2.0",
+        "stylelint-webpack-plugin": "^0.10.5",
+        "webpack-notifier": "^1.6.0"
+    },
+    "license": "UNLICENSED",
+    "private": true,
+    "scripts": {
+        "dev-server": "encore dev-server",
+        "dev": "encore dev",
+        "watch": "encore dev --watch",
+        "build": "encore production --progress"
+    },
+    "browserslist": [
+        "last 1 major version",
+        ">= 1%",
+        "Chrome >= 45",
+        "Firefox >= 38",
+        "Edge >= 12",
+        "Explorer >= 10",
+        "iOS >= 9",
+        "Safari >= 9",
+        "Android >= 4.4",
+        "Opera >= 30"
+    ],
+    "dependencies": {
+        "jquery": "^3.3.1",
+        "lazysizes": "^4.1.6",
+        "vanilla-lazyload": "^10.20.1"
+    }
+}
