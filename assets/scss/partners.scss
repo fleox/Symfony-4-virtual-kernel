@@ -1,0 +1,121 @@
+@charset "UTF-8";
+
+/*!
+ * Material Design for eNRJ
+ * Version: eNRJ 1.0.0
+ * Copyright: eNRJ
+ *
+ */
+
+@import "assets/scss/variables-partners";
+@import "assets/scss/variables";
+
+@import "0-base/mixins";
+@import "0-base/icons";
+@import "0-base/typography";
+
+@import "4-layout/grid-mixins";
+
+.headerSite,
+.footerSite {
+    font-family: $font-family-base;
+    font-size: $font-size-base;
+    font-weight: $font-weight-base;
+    line-height: $line-height-base;
+
+    // ** 0 - Base
+    span,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    a,
+    em,
+    strong,
+    ol,
+    ul,
+    li,
+    article,
+    aside,
+    figure,
+    figcaption,
+    section,
+    time {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font-size: 100%;
+        vertical-align: baseline;
+    }
+
+    ol,
+    ul {
+        list-style: none;
+    }
+
+    @import "0-base/html-base";
+    @import "0-base/helpers";
+
+    // ** 1 - Atoms
+    @import "1-atoms/buttons";
+    @import "1-atoms/types";
+
+    // ** 2 - Molecules
+    @import "2-molecules/navigation";
+}
+
+.headerSite {
+    z-index: 55;
+
+    @media (min-width: $breakpoint-lg) {
+        position: relative;
+    }
+
+    // ** 1 - Atoms
+    @import "1-atoms/site-logo";
+
+    // ** 2 - Molecules
+    @import "2-molecules/skip-links";
+    @import "2-molecules/account";
+    @import "2-molecules/radiolive";
+
+    // ** 3 - Organims
+    @import "3-organisms/header-site";
+}
+
+.footerSite {
+    background-color: $color-black;
+
+    // ** 1 - Atoms
+    @import "1-atoms/media-info";
+
+    // ** 2 - Molecules
+    @import "2-molecules/ratio";
+    @import "2-molecules/thumbnail";
+    @import "2-molecules/card";
+    @import "2-molecules/share";
+
+    // ** 3 - Organisms
+    @import "3-organisms/section-page";
+    @import "3-organisms/area";
+    @import "3-organisms/slider";
+    @import "3-organisms/footer-site";
+
+    // ** 4 - Layouts
+    @import "4-layout/grid-framework";
+    @import "4-layout/grid";
+
+    // ** 5 - Vendors
+    @import "~tiny-slider/src/tiny-slider";
+
+    // ** 6 - Overrides for partners (must be manually updated!)
+    .subNav-item {
+        display: list-item;
+        height: auto;
+        padding: 0;
+        vertical-align: baseline;
+    }
+}

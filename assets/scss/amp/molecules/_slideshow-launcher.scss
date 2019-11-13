@@ -1,0 +1,70 @@
+/* 
+ * @filename    : amp/molecules/_slideshow-launcher.scss
+ * @description : Contient les styles du bouton de lancement d'un SLIDESHOW
+ * @projet      : NRJ 2017 (nouveau site NRJ)
+ * @date        : MAI 2017
+ * @author      : Trésor ILOYI
+ * -------------------------------------------- */
+
+.slideshowLauncher-content,
+.slideshowLauncher-visual {
+    position: relative;
+}
+
+.slideshowLauncher-visual {
+    .copyright {
+        z-index: 2;
+    }
+}
+
+.slideshowLauncher-btn {
+    @include lato-bold;
+    @include font-size(1.2); // =12px
+    background: rgba($black, 0.6);
+    border: none;
+    height: 100%;
+    left: 0;
+    padding-top: 11%;
+    position: absolute;
+    text-transform: uppercase;
+    top: 0;
+    width: 100%;
+    text-align: center;
+    z-index: 1;
+    
+    &,
+    &:active,
+    &:hover,
+    &:focus {
+        color: $white;
+        text-decoration: none;
+    }
+}
+
+.slideshowLauncher-btn-icon {
+    display: block;
+    margin: 0 auto 0.6rem; // =0 auto 6px
+}
+
+.slideshowLauncher-btn-txt {
+    @include font-size(2.0); // =20px
+}
+
+.slideshowLauncher-count {
+    display: block;
+    margin-top: 0.8rem; // =8px
+    position: relative;
+    padding-top: 1rem; // =10px
+    
+    &:before {
+        background: $white;
+        content: "";
+        display: block;
+        height: 0.1rem; // =1px
+        left: 50%;
+        margin-left: -2rem; // = -20px
+        position: absolute;
+        top: 0;
+        width: 4rem; // =40px 
+    }
+}

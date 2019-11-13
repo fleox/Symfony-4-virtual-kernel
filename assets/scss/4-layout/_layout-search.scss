@@ -1,0 +1,11 @@
+.page--search {
+    background-color: $color-gray-10;
+
+    .contentPage {
+        padding-top: $spacing-64;
+
+        &-container {
+            background-color: transparent;
+        }
+    }
+}

@@ -1,0 +1,93 @@
+/*
+Styleguide Tab
+*/
+
+/*
+0 - Tabs
+Styleguide Tab - Tab
+*/
+
+/*
+Système d'onglets accessibles de Nicolas HOFFMANN https://a11y.nicolas-hoffmann.net/tabs/
+
+Markup: /style_guide/3_organisms/_tab.html.twig
+
+.tab - Classe par défaut
+.tab--justified - Onglets justifiés sur toute la largeur
+
+Styleguide Tab - Système d'onglets
+*/
+
+.tab {
+
+    // **
+    // * Tab Header
+    // **
+
+    &-header {
+        margin-bottom: $spacing-16;
+        position: relative;
+        @media (max-width: $breakpoint-md-max) {
+            &::after {
+                background: linear-gradient(to right, rgba($color-white, 0) 0%, rgba($color-white, 1) 100%);
+                bottom: 0;
+                content: '';
+                position: absolute;
+                right: 0;
+                top: 0;
+                width: $spacing-24;
+            }
+        }
+    }
+
+    // **
+    // * Tab List
+    // **
+
+    &-list {
+        display: flex;
+        @media (max-width: $breakpoint-md-max) {
+            flex-wrap: nowrap;
+            overflow-x: auto;
+        }
+
+        &Item {
+            padding: 0 $spacing-4;
+
+            &:first-child {
+                padding-left: 0;
+            }
+
+            &:last-child {
+                padding-right: 0;
+            }
+        }
+    }
+
+    // **
+    // * Tab Content
+    // **
+
+    &-content {
+        &[aria-hidden=true] {
+            display: none;
+        }
+    }
+
+    // **
+    // * Button
+    // **
+
+    .button {
+        &[aria-selected="true"] {
+            background-color: $color-primary;
+            color: $color-white;
+        }
+    }
+
+    &--justified {
+        .tab-list {
+            justify-content: space-between;
+        }
+    }
+}

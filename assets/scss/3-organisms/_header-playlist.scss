@@ -1,0 +1,75 @@
+/*
+Styleguide Header Playlist
+*/
+
+/*
+0 - Header de la page d'accueil des Playlists
+Styleguide Header Playlist - Header Playlist
+*/
+
+/*
+1 - Header de la page d'accueil des Playlists par défaut
+Markup: /style_guide/3_organisms/_header-playlist.html.twig
+.headerPlaylist - Classe principale du header d'un artiste
+Styleguide Header Playlist - Header Playlist Default
+*/
+
+.headerPlaylist {
+    display: flex;
+    flex-flow: column;
+    max-width: 192rem;
+    margin: auto;
+    @media (min-width: $breakpoint-lg) {
+        flex-flow: row;
+        align-items: stretch;
+        justify-content: center;
+    }
+
+    &-visual,
+    &-content {
+        @media (min-width: $breakpoint-lg) {
+            flex: 0 0 50%;
+        }
+    }
+
+    &-visual {
+        background-color: $color-primary-140; // Test
+        position: relative;
+
+        .thumbnail {
+            &-wrapper {
+                height: auto;
+                padding: 0;
+                position: static;
+            }
+
+            &-visual {
+                height: 100%;
+                object-fit: contain;
+                object-position: 50% 50%;
+
+                @media (max-width: $breakpoint-md-max) {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    &-content {
+        background: $color-primary;
+        color: $color-white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: $spacing-24;
+        @media (min-width: $breakpoint-lg) {
+            padding: $spacing-20 $spacing-40;
+        }
+    }
+
+    .cardPlaylist {
+        &-body {
+            border-color: $color-white;
+        }
+    }
+}

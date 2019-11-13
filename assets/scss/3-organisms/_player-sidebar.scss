@@ -1,0 +1,29 @@
+/*
+Styleguide Player Sidebar
+*/
+
+/*
+0 - Player Sidebar
+
+Styleguide Player Sidebar
+*/
+
+/*
+Player Sidebar
+
+Markup: /style_guide/3_organisms/_player-sidebar.html.twig
+
+.playerSidebar - Classe de base
+
+Styleguide Player Sidebar - Player Sidebar
+*/
+
+.playerSidebar {
+    & > [class*="card"] {
+        margin-top: $spacing-16;
+
+        @media (max-width: $breakpoint-md-max) {
+            margin: 0 $spacing-16 $spacing-16;
+        }
+    }
+}

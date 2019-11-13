@@ -1,0 +1,60 @@
+.page--seasonalTour {
+    .map {
+        position: relative;
+    }
+
+    .map-hashtag {
+        position: absolute;
+        top: $spacing-4;
+        right: $spacing-4;
+
+        @media (min-width: $breakpoint-md) {
+            font-size: $font-size-lg;
+            top: $spacing-12;
+            right: $spacing-12;
+        }
+    }
+
+    .thumbnail-wrapper {
+        padding: 0 0 100%;
+
+        @media (min-width: $breakpoint-md) {
+            padding: 0 0 56.25%;
+        }
+    }
+
+    .contentPage-container {
+        padding-top: $spacing-24;
+        background-color: $color-gray-10;
+    }
+
+    .thumbnail {
+        margin-bottom: $spacing-24;
+        margin-left: -$spacing-base;
+        margin-right: -$spacing-base;
+
+        @media (min-width: $breakpoint-md) {
+            margin-left: 0;
+            margin-right: 0;
+        }
+    }
+
+    .orderedList {
+        margin-bottom: $spacing-44;
+
+        &-item {
+
+            @media (min-width: $breakpoint-xl) {
+                font-size: $font-size-lg;
+            }
+        }
+    }
+
+    .media {
+        margin: $spacing-40 0 0;
+    }
+
+    .videoPlayer {
+        width: 100%;
+    }
+}

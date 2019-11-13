@@ -1,0 +1,32 @@
+/*
+Styleguide Bookings
+*/
+
+/*
+0 - Bookings
+
+Styleguide Bookings - Bookings
+*/
+
+/*
+1 - Booking default
+
+Markup: /style_guide/2_molecules/_booking.html.twig
+
+.booking - Booking par défaut
+
+Styleguide Bookings - Booking par défault
+*/
+
+.booking {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: $spacing-16;
+    opacity: 1;
+    transition: opacity 0.2s ease-in-out;
+
+    &.visuallyHidden {
+        opacity: 0;
+    }
+}

@@ -1,0 +1,109 @@
+/*
+Styleguide Timeline Classic
+*/
+
+/*
+0 - Timeline
+
+Styleguide Timeline Classic - Timeline Classic
+*/
+
+/*
+1 - Style d'une Timeline Classic de base
+
+Markup: /style_guide/3_organisms/timeline-classic/_timeline-classic.html.twig
+
+.timelineClassic - Timeline Classe de base
+.timelineClassic--white - Timeline Classe de base
+
+Styleguide Timeline Classic - Timeline Classic par défaut
+*/
+
+$timelineClassicPrefix: 'timelineClassic';
+
+.#{$timelineClassicPrefix} {
+    --timelineColor: #{$color-black};
+    --timelineDotColor: var(--timelineColor);
+    --timelineDotSize: #{$size-20};
+    --timelineDotSpaceAround: #{$spacing-8};
+    --timelineDotPositionTop: 50%;
+    --timelineHeadingHeight: #{$size-25};
+    --timelineSpacingLeft: #{$spacing-40};
+    --timelineTrackBackgroundColor: var(--timelineColor);
+    --timelineTrackSize: #{$size-10};
+
+    color: var(--timelineColor);
+
+    &--white {
+        --timelineColor: #{$color-white};
+    }
+
+    &-item {
+        &Header,
+        &Body {
+            padding-left: var(--timelineSpacingLeft);
+            position: relative;
+        }
+
+        &Header {
+            --timelineHeaderSpaceAroundTop: var(--timelineDotSpaceAround);
+            --timelineHeaderSpaceAroundBottom: var(--timelineDotSpaceAround);
+
+            padding-bottom: var(--timelineHeaderSpaceAroundBottom);
+            padding-top: var(--timelineHeaderSpaceAroundTop);
+
+            &::before {
+                background-color: var(--timelineDotColor);
+                border-radius: 50%;
+                bottom: 0;
+                box-shadow: 0 0 0.2rem 0.8rem var(--timelineBackgroundColor);
+                content: "";
+                height: var(--timelineDotSize);
+                left: 0;
+                position: absolute;
+                top: var(--timelineDotPositionTop);
+                transform: translateY(-50%);
+                width: var(--timelineDotSize);
+            }
+        }
+
+        &:first-child {
+            .#{$timelineClassicPrefix}-itemHeader {
+                --timelineDotPositionTop: calc(50% + #{$spacing-12});
+                --timelineHeaderSpaceAroundTop: #{$spacing-32};
+
+                &::after {
+                    background-color: var(--timelineTrackBackgroundColor);
+                    border-radius: var(--timelineTrackSize);
+                    bottom: calc(var(--timelineHeadingHeight) + var(--timelineDotSpaceAround) * 2);
+                    content: "";
+                    left: calc(var(--timelineDotSize) / 2 - var(--timelineTrackSize) / 2);
+                    height: $size-25;
+                    pointer-events: none;
+                    position: absolute;
+                    width: var(--timelineTrackSize);
+                }
+            }
+        }
+
+        &Body {
+            padding-bottom: $spacing-40;
+
+            &::before {
+                background-color: var(--timelineTrackBackgroundColor);
+                border-radius: var(--timelineTrackSize);
+                bottom: 0;
+                content: "";
+                left: calc(var(--timelineDotSize) / 2 - var(--timelineTrackSize) / 2);
+                pointer-events: none;
+                position: absolute;
+                top: 0;
+                width: var(--timelineTrackSize);
+            }
+        }
+
+        .supTitle {
+            color: var(--timelineColor);
+        }
+    }
+}

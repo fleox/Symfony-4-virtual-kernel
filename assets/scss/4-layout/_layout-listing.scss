@@ -1,0 +1,8 @@
+.page--listing {
+    .container-fluid {
+        @media (min-width: $breakpoint-md) {
+            padding-left: $spacing-64;
+            padding-right: $spacing-64;
+        }
+    }
+}

@@ -1,0 +1,465 @@
+// *
+// * @filename    : _simple-modal.scss
+// * @description : Simple Modal Vendor Styles
+// * @projet      : NRJ
+// * @date        : 05/2019
+// * @author      : Nicolas BOURLES
+// * @Source      : Nicolas HOFFMANN https://a11y.nicolas-hoffmann.net/modal/
+// * --------------------------------------------
+
+/* needed for old browsers */
+dialog {
+    display: block;
+}
+
+/* removes scroll when modal is opened */
+.no-scroll {
+    overflow: hidden;
+}
+
+/* overlay covers everything */
+.simple-modal-overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: $color-white;
+    opacity: 0.8;
+    z-index: 998;
+    cursor: pointer;
+}
+
+/* modal */
+.simple-modal {
+    position: fixed;
+    left: 15%;
+    top: 5%;
+    width: 70%;
+    max-height: 98vh;
+    right: auto;
+    border: 0.2rem solid $color-black;
+    background: $color-white;
+    z-index: 999;
+    padding: 2em;
+    overflow: auto;
+}
+
+.simple-modal-close {
+    float: right;
+    background: $color-primary;
+    border-radius: 1em;
+    color: $color-white;
+    padding: 0.25em;
+    text-decoration: none;
+    line-height: 1.2;
+    text-align: center;
+}
+
+.simple-modal-close:focus,
+.simple-modal-close:hover,
+.simple-modal-close:active {
+    background: $color-primary;
+}
+
+.simple-modal-overlay[data-background-click="disabled"] {
+    cursor: auto;
+}
+
+/* it can be easily adapted in media-queries for tablets/mobile */
+
+/* for this example: tablets */
+@media (max-width: 55.625em) {
+    .simple-modal {
+        left: 5%;
+        top: 5%;
+        bottom: 5%;
+        width: 90%;
+    }
+}
+
+/* for this example: mobile */
+@media (max-width: 44.375em) {
+    .simple-modal {
+        left: 1%;
+        top: 1%;
+        max-width: 98%;
+        bottom: 1%;
+    }
+}
+
+/* another modal styling example */
+
+/* tooltip modal for it’s easy button */
+.slider-modal-overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: rgba($color-black, 0.8);
+    opacity: 0.8;
+    z-index: 998;
+    cursor: pointer;
+}
+
+.slider-modal {
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    z-index: 999;
+    position: fixed;
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+    font-size: 1em;
+    border: 0;
+    overflow: auto;
+    background-color: $color-black;
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+    from {
+        top: -30rem;
+        opacity: 0;
+    }
+
+    to {
+        height: 100%;
+        opacity: 1;
+    }
+}
+
+@keyframes animatetop {
+    from {
+        height: 0;
+        width: 0;
+        opacity: 0;
+    }
+
+    to {
+        height: 100%;
+        width: 100%;
+        opacity: 1;
+    }
+}
+
+.slider-modal-close {
+    position: absolute;
+    z-index: 3;
+    top: $spacing-32;
+    right: $spacing-20;
+    background: transparent;
+    color: $color-white;
+
+    @media (min-width: $breakpoint-md) {
+        top: $spacing-20;
+    }
+
+    &::before {
+        content: $enrj-times-light;
+        font-family: '#{$icomoon-font-family}';
+        left: 50%;
+        position: absolute;
+        speak: none;
+        top: -1rem;
+        transform: translateX(-50%);
+
+        @media (min-width: $breakpoint-md) {
+            font-size: $font-size-6;
+            left: -$spacing-20;
+            top: 50%;
+            transform: translate(0, -50%);
+        }
+    }
+
+    .button-icon {
+        font-size: $font-size-4;
+        margin-right: $spacing-4;
+        top: 0.1rem;
+        position: relative;
+    }
+
+    .slider-modal-close__text {
+        font-family: $font-family-base;
+        font-size: $font-size-3;
+
+        @media (min-width: $breakpoint-md) {
+            font-family: $font-family-base;
+            font-size: $font-size-5;
+        }
+    }
+}
+
+/* another modal styling example */
+
+/* tooltip modal for it’s easy button */
+.simple-left-modal-overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: rgba($color-black, 0.8);
+    opacity: 0.8;
+    z-index: 666;
+    cursor: pointer;
+}
+
+.simple-left-modal {
+    left: auto;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    z-index: 667;
+    position: fixed;
+    width: 40em;
+    max-width: 100%;
+    padding: 1em;
+    font-size: 1em;
+    border: 0;
+    overflow: auto;
+    background-color: $color-white;
+    background-image: linear-gradient(to bottom, $color-primary 3em, $color-gray-10 3em);
+    background-attachment: local;
+}
+
+.simple-left-modal-close {
+    position: absolute;
+    top: 0.25em;
+    right: 0;
+    background: transparent;
+    color: $color-white;
+}
+
+// **
+// * Search Modal
+// **
+
+@mixin searchModalGradient {
+    &::before,
+    &::after {
+        content: '';
+        height: $spacing-8;
+        left: 0;
+        pointer-events: none;
+        position: fixed;
+        right: 0;
+        z-index: 1;
+    }
+
+    &::before {
+        background: linear-gradient(to bottom, rgba($color-gray-10, 1) 0%, rgba($color-gray-10, 0) 100%);
+        top: $spacing-20;
+        @media (min-width: $breakpoint-md) {
+            top: $spacing-64;
+        }
+    }
+
+    &::after {
+        background: linear-gradient(to bottom, rgba($color-gray-10, 0) 0%, rgba($color-gray-10, 1) 100%);
+        bottom: 0;
+        @media (min-width: $breakpoint-md) {
+            bottom: $spacing-64;
+        }
+    }
+}
+
+.search-modal {
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+    border: none;
+    bottom: 0;
+    height: auto;
+    left: 0;
+    padding: 0;
+    position: fixed;
+    top: 0;
+    width: auto;
+    right: 0;
+    z-index: 999;
+
+    &,
+    &-overlay {
+        background-color: $color-gray-10;
+    }
+
+    &-overlay {
+        bottom: 0;
+        cursor: pointer;
+        left: 0;
+        opacity: 0.8;
+        position: fixed;
+        top: 0;
+        right: 0;
+        z-index: 666;
+
+        &[data-background-click="disabled"] {
+            cursor: auto;
+        }
+    }
+
+    &__wrapper {
+        @media (max-width: $breakpoint-sm-max) {
+            bottom: 0;
+            left: 0;
+            overflow: auto;
+            position: absolute;
+            right: 0;
+            top: $spacing-20;
+
+            @include searchModalGradient;
+        }
+    }
+
+    &-title {
+        @include visuallyHidden;
+    }
+
+    &-close {
+        @extend .button;
+
+        text-transform: none;
+        z-index: 2;
+        @media (max-width: $breakpoint-sm-max) {
+            background-color: transparent;
+            border-color: transparent;
+            float: right;
+            font-size: $font-size-1;
+            padding-top: $spacing-16;
+            position: relative;
+            top: $spacing-4;
+        }
+        @media (min-width: $breakpoint-md) {
+            padding-left: $spacing-32;
+            position: absolute;
+            right: $spacing-64;
+            top: $spacing-64;
+        }
+
+        &::before {
+            content: $enrj-times-light;
+            font-family: '#{$icomoon-font-family}';
+            left: 50%;
+            position: absolute;
+            speak: none;
+            top: $spacing-4;
+            transform: translateX(-50%);
+            @media (min-width: $breakpoint-md) {
+                font-size: $font-size-6;
+                left: $spacing-8;
+                top: 50%;
+                transform: translate(0, -50%);
+            }
+        }
+    }
+
+    &__content {
+        @media (min-width: $breakpoint-md) {
+            bottom: $spacing-64;
+            left: 0;
+            overflow: auto;
+            position: absolute;
+            right: 0;
+            top: $spacing-64;
+
+            @include searchModalGradient;
+        }
+    }
+
+    .searchResults-header {
+        @media (max-width: $breakpoint-sm-max) {
+            padding-right: $spacing-64;
+        }
+    }
+
+    .contentPage {
+        padding-top: 0;
+        background-color: $color-gray-10;
+    }
+
+    .contentPage-container {
+        background-color: transparent;
+        padding-top: $spacing-8;
+    }
+}
+
+// **
+// * Account Modal
+// **
+
+.account-modal {
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+    background-image: linear-gradient(to right bottom, $color-primary-160, $color-primary-100);
+    border: none;
+    bottom: 0;
+    height: auto;
+    left: 0;
+    padding: 0;
+    position: fixed;
+    top: 0;
+    width: auto;
+    right: 0;
+    z-index: 999;
+
+    &::before {
+        background-image: url('//www.nrj.fr/uploads/assets/nrj/pattern-noisy.png');
+        bottom: 0;
+        content: "";
+        left: 0;
+        opacity: $opacity-7;
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+
+    &__wrapper,
+    &__content,
+    .contentPage,
+    .accountSteps {
+        bottom: 0;
+        left: 0;
+        overflow: auto;
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+
+    &-close {
+        background-color: transparent;
+        color: $color-black;
+        height: $spacing-40;
+        position: absolute;
+        right: 0;
+        width: $spacing-40;
+        top: 0;
+        z-index: 2;
+
+        &__text {
+            @include visuallyHidden;
+        }
+
+        &::before {
+            content: $enrj-times-light;
+            font-family: '#{$icomoon-font-family}';
+            font-size: $font-size-6;
+            left: 50%;
+            position: absolute;
+            speak: none;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        &:hover,
+        &:focus {
+            color: $color-primary;
+        }
+    }
+}

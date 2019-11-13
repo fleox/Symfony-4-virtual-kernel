@@ -1,0 +1,67 @@
+/*
+ * @filename    : common/fonts/_lato.scss
+ * @description : Contient les déclarations de la webfont LATO
+ * @projet      : NRJ 2017
+ * @date        : NOVEMBRE 2017
+ * @author      : Trésor ILOYI
+ * -------------------------------------------- */
+
+/* LATO LIGHT */
+@font-face {
+    font-family: 'Lato';
+    src: url('#{$fontPath}lato-light.woff2') format('woff2'),
+         url('#{$fontPath}lato-light.woff') format('woff'),
+         url('#{$fontPath}lato-light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+/* LATO REGULAR */
+@font-face {
+    font-family: 'Lato';
+    src: url('#{$fontPath}lato-regular.woff2') format('woff2'),
+         url('#{$fontPath}lato-regular.woff') format('woff'),
+         url('#{$fontPath}lato-regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* LATO REGULAR ITALIC */
+@font-face {
+    font-family: 'Lato';
+    src: url('#{$fontPath}lato-regular-italic.woff2') format('woff2'),
+         url('#{$fontPath}lato-regular-italic.woff') format('woff'),
+         url('#{$fontPath}lato-regular-italic.ttf') format('truetype');
+    font-weight: 400;
+    font-style: italic;
+}
+
+/* LATO SEMIBOLD */
+@font-face {
+    font-family: 'Lato';
+    src: url('#{$fontPath}lato-semibold.woff2') format('woff2'),
+         url('#{$fontPath}lato-semibold.woff') format('woff'),
+         url('#{$fontPath}lato-semibold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+/* LATO BOLD */
+@font-face {
+    font-family: 'Lato';
+    src: url('#{$fontPath}lato-bold.woff2') format('woff2'),
+         url('#{$fontPath}lato-bold.woff') format('woff'),
+         url('#{$fontPath}lato-bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+/* LATO BLACK */
+@font-face {
+    font-family: 'Lato';
+    src: url('#{$fontPath}lato-black.woff2') format('woff2'),
+         url('#{$fontPath}lato-black.woff') format('woff'),
+         url('#{$fontPath}lato-black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}

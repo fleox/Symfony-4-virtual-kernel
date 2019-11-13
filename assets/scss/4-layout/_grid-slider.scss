@@ -1,0 +1,50 @@
+.gridSlider {
+    @media (max-width: $breakpoint-md-max) {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        touch-action: pan-y;
+        margin-right: -$spacing-16;
+    }
+
+    .grid {
+        @media (max-width: $breakpoint-md-max) {
+            display: block;
+            margin-left: -($grid-gap / 2);
+            margin-right: -($grid-gap / 2);
+            overflow-x: auto;
+            overflow-y: hidden;
+            white-space: nowrap;
+        }
+
+        &-item {
+            @media (max-width: $breakpoint-md-max) {
+                display: inline-block;
+                white-space: normal;
+                padding-left: ($grid-gap / 2);
+                padding-right: ($grid-gap / 2);
+                vertical-align: top;
+                width: 80%;
+            }
+
+            @media (min-width: $breakpoint-md) and (max-width: $breakpoint-md-max) {
+                padding-left: ($grid-gap-md / 2);
+                padding-right: ($grid-gap-md / 2);
+                width: 40%;
+
+                &:first-child {
+                    padding-left: 0;
+                }
+            }
+        }
+    }
+
+    &-4 {
+        .grid {
+            &-item {
+                @media (max-width: $breakpoint-md-max) {
+                    width: 45%;
+                }
+            }
+        }
+    }
+}

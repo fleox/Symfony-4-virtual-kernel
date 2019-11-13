@@ -1,0 +1,177 @@
+/*
+Styleguide Post Text
+*/
+
+/*
+0 - Post Text
+
+Styleguide Post Text - Post Text
+*/
+
+/*
+1 - Post text default
+
+Markup: /style_guide/2_molecules/_post-text.html.twig
+
+.postText - Code de base
+.postText--truncated - Texte tronqué
+.postText--centered - Texte centré
+
+Styleguide Post Text - Post Text par défaut
+*/
+
+.postText {
+    font-size: $font-size-3;
+    color: $color-gray-80;
+    @media (min-width: $breakpoint-md) {
+        font-size: $font-size-4;
+    }
+
+    &--truncated {
+        @include truncate-multilines($lineCount: 2);
+    }
+
+    &--centered {
+        text-align: center;
+    }
+
+    abbr {
+        border: none;
+        text-decoration: none;
+
+        &[title] {
+            border-bottom: 0.1rem dotted;
+        }
+    }
+
+    address {
+        margin-bottom: $spacing-12;
+    }
+
+    dl {
+        &:not(:last-child) {
+            margin-bottom: $spacing-16;
+        }
+    }
+
+    dt {
+        float: left;
+        font-weight: $font-weight-bold;
+        margin-right: $spacing-4;
+    }
+
+    dd {
+        margin-bottom: $spacing-12;
+    }
+
+    h2 {
+        @extend .heading2;
+
+        margin-bottom: $spacing-12;
+
+        &:not(:first-child) {
+            margin-top: $spacing-32;
+        }
+    }
+
+    h3 {
+        @extend .heading3;
+
+        margin: $spacing-24 0 $spacing-12;
+    }
+
+    h4 {
+        @extend .heading4;
+
+        margin: $spacing-20 0 $spacing-8;
+    }
+
+    ol {
+        list-style: decimal inside;
+    }
+
+    ul {
+        list-style: disc inside;
+    }
+
+    ol,
+    ul {
+        margin-left: $spacing-16;
+
+        &:not(:last-child) {
+            margin-bottom: $spacing-12;
+        }
+
+        li {
+            &:not(:last-child) {
+                margin-bottom: $spacing-4;
+            }
+        }
+    }
+
+    p {
+        &:not(:last-child) {
+            margin-bottom: $spacing-12;
+        }
+    }
+
+    table {
+        @extend .table;
+    }
+
+    .tableScroller,
+    table {
+        &:not(:last-child) {
+            margin-bottom: $spacing-16;
+        }
+    }
+
+    caption {
+        @extend .table-caption;
+    }
+
+    thead {
+        @extend .table-header;
+    }
+
+    tfoot {
+        @extend .table-footer;
+    }
+
+    tr {
+        @extend .table-row;
+    }
+
+    th {
+        @extend .table-heading;
+    }
+
+    td {
+        @extend .table-data;
+    }
+
+    a {
+        color: $color-primary;
+
+        &:hover,
+        &:focus {
+            text-decoration: none;
+        }
+    }
+
+    em {
+        @extend .spannedText--emphasize;
+    }
+
+    strong {
+        @extend .spannedText--strong;
+    }
+
+    // **
+    // * postTextCallToActionHide:  Call-to-action placed just after a postText when a truncate script is applied
+    // **
+
+    &CallToActionHide {
+        margin-left: -$spacing-12;
+    }
+}

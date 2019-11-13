@@ -1,0 +1,138 @@
+/*
+Styleguide Media Player
+*/
+
+/*
+0 - Lecteur de vidéos avec liste de lecture intégrée
+
+Styleguide Media Player - Media Player
+*/
+
+/*
+1 - Media Player
+
+Markup: /style_guide/3_organisms/_media-player.html.twig
+
+.mediaPlayer - Classe par défaut
+
+Styleguide Media Player - Media Player Default
+*/
+
+.mediaPlayer {
+
+    // **
+    // * Media Player Content
+    // **
+
+    &-content {
+        background-color: $color-gray-70;
+        color: $color-white;
+        margin-bottom: $spacing-12;
+        @media (min-width: $breakpoint-lg) {
+            display: flex;
+        }
+    }
+
+    // **
+    // * Media Player Main
+    // **
+
+    &-main {
+        @media (min-width: $breakpoint-lg) {
+            flex: 1;
+        }
+    }
+
+    // **
+    // * Media Player Aside
+    // **
+
+    &-aside {
+        padding: $spacing-16;
+
+        @media (min-width: $breakpoint-lg) {
+            display: flex;
+            flex: 0 0 34%;
+            position: relative;
+        }
+    }
+
+    .area {
+        width: 100%;
+
+        @media (min-width: $breakpoint-lg) {
+            bottom: $spacing-16;
+            display: flex;
+            flex-direction: column;
+            left: $spacing-24;
+            position: absolute;
+            right: $spacing-24;
+            top: $spacing-16;
+            width: auto;
+        }
+
+        [class^="heading"] {
+            font-size: $font-size-4;
+        }
+
+        &-header {
+            margin-bottom: $spacing-12;
+        }
+
+        &-body {
+            @media (min-width: $breakpoint-lg) {
+                flex: 1;
+                overflow-x: hidden;
+                overflow-y: auto;
+                scrollbar-color: $color-gray-50;
+                scrollbar-width: thin;
+
+                // stylelint-disable selector-max-specificity
+                &::-webkit-scrollbar {
+                    width: 0.5rem;
+                }
+
+                &::-webkit-scrollbar-thumb {
+                    background-color: $color-gray-50;
+                }
+                // stylelint-enable
+            }
+
+            [class^="heading"] {
+                @media (max-width: $breakpoint-xs-max) {
+                    font-size: $font-size-2;
+                }
+            }
+        }
+    }
+
+    // ** Stylelint max-specicity is disabled here because the grid framework is loaded after this file
+    // stylelint-disable selector-max-specificity
+    @media (max-width: $breakpoint-xs-max) {
+        .gridSlider {
+            .grid-item {
+                width: 45%;
+            }
+        }
+    }
+    // stylelint-enable
+}
+
+// **
+// * MediaPlayer List
+// **
+
+@media (min-width: $breakpoint-lg) {
+    .gridSlider--mediaPlayer {
+        .list {
+            grid-row-gap: $spacing-16;
+        }
+
+        .list-item {
+            &:not(:last-child) {
+                border-bottom: $border-width-1 solid $color-white;
+                padding-bottom: $spacing-16;
+            }
+        }
+    }
+}

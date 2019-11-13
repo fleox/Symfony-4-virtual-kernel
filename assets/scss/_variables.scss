@@ -1,0 +1,300 @@
+// *
+// * @filename    : _variables.scss
+// * @description : All variables used for the Website
+// * @projet      : NRJ Global Sites
+// * @date        : 2019-02
+// * @author      : Nicolas BOURLES
+// * --------------------------------------------
+
+// ***
+// * Color System
+// */
+
+// ** Generic colors: grayscale, black and white
+// The values set for these following variables are permanent and doesn't change
+
+/* stylelint-disable */
+$color-white:       #fff !default;
+$color-black:       #000 !default;
+$color-gray-10:     lighten($color-black, 90%) !default;
+$color-gray-20:     lighten($color-black, 80%) !default;
+$color-gray-30:     lighten($color-black, 70%) !default;
+$color-gray-40:     lighten($color-black, 60%) !default;
+$color-gray-50:     lighten($color-black, 50%) !default;
+$color-gray-60:     lighten($color-black, 40%) !default;
+$color-gray-70:     lighten($color-black, 30%) !default;
+$color-gray-80:     lighten($color-black, 20%) !default;
+$color-gray-90:     lighten($color-black, 10%) !default;
+
+// ** Brand Colors
+// The values set for these following variables can be changed
+
+// Root colors
+$color-base:        $color-black !default;
+$color-primary:     #E2001A !default;
+$color-nma:         #f71871 !default;
+$color-nma-120:     darken($color-nma, 5%) !default;
+$color-info:        #32d13e !default;
+$color-danger:      #E2001A !default;
+$color-nma-live:    #fed700 !default;
+
+// Variants based with root colors
+$color-primary-180:  darken($color-primary, 20%) !default;
+$color-primary-160:  darken($color-primary, 15%) !default;
+$color-primary-140:  darken($color-primary, 10%) !default;
+$color-primary-120:  darken($color-primary, 5%) !default;
+$color-primary-100:  $color-primary !default;
+$color-primary-80:   lighten($color-primary, 15%) !default;
+$color-primary-60:   lighten($color-primary, 20%) !default;
+$color-primary-40:   lighten($color-primary, 25%) !default;
+$color-primary-20:   lighten($color-primary, 30%) !default;
+$color-primary-10:   lighten($color-primary, 35%) !default;
+
+$color-brand-facebook: #3b5998 !default;
+$color-brand-twitter: #55acee !default;
+$color-brand-youtube: #E2001A !default;
+$color-brand-snapchat: #F8F11E !default;
+
+$color-brand-intagram-01: #f09433 !default;
+$color-brand-intagram-02: #e6683c !default;
+$color-brand-intagram-03: #dc2743 !default;
+$color-brand-intagram-04: #cc2366 !default;
+$color-brand-intagram-05: #bc1888 !default;
+
+$color-brand-live: #fed700 !default;
+
+$color-universe-musicAwards: #000 !default;
+$color-universe-musicAwards-120: darken($color-universe-musicAwards, 20%) !default;
+$color-universe-musicAwards-80: lighten($color-universe-musicAwards, 15%) !default;
+
+$color-universe-games: #25A1D8 !default;
+$color-universe-games-120: darken($color-universe-games, 20%) !default;
+$color-universe-games-80: lighten($color-universe-games, 15%) !default;
+
+$color-universe-extravadance: #612d8c !default;
+$color-universe-extravadance-120: darken($color-universe-extravadance, 20%) !default;
+
+/* stylelint-enable */
+
+// ***
+// * Icons
+// */
+
+/* stylelint-disable */
+$icomoon-asset-version: "hm83sc";
+$icomoon-font-family: "enrj-hm83sc" !default;
+$icomoon-font-path: '//www.nrj.fr/uploads/assets/nrj/fonts/' !default;
+
+$enrj-angle-down-light: "\e900";
+$enrj-angle-up-light: "\e901";
+$enrj-bars-light: "\e904";
+$enrj-blocks: "\e90d";
+$enrj-broadcast: "\e92a";
+$enrj-camera-solid: "\e908";
+$enrj-check: "\e92f";
+$enrj-chevron-left: "\f053";
+$enrj-chevron-right: "\f054";
+$enrj-chevron-up: "\f077";
+$enrj-circle: "\e90c";
+$enrj-clock: "\e933";
+$enrj-cog: "\e92d";
+$enrj-download: "\e924";
+$enrj-envelope: "\e927";
+$enrj-exclamation-circle: "\e932";
+$enrj-eye: "\e930";
+$enrj-eye-slash: "\e931";
+$enrj-facebook-f: "\f39e";
+$enrj-film: "\e928";
+$enrj-filter: "\e914";
+$enrj-gallery: "\e915";
+$enrj-globe: "\e90e";
+$enrj-network: "\e90e";
+$enrj-sphere: "\e90e";
+$enrj-headphones-alt-solid: "\e902";
+$enrj-heart-o: "\e90f";
+$enrj-image-solid: "\e909";
+$enrj-images-solid: "\e90a";
+$enrj-info: "\e92e";
+$enrj-instagram: "\f16d";
+$enrj-micro: "\e90b";
+$enrj-microphone: "\e92b";
+$enrj-music-solid: "\e934";
+$enrj-pause: "\e910";
+$enrj-play: "\e911";
+$enrj-redo: "\e923";
+$enrj-rss: "\e925";
+$enrj-search: "\f002";
+$enrj-search-light: "\e903";
+$enrj-share: "\e926";
+$enrj-snapchat: "\e92c";
+$enrj-star-regular: "\e935";
+$enrj-times-light: "\e907";
+$enrj-trophy: "\e929";
+$enrj-twitter: "\f099";
+$enrj-undo: "\e922";
+$enrj-user-light: "\e905";
+$enrj-user-solid: "\e906";
+$enrj-volume-down: "\e912";
+$enrj-volume-up: "\e913";
+$enrj-youtube: "\f167";
+$enrj-zodiac-aquarius: "\e916";
+$enrj-zodiac-aries: "\e917";
+$enrj-zodiac-cancer: "\e918";
+$enrj-zodiac-capricorn: "\e919";
+$enrj-zodiac-gemini: "\e91a";
+$enrj-zodiac-leo: "\e91b";
+$enrj-zodiac-libra: "\e91c";
+$enrj-zodiac-pisces: "\e91d";
+$enrj-zodiac-sagittarius: "\e91e";
+$enrj-zodiac-scorpio: "\e91f";
+$enrj-zodiac-taurus: "\e920";
+$enrj-zodiac-virgo: "\e921";
+
+/* stylelint-enable */
+
+// ***
+// * Typography
+// Font, line-height, and color for body text, headings, and more.
+// */
+
+$fontPath: '//www.nrj.fr/uploads/assets/nrj/fonts/' !default;
+$imagePath: 'https://nrj.fr/uploads/assets/nrj/' !default;
+
+// stylelint-disable value-keyword-case
+$font-lato:             "lato", sans-serif !default;
+$font-montserrat:       "montserrat", sans-serif !default;
+$font-family-base:  $font-lato !default;
+$font-family-alternate: $font-montserrat !default;
+// stylelint-enable value-keyword-case
+
+$font-size-base:              1.6rem !default; // Assumes the browser default, typically `16px`
+$font-size-lg:                $font-size-base * 1.25 !default;
+$font-size-sm:                $font-size-base * 0.875 !default;
+
+$font-weight-normal:          400 !default;
+$font-weight-bold:            700 !default;
+
+$font-weight-base:            $font-weight-normal !default;
+
+$line-height-base:            1.5 !default;
+$line-height-small:          $line-height-base * 0.8 !default;
+
+$font-size-1:                $font-size-base * 0.75 !default;   //12
+$font-size-2:                $font-size-base * 0.875 !default;  //14
+$font-size-3:                $font-size-base !default;          //16
+$font-size-4:                $font-size-base * 1.125 !default;  //18
+$font-size-5:                $font-size-base * 1.25 !default;   //20
+$font-size-6:                $font-size-base * 1.375 !default;  //22
+$font-size-7:                $font-size-base * 1.5 !default;    //24
+$font-size-8:                $font-size-base * 1.75 !default;   //28
+$font-size-9:                $font-size-base * 2 !default;      //32
+$font-size-10:               $font-size-base * 2.375 !default;  //38
+$font-size-11:               $font-size-base * 2.75 !default;   //44
+$font-size-12:               $font-size-base * 2.875 !default;  //46
+
+$spacing-base:               1.6rem !default;
+$spacing-2:                  $spacing-base * 0.125 !default;
+$spacing-4:                  $spacing-base * 0.25 !default;
+$spacing-8:                  $spacing-base * 0.5 !default;
+$spacing-12:                 $spacing-base * 0.75 !default;
+$spacing-16:                 $spacing-base !default;
+$spacing-20:                 $spacing-base * 1.25 !default;
+$spacing-22:                 $spacing-base * 1.375 !default;
+$spacing-24:                 $spacing-base * 1.5 !default;
+$spacing-28:                 $spacing-base * 1.75 !default;
+$spacing-32:                 $spacing-base * 2 !default;
+$spacing-40:                 $spacing-base * 2.5 !default;
+$spacing-44:                 $spacing-base * 2.75 !default;
+$spacing-48:                 $spacing-base * 3 !default;
+$spacing-64:                 $spacing-base * 4 !default;
+$spacing-96:                 $spacing-base * 6 !default;
+
+$size-base:                  1rem !default;
+$size-10:                    $size-base !default;
+$size-15:                    $size-base * 1.5 !default;
+$size-20:                    $size-base * 2 !default;
+$size-25:                    $size-base * 2.5 !default;
+$size-40:                    $size-base * 4 !default;
+$size-50:                    $size-base * 5 !default;
+$size-80:                    $size-base * 8 !default;
+$size-90:                    $size-base * 9 !default;
+$size-100:                   $size-base * 10 !default;
+$size-150:                   $size-base * 15 !default;
+$size-200:                   $size-base * 20 !default;
+$size-250:                   $size-base * 25 !default;
+$size-320:                   $size-base * 32 !default;
+$size-400:                   $size-base * 40 !default;
+$size-500:                   $size-base * 50 !default;
+$size-750:                   $size-base * 75 !default;
+
+$border-width-base: 0.1rem !default;
+$border-width-1: $border-width-base !default;
+
+$radius: $spacing-8 !default;
+$radius-small: $spacing-4 !default;
+$radius-big: $spacing-12 !default;
+
+$opacity-5: 0.5;
+$opacity-7: 0.7;
+
+$rotate-10: 10deg;
+
+// ***
+// * Grid
+// */
+
+// ** Breakpoints
+// Comment: breakpoint size in px / body font-size in px = breakpoint size in em
+$breakpoint-sm: 36em !default; // = 576px
+$breakpoint-md: 48em !default; // = 768px
+$breakpoint-lg: 66.25em !default; // = 1060px
+$breakpoint-xl: 81.25em !default; // = 1300px
+
+$breakpoint-xs-max: $breakpoint-sm - 0.1;
+$breakpoint-sm-max: $breakpoint-md - 0.1;
+$breakpoint-md-max: $breakpoint-lg - 0.1;
+$breakpoint-lg-max: $breakpoint-xl - 0.1;
+
+$container-max-width-sm: 100% !default;
+$container-max-width-md: 100% !default;
+$container-max-width-lg: 99.6rem !default;
+$container-max-width-xl: 120rem !default;
+
+// ** Grid Framework
+// Comment: all variables used for Grid Framework
+$grid-template-columns-number: 12 !default;
+$grid-gap: $spacing-16 !default;
+$grid-gap-md: $spacing-16 !default;
+$container-className: 'container' !default;
+$containerFluid-className: 'containerFluid' !default;
+$grid-className: 'grid' !default;
+$gridItem-className: 'grid-item' !default;
+
+$grid-breakpoints: (
+    xs: 0,
+    sm: $breakpoint-sm,
+    md: $breakpoint-md,
+    lg: $breakpoint-lg,
+    xl: $breakpoint-xl
+) !default;
+
+$grid-breakpoints-max: (
+    xs-max: $breakpoint-xs-max,
+    sm-max: $breakpoint-sm-max,
+    md-max: $breakpoint-md-max,
+    lg-max: $breakpoint-lg-max
+) !default;
+
+$container-max-widths: (
+    sm: $container-max-width-sm,
+    md: $container-max-width-md,
+    lg: $container-max-width-lg,
+    xl: $container-max-width-xl
+) !default;
+
+// Box-shadow
+$box-shadow-card: 0 0.1rem 0.3rem rgba(0, 0, 0, 0.12), 0 0.1rem 0.2rem rgba(0, 0, 0, 0.24);
+$box-shadow-card-hover: 0 1.4rem 2.8rem rgba(0, 0, 0, 0.25), 0 1rem 1rem rgba(0, 0, 0, 0.22);
+
+// Tranition
+$transition-ui-box-shadow : all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);

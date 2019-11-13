@@ -1,0 +1,271 @@
+/*
+Styleguide Navigation
+*/
+
+/*
+0 - Navigations
+
+Styleguide Navigation - Navigations
+*/
+
+/*
+La navigation secondaire
+
+Markup: /style_guide/2_molecules/_sub-navigation.html.twig
+
+.navSub - Navigation
+
+Styleguide Navigation - Navigation secondaire
+*/
+
+$navSubPrefix: 'navSub';
+
+.navSub {
+    padding: $spacing-16;
+    grid-column: 1;
+
+    @media (min-width: $breakpoint-md) {
+        flex: 0 0 70%;
+        column-count: 2;
+    }
+
+    &-item {
+        break-inside: avoid;
+
+        .buttonNav {
+            font-size: $font-size-3;
+            letter-spacing: 0.01rem;
+            color: $color-gray-90;
+            display: inline-block;
+            padding: $spacing-8;
+        }
+
+        @media (max-width: $breakpoint-md) {
+            &--active {
+                background-color: rgba($color-primary-10, 0.3);
+                color: $color-primary;
+
+                .buttonNav {
+                    color: $color-primary-120;
+                }
+            }
+        }
+    }
+}
+
+/*
+La navigation principale
+
+Markup: /style_guide/2_molecules/_nav.html.twig
+
+.nav - Navigation
+.nav--centered - Navigation centrée
+.nav--column - Navigation en mode colonne
+.nav--columnXs - Navigation en mode colonne mais uniquement en mobile
+.nav--slider - Navigation avec scroll en mobile (incompatible avec le nav--column)
+.nav--dark - Navigation de couleur sombre
+
+Styleguide Navigation - Navigation principale
+*/
+
+$navPrefix: 'nav';
+
+@mixin navColumn {
+    .#{$navPrefix}-list {
+        flex-direction: column;
+    }
+
+    .#{$navPrefix}-item {
+        padding: $spacing-4 0;
+    }
+
+    .#{$navPrefix}-item:first-child {
+        padding-top: 0;
+    }
+
+    .#{$navPrefix}-item:last-child {
+        padding-bottom: 0;
+    }
+
+    .button {
+        display: block;
+    }
+}
+
+.#{$navPrefix} {
+    &-overlay {
+        transition: opacity 0.5s ease;
+        overflow: hidden;
+        opacity: 0;
+        background: rgba(3, 2, 1, 0);
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: -1;
+    }
+
+    &-list {
+        display: flex;
+        flex-wrap: wrap;
+
+        .headerSite-nav & {
+            justify-content: space-between;
+
+            @media (min-width: $breakpoint-md) {
+                justify-content: flex-start;
+            }
+        }
+
+        @media (min-width: $breakpoint-md) {
+            justify-content: flex-start;
+        }
+    }
+
+    &-item {
+        padding: 0 $spacing-4;
+
+        &:first-child {
+            padding-left: 0;
+        }
+
+        &:last-child {
+            padding-right: 0;
+        }
+    }
+
+    // **
+    // * Nav Column
+    // **
+
+    &--column {
+        @include navColumn;
+    }
+
+    &--columnXs {
+        @media (max-width: $breakpoint-sm-max) {
+            @include navColumn;
+        }
+    }
+
+    // **
+    // * Nav Centered
+    // **
+
+    &--centered {
+        display: flex;
+
+        .#{$navPrefix}-list {
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+
+    // **
+    // * Nav Boxed (1920px)
+    // **
+
+    &--boxed {
+        max-width: 192rem;
+        margin: auto;
+    }
+
+    // **
+    // * Nav Slider
+    // **
+
+    &--slider {
+        @media (max-width: $breakpoint-md-max) {
+            overflow-x: auto;
+            white-space: nowrap;
+
+            .#{$navPrefix}-list {
+                flex-wrap: nowrap;
+            }
+        }
+    }
+
+    // **
+    // * Nav Dark
+    // **
+
+    &--dark {
+        background-color: $color-black;
+
+        .button {
+            outline-color: $color-white;
+        }
+    }
+}
+
+/*
+La navigation "chaude"
+
+Markup: /style_guide/2_molecules/_sub-navigation.html.twig
+
+.navWarm - Navigation
+
+Styleguide Navigation - Navigation Hightlight
+*/
+
+.navWarm {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: $spacing-4;
+
+    &-item {
+        flex: 0 0 calc(50% - 1.6rem);
+
+        &:nth-child(odd) {
+            margin: 0 $spacing-12 $spacing-12 0;
+        }
+    }
+
+    &-link {
+        border: 0.1rem solid $color-gray-20;
+    }
+
+    &-link,
+    &-img {
+        display: block;
+    }
+}
+
+/*
+3 - Navigation en pied de page
+
+Markup: /style_guide/2_molecules/_nav-footer.html.twig
+
+.navFooter - Navigation dans la pied de page
+
+Styleguide Navigation - Nav Footer
+*/
+
+.navFooter {
+    @media (min-width: $breakpoint-md) {
+        align-items: flex-start;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &-item {
+        @media (max-width: $breakpoint-sm-max) {
+            display: flex;
+            flex-direction: column;
+        }
+        @media (min-width: $breakpoint-md) {
+            flex: 1;
+        }
+
+        .buttonNav {
+            color: $color-white;
+            margin-left: -$spacing-4;
+        }
+
+        .button {
+            margin-left: -$spacing-24;
+        }
+    }
+}

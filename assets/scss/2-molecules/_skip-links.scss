@@ -1,0 +1,28 @@
+.skipLinks {
+    position: absolute;
+    z-index: 999;
+
+    &-btn {
+        position: absolute;
+        z-index: 2;
+        top: -100rem;
+        left: -100rem;
+        height: 0.1rem;
+        width: 0.1rem;
+        text-align: left;
+        overflow: hidden;
+        line-height: 1;
+
+        &:active,
+        &:focus,
+        &:hover {
+            left: 0;
+            top: 0;
+            width: auto;
+            height: auto;
+            overflow: visible;
+            background-color: $color-white;
+            padding: $spacing-4 $spacing-12;
+        }
+    }
+}

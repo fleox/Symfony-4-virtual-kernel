@@ -1,0 +1,174 @@
+/*
+Styleguide Compte
+*/
+
+/*
+0 - Compte
+
+Styleguide Compte - Comptes
+*/
+
+/*
+1 - Style du compte
+
+Markup: /style_guide/2_molecules/_account.html.twig
+
+.account
+
+Styleguide Compte - Compte
+*/
+
+$accountPrefix: 'account';
+
+.#{$accountPrefix} {
+    display: flex;
+    align-items: center;
+
+    .headerSite-navWrapperAside & {
+        @media (max-width: $breakpoint-md-max) {
+            display: none;
+        }
+    }
+
+    &--light {
+        padding: 0 $spacing-12;
+
+        .#{$accountPrefix}-link {
+            color: $color-white;
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: $spacing-32 0 0;
+            text-align: center;
+
+            .user-conected & {
+                color: $color-black;
+            }
+        }
+
+        .enrj-user-light {
+            font-size: $font-size-8;
+        }
+
+        .buttonIcon-text {
+            font-size: $font-size-2;
+        }
+
+        @media (min-width: $breakpoint-lg) {
+            flex: 0 0 ($spacing-base * 6.25); // 10rem
+            padding: 0 $spacing-4;
+            justify-content: center;
+        }
+    }
+
+    &--large {
+        padding: $spacing-12;
+        background-color: $color-gray-10;
+
+        .#{$accountPrefix}-visual {
+            width: $spacing-64;
+        }
+
+        .#{$accountPrefix}-link,
+        .#{$accountPrefix}-img {
+            display: block;
+        }
+
+        .#{$accountPrefix}-infos {
+            margin-left: $spacing-12;
+        }
+
+        .#{$accountPrefix}-pseudo {
+            &Link {
+                font-weight: $font-weight-bold;
+            }
+        }
+
+        .#{$accountPrefix}-pseudoLink,
+        .#{$accountPrefix}-ctaLink {
+            text-decoration: none;
+            color: $color-gray-90;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    &--connected {
+        .#{$accountPrefix}-link {
+            width: 100%;
+            padding-top: 0;
+        }
+
+        .#{$accountPrefix}-visual {
+            flex-shrink: 0;
+            width: $spacing-48;
+            height: $spacing-48;
+            margin-right: $spacing-16;
+            border-radius: 50%;
+            border: 0.1rem solid $color-white;
+            overflow: hidden;
+
+            @media (min-width: $breakpoint-lg) {
+                width: $spacing-32;
+                height: $spacing-32;
+                margin-right: 0;
+                margin-bottom: $spacing-2;
+            }
+        }
+
+        .#{$accountPrefix}-text {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            font-size: $font-size-2;
+            color: $color-black;
+            text-decoration: none;
+
+            @include ellipsis;
+
+            @media (min-width: $breakpoint-lg) {
+                width: ($spacing-base * 5.4375); // 8.7rem
+                font-size: ($font-size-base * 0.5625); // 0.9rem
+                color: $color-white;
+                align-items: center;
+            }
+        }
+
+        .#{$accountPrefix}-name {
+            flex-shrink: 1;
+            font-weight: $font-weight-bold;
+
+            @include ellipsis;
+        }
+
+        .#{$accountPrefix}-cta {
+            .button {
+                padding: 0;
+            }
+
+            @media (min-width: $breakpoint-lg) {
+                .button-text {
+                    font-size: 0.9rem;
+                }
+            }
+        }
+
+        .#{$accountPrefix}-parameters {
+            flex-shrink: 0;
+            width: $spacing-32;
+            line-height: 5.3rem;
+            text-align: center;
+            text-decoration: none;
+            color: $color-black;
+            font-size: $font-size-6;
+
+            @media (min-width: $breakpoint-lg) {
+                display: none;
+            }
+        }
+    }
+}

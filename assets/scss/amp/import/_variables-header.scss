@@ -1,0 +1,30 @@
+/* 
+ * @filename    : variables-header.scss
+ * @description : Fichier listant l'ensemble des VARIABLES SASS du HEADER NRJ
+ * @projet      : NRJ (nouveau NRJ)
+ * @date        : AVRIL 2017
+ * @author      : Trésor ILOYI
+ * -------------------------------------------- */
+
+/***
+ * COLORS
+ * Définition des couleurs du HEADER NRJ
+ */
+
+$red-header-1 : #e10816;
+
+$gray-header-1 : #565555;
+$gray-header-2 : #e3e3e2;
+
+$gray-dark-header-1 : #1d1e1c;
+$gray-dark-header-2 : #2c2e2b;
+$gray-dark-header-3 : #3c3e3c;
+
+
+// ***
+// * MISC
+// * Variables diverses et variées
+// */
+
+$zindex-header: 50;
+$customPath: '//www.nrj.fr/';

@@ -1,0 +1,33 @@
+{
+  extends: "stylelint-config-standard",
+  defaultSeverity: "warning",
+  "ignoreFiles": [
+    "./assets/scss/guideline.scss",
+    "./assets/scss/x-styleguide/2-molecules/*",
+    "./assets/scss/x-styleguide/3-organisms/*",
+    "./vendor/enrj/front-package/vendor/**",
+    "./vendor/kiefer79/kss-php/test/fixtures/sass/*",
+    "./vendor/kiefer79/kss-php/example/css/*",
+    "./vendor/kiefer79/kss-php/test/fixtures/scss-words/*",
+    "./vendor/kiefer79/kss-php/test/fixtures/scss/*",
+    "./old_assets/scss/**",
+    "./assets/scss/amp/**",
+    "./assets/scss/nma.scss",
+    "./assets/scss/music-awards/_module-vote.scss"
+  ],
+  "rules": {
+    "at-rule-empty-line-before": null,
+    "at-rule-no-unknown": [
+      true,
+      ignoreAtRules: [ 'extend', 'at-root', 'warn', 'error', 'if', 'else', 'for', 'each', 'while', 'mixin', 'include', 'content', 'return', 'function' ],
+    ],
+    "color-no-hex": true,
+    "unit-whitelist": ["em", "rem", "%", "s", "vw", "vh", "deg", "fr", "ms"],
+    "indentation": 4,
+    "selector-max-specificity": [
+      "0,2,0", {
+        ignoreSelectors: [":focus", ":hover", ":active", "::before", "::after", ":first-child", ":last-child", ":not()", ":only-child", ":nth-child", "/\\[.*?\\]/"]
+      }
+    ]
+  }
+}

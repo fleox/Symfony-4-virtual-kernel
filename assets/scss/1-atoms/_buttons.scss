@@ -1,0 +1,729 @@
+/*
+Styleguide Buttons
+*/
+
+/*
+0 - Les boutons
+
+Styleguide Buttons - Buttons
+
+*/
+
+/*
+1 - Boutons classiques
+
+Markup: /style_guide/1_atoms/_button.html.twig
+
+.button                               - Code de base du bouton
+.button--dark                         - Etat par défaut du bouton
+.button--light                        - Etat blanc du bouton
+.button--shadow                       - Etat ombré du bouton
+.button--primary                      - Etat du bouton avec la couleur primary
+.button--small                        - Bouton de petite taille
+.button--large                        - Bouton de grande taille
+.button--xLarge                       - Bouton de très grande taille
+.button--revert                       - Bouton inversé
+.button--transparent                  - Bouton transparent
+.button--transparent .button--dark    - Bouton transparent noir
+.button--transparent .button--primary - Bouton transparent primary
+.button--full                         - Etat pleine largeur du bouton
+.button--icon                         - Bouton avec icône (nécessite une classe directionnelle complémentaire)
+.button--iconLeft                     - Bouton avec icône positionnée gauche
+.button--iconRight                    - Bouton avec icône positionnée à droite
+.button--iconDown                     - Bouton avec icône positionnée en bas
+.button--iconUp                       - Bouton avec icône positionnée en haut
+.button--lowercase                    - Bouton avec texte en minuscule
+.button--separator                    - Bouton avec séparateur vertical
+.button--alternate                    - Bouton neutre gris
+.button--rounded                      - Bouton arrondi
+.button--imgOnly                      - Bouton composé exclusivement d'une image
+
+Styleguide Buttons - Button
+*/
+
+$buttonPrefix: 'button';
+
+.#{$buttonPrefix} {
+    --button-backgroundColor: #{$color-white};
+    --button-borderColor: #{$color-black};
+    --button-borderWidth: #{$spacing-base / 16}; // 0.1rem
+    --button-textColor: #{$color-black};
+    --button-textSize: #{$font-size-2};
+    --button-padding: #{$spacing-8 $spacing-16};
+
+    color: var(--button-textColor);
+    background-color: var(--button-backgroundColor);
+    border: var(--button-borderWidth) solid var(--button-borderColor);
+    font-size: var(--button-textSize);
+    font-weight: $font-weight-bold;
+    line-height: $line-height-small;
+    padding: var(--button-padding);
+    font-family: $font-family-base;
+    letter-spacing: 0.05rem;
+    display: inline-block;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+
+    &:not(span) {
+        cursor: pointer;
+
+        &:hover,
+        &:focus {
+            text-decoration: none;
+
+            --button-backgroundColor: #{$color-black};
+            --button-textColor: #{$color-white};
+        }
+    }
+
+    &--revert {
+        --button-backgroundColor: transparent;
+        --button-borderColor: #{$color-white};
+        --button-textColor: #{$color-white};
+
+        &:not(span):hover,
+        &:not(span):focus {
+            --button-backgroundColor: #{$color-white};
+            --button-textColor: #{$color-black};
+        }
+
+        &[disabled=disabled]:hover,
+        &[disabled=disabled]:focus {
+            --button-backgroundColor: transparent;
+            --button-textColor: #{$color-white};
+        }
+    }
+
+    &--dark {
+        --button-backgroundColor: #{$color-black};
+        --button-borderColor: #{$color-black};
+        --button-textColor: #{$color-white};
+
+        &:not(span):hover,
+        &:not(span):focus {
+            --button-backgroundColor: #{$color-gray-80};
+            --button-borderColor: #{$color-gray-80};
+        }
+    }
+
+    &--light {
+        --button-backgroundColor: #{$color-white};
+        --button-borderColor: #{$color-white};
+        --button-textColor: #{$color-black};
+
+        &:not(span):hover,
+        &:not(span):focus {
+            --button-backgroundColor: #{$color-gray-10};
+            --button-borderColor: #{$color-gray-10};
+            --button-textColor: #{$color-black};
+        }
+    }
+
+    &--shadow {
+        box-shadow: 0 0.3rem 0.6rem rgba($color-black, 0.16);
+    }
+
+    &--primary {
+        --button-backgroundColor: #{$color-primary};
+        --button-borderColor: #{$color-primary};
+        --button-textColor: #{$color-white};
+
+        &:not(span):hover,
+        &:not(span):focus {
+            --button-backgroundColor: #{$color-primary-80};
+            --button-borderColor: #{$color-primary-80};
+        }
+    }
+
+    &--alternate {
+        --button-backgroundColor: #{$color-gray-10};
+        --button-borderColor: #{$color-gray-10};
+        --button-textColor: #{$color-black};
+
+        &:not(span):hover,
+        &:not(span):focus {
+            --button-backgroundColor: #{$color-gray-20};
+            --button-borderColor: #{$color-gray-20};
+        }
+    }
+
+    &--transparent {
+        --button-textColor: #{$color-white};
+
+        &,
+        &:not(span):hover,
+        &:not(span):focus {
+            --button-backgroundColor: transparent;
+            --button-borderColor: transparent;
+        }
+
+        &:not(span):hover,
+        &:not(span):focus {
+            text-decoration: underline;
+        }
+
+        &.#{$buttonPrefix}--dark {
+            &,
+            &:hover,
+            &:focus {
+                --button-textColor: #{$color-black};
+            }
+        }
+
+        &.#{$buttonPrefix}--primary {
+            &,
+            &:hover,
+            &:focus {
+                --button-textColor: #{$color-primary};
+            }
+        }
+
+        &.#{$buttonPrefix}--separator {
+            padding-left: $spacing-32;
+            border: none;
+
+            &::before {
+                border-right: none;
+            }
+        }
+    }
+
+    &--large {
+        --button-padding: #{$spacing-8 $spacing-24};
+        --button-textSize: #{$font-size-3};
+    }
+
+    &--small {
+        --button-padding: #{$spacing-4 $spacing-12};
+
+        letter-spacing: 0;
+        text-transform: none;
+        font-weight: normal;
+    }
+
+    &--xLarge {
+        --button-padding: #{$spacing-8 $spacing-40};
+        --button-textSize: #{$font-size-3};
+
+        @media (min-width: $breakpoint-md) {
+            --button-padding: #{$spacing-24 $spacing-48};
+            --button-textSize: #{$font-size-4};
+        }
+    }
+
+    &--full {
+        width: 100%;
+        text-align: center;
+    }
+
+    &--center {
+        transform: translateX(-50%);
+        left: 50%;
+        position: relative;
+    }
+
+    &--icon {
+        position: relative;
+
+        .#{$buttonPrefix}-icon {
+            font-size: $spacing-24;
+            max-width: $spacing-24;
+            position: absolute;
+        }
+    }
+
+    &--iconLeft,
+    &--iconRight {
+        .#{$buttonPrefix}-icon {
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    }
+
+    &--iconLeft {
+        padding-left: $spacing-44;
+
+        .#{$buttonPrefix}-icon {
+            left: $spacing-12;
+        }
+    }
+
+    &--iconRight {
+        padding-right: $spacing-44;
+
+        .#{$buttonPrefix}-icon {
+            right: $spacing-12;
+        }
+    }
+
+    &--iconDown,
+    &--iconUp {
+        .#{$buttonPrefix}-icon {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+
+    &--more {
+        --button-padding: #{$spacing-8 $spacing-16};
+        --button-textSize: #{$font-size-1};
+
+        margin-right: $spacing-12;
+        text-transform: uppercase;
+        letter-spacing: 0.05rem;
+        border-radius: $radius;
+
+        &:hover {
+            background-color: $color-primary-100;
+            border-color: $color-primary-100;
+        }
+    }
+
+    &--iconDown {
+        padding-bottom: $spacing-32;
+
+        .#{$buttonPrefix}-icon {
+            bottom: $spacing-4;
+        }
+    }
+
+    &--iconUp {
+        padding-top: $spacing-32;
+
+        .#{$buttonPrefix}-icon {
+            top: $spacing-4;
+        }
+    }
+
+    &--lowercase {
+        text-transform: none;
+    }
+
+    &--cta {
+        --button-padding: 0;
+
+        width: 19.4rem;
+        border: 0;
+        background: none;
+
+        img {
+            display: block;
+        }
+    }
+
+    &--imgOnly {
+        --button-borderWidth: 0;
+        --button-padding: 0;
+
+        &,
+        &:not(span):hover,
+        &:not(span):focus {
+            --button-backgroundColor: transparent;
+        }
+    }
+
+    &--separator {
+        padding-left: ($spacing-48 + $spacing-8);
+        position: relative;
+
+        &::before {
+            border-right: 0.1rem solid var(--button-textColor);
+            bottom: 0;
+            content: '';
+            left: 0;
+            position: absolute;
+            top: 0;
+            width: $spacing-40;
+        }
+
+        .#{$buttonPrefix}-icon {
+            left: $spacing-12;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    }
+
+    &--rounded {
+        border-radius: 2rem;
+    }
+
+    &[disabled=disabled] {
+        opacity: 0.5;
+        cursor: default;
+    }
+
+    &-icon,
+    &-text {
+        vertical-align: middle;
+    }
+
+    &-img {
+        display: block;
+    }
+}
+
+/*
+2 - Boutons Square
+
+Markup: /style_guide/1_atoms/_button-square.html.twig
+
+.buttonSquare - Bouton avec une icone
+.buttonSquare--dark - Bouton avec une icone
+.buttonSquare--rounded - Bouton de forme arrondie
+.buttonSquare--xSmall - Bouton de très petite taille
+.buttonSquare--small - Bouton de petite taille
+.buttonSquare--large - Bouton de grande taille
+.buttonSquare--facebook - Bouton Facebook
+.buttonSquare--twitter - Bouton Facebook
+.buttonSquare--transparent - Etat transparent du bouton avec texte en blanc
+.buttonSquare--transparent.buttonSquare--dark - Etat transparent du bouton avec texte en noir
+
+Styleguide Buttons - Button Square
+*/
+
+$buttonSquarePrefix: 'buttonSquare';
+
+.#{$buttonSquarePrefix} {
+    --button-backgroundColor: #{$color-white};
+    --button-textColor: #{$color-black};
+    --button-textSize: #{$font-size-7};
+    --button-size: #{$spacing-44};
+
+    background-color: var(--button-backgroundColor);
+    color: var(--button-textColor);
+    display: block;
+    font-size: var(--button-textSize);
+    height: var(--button-size);
+    position: relative;
+    width: var(--button-size);
+
+    &--primary {
+        --button-backgroundColor: #{$color-primary};
+        --button-textColor: #{$color-white};
+    }
+
+    &--dark {
+        --button-backgroundColor: #{$color-black};
+        --button-textColor: #{$color-white};
+    }
+
+    &--nma {
+        --button-backgroundColor: #{$color-nma};
+        --button-borderColor: #{$color-nma};
+        --button-textColor: #{$color-white};
+
+        &:not(span):hover,
+        &:not(span):focus {
+            --button-backgroundColor: #{$color-nma-120};
+            --button-borderColor: #{$color-nma-120};
+        }
+    }
+
+    &--rounded {
+        border-radius: 50%;
+    }
+
+    &--xSmall {
+        --button-textSize: 0.8rem;
+        --button-size: #{$spacing-16};
+    }
+
+    &--small {
+        --button-textSize: #{$font-size-5};
+        --button-size: #{$spacing-32};
+    }
+
+    &--large {
+        --button-textSize: #{$font-size-10};
+        --button-size: #{$spacing-64};
+    }
+
+    &--big {
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        justify-content: center;
+        height: $spacing-44 * 2;
+        width: $spacing-44 * 2;
+        font-size: $font-size-7;
+        text-align: center;
+        text-decoration: none;
+
+        @media (min-width: $breakpoint-md) {
+            height: $spacing-64 * 2.5;
+            width: $spacing-64 * 2.5;
+            font-size: $font-size-10;
+        }
+
+        .#{$buttonSquarePrefix}-icon {
+            position: relative;
+            left: auto;
+            top: auto;
+            margin-bottom: $spacing-4;
+            transform: none;
+        }
+
+        .#{$buttonSquarePrefix}-text {
+            text-transform: uppercase;
+            font-size: $font-size-1;
+
+            @media (min-width: $breakpoint-md) {
+                font-size: $font-size-3;
+            }
+        }
+    }
+
+    &-icon {
+        left: 50%;
+        max-width: var(--button-textSize);
+        position: absolute;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    &--facebook,
+    &--twitter,
+    &--youtube,
+    &--instagram,
+    &--snapchat,
+    &--globe {
+        --button-textColor: #{$color-white};
+    }
+
+    &--facebook {
+        --button-backgroundColor: #{$color-brand-facebook};
+    }
+
+    &--twitter {
+        --button-backgroundColor: #{$color-brand-twitter};
+    }
+
+    &--youtube {
+        --button-backgroundColor: #{$color-brand-youtube};
+    }
+
+    &--snapchat {
+        --button-backgroundColor: #{$color-brand-snapchat};
+
+        .buttonSquare-icon {
+            &::before {
+                -webkit-text-stroke: 0.1rem $color-black;
+            }
+        }
+    }
+
+    &--instagram {
+        background: linear-gradient(45deg, $color-brand-intagram-01 0%, $color-brand-intagram-02 25%, $color-brand-intagram-03 50%, $color-brand-intagram-04 75%, $color-brand-intagram-05 100%);
+    }
+
+    &--transparent {
+        --button-backgroundColor: transparent;
+        --button-textColor: #{$color-white};
+
+        &.#{$buttonSquarePrefix}--dark {
+            &,
+            &:hover,
+            &:focus {
+                --button-textColor: #{$color-black};
+            }
+        }
+
+        .svgIcon {
+            fill: var(--button-textColor);
+        }
+    }
+}
+
+/*
+3 - Boutons de navigation
+Markup: /style_guide/1_atoms/_button-nav.html.twig
+.buttonNav - lien de navigation
+Styleguide Buttons - Navigation
+*/
+
+.buttonNav {
+    color: $color-black;
+    font-size: $font-size-2;
+    font-weight: $font-weight-bold;
+    text-decoration: none;
+    letter-spacing: 0.05rem;
+    padding: $spacing-4;
+
+    &:hover {
+        text-decoration: underline;
+    }
+
+    &--light {
+        font-weight: normal;
+    }
+
+    @media (min-width: $breakpoint-md) {
+        font-size: $font-size-3;
+        letter-spacing: 0.01rem;
+    }
+}
+
+/*
+4 - Boutons Universe
+
+Markup: /style_guide/1_atoms/_button-universe.html.twig
+
+.buttonUniverse - Bouton univers par défaut
+.buttonUniverse--musicAwards - Bouton univers awards
+.buttonUniverse--games - Bouton univers games
+
+Styleguide Buttons - Button Universe
+*/
+
+$buttonUniversePrefix: 'buttonUniverse';
+
+.#{$buttonUniversePrefix} {
+    --button-backgroundColor: #{$color-white};
+    --button-textColor: #{$color-black};
+
+    display: flex;
+    flex-flow: row-reverse;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: $spacing-8;
+    padding: $spacing-8 $spacing-24 $spacing-8 $spacing-8;
+    border: 0;
+    border-left: ($spacing-base * 0.375) solid $color-primary; // 0.6rem
+    border-radius: ($spacing-base * 0.3125); // 0.5rem
+    font-size: $font-size-1;
+    font-weight: $font-weight-bold;
+    color: var(--button-textColor);
+    background-color: var(--button-backgroundColor);
+    text-decoration: none;
+    text-transform: uppercase;
+
+    .button-text {
+        margin-left: $spacing-8;
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        right: $spacing-24;
+        @include triangle(right, $color-primary, 1.5, rem, 2);
+    }
+
+    &:not(span):hover,
+    &:not(span):focus {
+        --button-textColor: #{$color-white};
+        --button-backgroundColor: #{$color-primary};
+
+        &::after {
+            border-color: transparent transparent transparent $color-white;
+        }
+    }
+
+    &--musicAwards {
+        border-color: $color-universe-musicAwards;
+
+        &::after {
+            border-color: transparent transparent transparent $color-universe-musicAwards;
+        }
+
+        &:not(span):hover,
+        &:not(span):focus {
+            --button-backgroundColor: #{$color-universe-musicAwards};
+        }
+    }
+
+    &--games {
+        border-color: $color-universe-games;
+
+        &::after {
+            border-color: transparent transparent transparent $color-universe-games;
+        }
+
+        &:not(span):hover,
+        &:not(span):focus {
+            --button-backgroundColor: #{$color-universe-games};
+        }
+    }
+}
+
+/*
+5 - Bouton Live
+
+Markup: /style_guide/1_atoms/_button-live.html.twig
+
+.buttonLive - Bouton Live par défaut
+
+Styleguide Buttons - Button Live
+*/
+
+$buttonLivePrefix: 'buttonLive';
+
+.#{$buttonLivePrefix} {
+    --buttonLive-backgroundColor: #{$color-black};
+    --buttonLive-textColor: #{$color-white};
+    --buttonLive-fontWeight: #{$font-weight-normal};
+
+    background-color: var(--buttonLive-backgroundColor);
+    border-radius: $radius-small;
+    color: var(--buttonLive-textColor);
+    display: inline-block;
+    font-size: $font-size-4;
+    font-weight: var(--buttonLive-fontWeight);
+    line-height: $line-height-small;
+    padding: $spacing-4 $spacing-8 $spacing-4 $spacing-28;
+    position: relative;
+    text-decoration: none;
+
+    @media (min-width: $breakpoint-md) {
+        --buttonLive-fontWeight: #{$font-weight-normal};
+
+        padding-right: $spacing-12;
+        padding-left: $spacing-48;
+    }
+
+    &-icon {
+        height: 1.3rem;
+        left: $spacing-4;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 1.6rem;
+
+        @media (min-width: $breakpoint-md) {
+            height: 2.2rem;
+            left: $spacing-12;
+            width: 2.8rem;
+        }
+
+        & * {
+            fill: var(--buttonLive-textColor);
+        }
+    }
+
+    &-supTitle,
+    &-text {
+        display: block;
+    }
+
+    &-supTitle {
+        font-size: $font-size-1;
+        text-transform: uppercase;
+    }
+
+    &-text {
+        @media (max-width: $breakpoint-sm-max) {
+            @include visuallyHidden;
+        }
+    }
+
+    &:hover,
+    &:focus {
+        --buttonLive-backgroundColor: #{$color-gray-80};
+
+        .#{$buttonLivePrefix}-supTitle,
+        .#{$buttonLivePrefix}-text {
+            text-decoration: underline;
+        }
+    }
+}

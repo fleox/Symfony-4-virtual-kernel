@@ -1,0 +1,82 @@
+/*
+Styleguide List Logo
+*/
+
+/*
+0 - List Logo
+
+Styleguide List Logo - List Logo
+*/
+
+/*
+1 - List Logo
+
+Markup: /style_guide/2_molecules/_list-logo.html.twig
+
+.listLogo - Classe par défaut
+
+Styleguide List Logo - List Logo Default
+*/
+
+.listLogo {
+    z-index: 5;
+
+    &-item {
+        display: inline-block;
+        padding: $spacing-2;
+        background: $color-white;
+    }
+
+    &-img {
+        display: block;
+        height: 2rem;
+    }
+
+    .blockDisplay--covering & {
+        position: absolute;
+        bottom: 0;
+        margin: 0;
+        left: $spacing-4;
+        align-items: flex-end;
+        justify-content: space-evenly;
+        display: flex;
+        right: $spacing-4;
+
+        @media (min-width: $breakpoint-md) {
+            justify-content: stretch;
+        }
+
+        @media (min-width: $breakpoint-lg) {
+            align-items: flex-start;
+            bottom: auto;
+            left: $spacing-8;
+            right: $spacing-8;
+            top: $spacing-4;
+        }
+
+        &-item {
+            background-color: transparent;
+            margin-left: $spacing-4;
+
+            &:first-child {
+                margin-left: 0;
+
+                @media (min-width: $breakpoint-md) {
+                    margin-right: auto;
+                }
+            }
+        }
+
+        &-img {
+            height: 1.8rem;
+
+            @media (min-width: $breakpoint-md) {
+                height: 2.5rem;
+            }
+
+            &[src*="youtube-music"] {
+                height: auto;
+            }
+        }
+    }
+}

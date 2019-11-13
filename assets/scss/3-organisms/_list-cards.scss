@@ -1,0 +1,45 @@
+/*
+Styleguide List Cards
+*/
+
+/*
+0 - List Cards
+
+Styleguide List Cards - List Cards
+*/
+
+/*
+1 List de cards Classique
+
+Markup: /style_guide/3_organisms/_list-cards.html.twig
+
+.listCards - List Cards par défaut
+.listCards--column - List Cards en mode colonne
+
+Styleguide List Cards - List Cards par défaut
+*/
+
+$listCardsPrefix: 'listCards';
+
+.#{$listCardsPrefix} {
+    &-item {
+        &:not(:last-child) {
+            margin-bottom: $spacing-16;
+        }
+    }
+
+    // **
+    // * List Cards Column
+    // **
+
+    &--column {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 (-$spacing-16 / 2);
+
+        .#{$listCardsPrefix}-item {
+            padding: 0 ($spacing-16 / 2);
+            margin-bottom: $spacing-16;
+        }
+    }
+}

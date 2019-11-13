@@ -1,0 +1,114 @@
+/*
+Styleguide Landing Page
+*/
+
+/*
+0 - Landing Page
+
+Styleguide Landing Page - Landing Page
+*/
+
+/*
+Landing Page
+
+Markup: /style_guide/2_molecules/_landing-page.html.twig
+
+.landingPage - Classe par défaut
+.landingPage--nma - Landing page NRj Music Awards
+
+Styleguide Landing Page - Landing Page
+*/
+
+.landingPage {
+    align-items: center;
+    background-color: $color-primary;
+    bottom: 0;
+    color: $color-white;
+    display: flex;
+    left: 0;
+    font-family: $font-family-alternate;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: $spacing-64;
+    position: fixed;
+    right: 0;
+    top: 0;
+    text-align: center;
+    z-index: 49;
+
+    @media (min-width: $breakpoint-md) {
+        padding: $spacing-16;
+    }
+
+    .headline,
+    .supTitle {
+        color: inherit;
+    }
+
+    .headline {
+        margin-bottom: $spacing-24;
+        text-align: center;
+        text-transform: uppercase;
+
+        @media (max-width: $breakpoint-sm-max) {
+            margin-left: auto;
+            margin-right: auto;
+            max-width: ($spacing-base * 20);
+        }
+    }
+
+    .supTitle {
+        margin-bottom: $spacing-16;
+    }
+
+    .thumbnail {
+        z-index: -1;
+
+        &,
+        &-wrapper,
+        &-inner {
+            bottom: 0;
+            left: 0;
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+
+        &-visual {
+            display: block;
+            height: 100%;
+            object-fit: cover;
+            width: 100%;
+        }
+    }
+
+    &--nma {
+        .landingPage-branding {
+            max-width: ($spacing-22 * 10);
+
+            @media (min-width: $breakpoint-md) {
+                max-width: ($spacing-44 * 10);
+            }
+
+            @media (min-width: $breakpoint-xl) {
+                max-width: 100%;
+            }
+        }
+
+        [class*="heading"] {
+            margin-bottom: -($spacing-base * 4.125);
+
+            @media (min-width: $breakpoint-md) {
+                margin-bottom: -$spacing-96;
+            }
+        }
+
+        .headline {
+            @media (min-width: $breakpoint-md) and (max-width: $breakpoint-md-max) {
+                margin-left: auto;
+                margin-right: auto;
+                max-width: ($spacing-48 * 10);
+            }
+        }
+    }
+}

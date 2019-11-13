@@ -1,0 +1,265 @@
+/*
+Styleguide Banner Live
+*/
+
+/*
+0 - Banner Live
+
+Styleguide Banner Live - Banner Live
+*/
+
+/*
+1 - Bannière classique
+
+Markup: /style_guide/2_molecules/_banner-live.html.twig
+
+.bannerLive - Code de base
+
+Styleguide Banner Live - Banner Live
+*/
+
+$bannerLivePrefix: 'bannerLive';
+
+.#{$bannerLivePrefix} {
+    background-color: $color-black;
+    border-bottom: 0.3rem solid $color-black;
+    color: $color-white;
+    display: flex;
+    flex-wrap: wrap;
+
+    &-link {
+        text-decoration: none;
+    }
+
+    .page & {
+        left: 0;
+        position: fixed;
+        right: 0;
+        top: 9.9rem;
+        z-index: 50;
+
+        @media (min-width: $breakpoint-lg) {
+            top: $spacing-64;
+        }
+    }
+
+    @media (min-width: $breakpoint-md) {
+        background-color: $color-brand-live;
+    }
+
+    .headerSite--hasMetaNav & {
+        top: 12rem;
+
+        @media (min-width: $breakpoint-lg) {
+            top: 8.6rem;
+        }
+    }
+
+    &-header,
+    &-body,
+    &-callToAction {
+        align-items: center;
+        display: flex;
+    }
+
+    &-header {
+        flex: 1;
+        padding-left: $spacing-8;
+
+        @media (min-width: $breakpoint-md) {
+            background-color: $color-black;
+            flex: 0 0 auto;
+            padding: $spacing-8 $spacing-16;
+        }
+    }
+
+    &-heading {
+        font-size: $font-size-2;
+        line-height: $line-height-small;
+        text-transform: uppercase;
+
+        @media (min-width: $breakpoint-md) {
+            font-size: $font-size-4;
+        }
+
+        &Live,
+        &Text {
+            display: block;
+        }
+
+        &Live {
+            padding-left: $spacing-12;
+            position: relative;
+
+            &::before {
+                animation: animationPulse 2s linear infinite;
+                background: $color-primary;
+                border-radius: 100%;
+                content: '';
+                height: 0.5em;
+                left: 0;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 0.5em;
+            }
+        }
+
+        &Text {
+            @media (max-width: $breakpoint-sm-max) {
+                @include visuallyHidden;
+            }
+        }
+    }
+
+    &-body {
+        background-color: $color-brand-live;
+        color: $color-black;
+        flex: 0 0 100%;
+        order: 3;
+        padding: $spacing-4 $spacing-8;
+
+        @media (min-width: $breakpoint-md) {
+            background-color: transparent;
+            flex: 1;
+            order: initial;
+            padding: $spacing-8 $spacing-16;
+        }
+    }
+
+    &-content {
+        height: 4.6rem;
+        overflow: hidden;
+        width: 100%;
+
+        @media (min-width: $breakpoint-md) {
+            height: 3.4rem;
+        }
+    }
+
+    &-callToAction {
+        border-left: 0.1rem solid $color-white;
+        flex: 0 0 auto;
+        padding-left: $spacing-12;
+
+        @media (min-width: $breakpoint-md) {
+            border: none;
+            padding: $spacing-8 $spacing-16 $spacing-8 0;
+        }
+    }
+
+    // **
+    // * List Events Sheduled
+    // @See: 1_atoms/_list-events-sheduled
+    // **
+
+    .listEventsSheduled {
+        position: relative;
+        width: 100%;
+
+        @media (min-width: $breakpoint-md) {
+            font-size: $font-size-6;
+        }
+
+        &-item {
+            left: 0;
+            position: absolute;
+            right: 0;
+
+            &:not(:first-child) {
+                display: none;
+            }
+
+            &--hidden {
+                opacity: 0;
+                transform: translateY(100%);
+            }
+
+            &--animateLeave {
+                animation: 1s ease-in animationLiveLeave;
+                transform: translateY(-100%);
+            }
+
+            &--animateEnter {
+                animation: 1s ease-in animationLiveEnter;
+                transform: translateY(0);
+            }
+        }
+
+        &-image {
+            display: none;
+        }
+    }
+}
+
+@keyframes animationPulse {
+    25% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    70% {
+        opacity: 1;
+    }
+}
+
+@keyframes animationLiveLeave {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+}
+
+@keyframes animationLiveEnter {
+    0% {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+// **
+// * Body Class when the banner live is loaded
+// **
+
+.page--hasBannerLive {
+    padding-top: 17.8rem; // Header Site Height + Banner Site Height
+
+    @media (min-width: $breakpoint-md) {
+        padding-top: 16.1rem;
+    }
+
+    @media (min-width: $breakpoint-lg) {
+        padding-top: 12.6rem;
+    }
+
+    &.headerSite--hasMetaNav {
+        padding-top: 20rem;
+
+        @media (min-width: $breakpoint-md) {
+            padding-top: 18.3rem;
+        }
+
+        @media (min-width: $breakpoint-lg) {
+            padding-top: 14.8rem;
+        }
+    }
+}
+
+// stylelint-disable selector-max-specificity
+body.habillage.page--hasBannerLive {
+    background-position: center 126px!important;
+}
+// styline-enable

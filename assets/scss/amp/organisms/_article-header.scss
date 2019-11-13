@@ -1,0 +1,76 @@
+/*
+ * @filename    : article/organisms/_article-header.scss
+ * @description : Contient les styles de l'entête/header (titre + dates + meta) présents dans les pages de type "ARTICLE" du site
+ * @projet      : NRJ 2017 (nouveau site NRJ)
+ * @date        : JUILLET 2017
+ * @author      : Trésor ILOYI
+ * -------------------------------------------- */
+
+.articleHeader {
+
+    /* LIEN DE RETOUR */
+    &-back {
+        @include font-size(1.2); // =12px
+        margin: 0 auto 29px;
+        line-height: 1;
+
+        a {
+            text-decoration: underline;
+
+            &,
+            &:active,
+            &:focus,
+            &:hover {
+                @include lato-bold;
+                color: $black;
+            }
+
+            &:active,
+            &:focus,
+            &:hover {
+                text-decoration: none;
+            }
+
+            &:before {
+                content: "< ";
+            }
+        }
+    }
+
+    /**
+     * METAS DE L'ARTICLE
+     * Les metas de l'article sont : la category, la date ainsi que l'auteur de l'article
+     */
+
+    &-metas {
+        margin: 0 auto 1.3rem; // =0 auto 13px
+        overflow: hidden;
+    }
+
+    /* METAS : Categorie */
+    &-category {
+        float: left;
+        margin-bottom: 0.5rem; // =5px
+        margin-right: 1rem; // =10px
+        top: 2px;
+    }
+
+    /* METAS : Auteur */
+    &-author {
+        font-size: 1em;
+    }
+
+    /* Titre de l'article */
+    &-title {
+        margin-bottom: 1.3rem; // =13px
+    }
+
+    /* Excerpt de l'article */
+    &-excerpt {
+        margin-bottom: 1.8rem; // =18px
+
+        a {
+            @include article-link;
+        }
+    }
+}

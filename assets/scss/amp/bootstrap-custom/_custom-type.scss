@@ -1,0 +1,64 @@
+//
+// Typography
+// --------------------------------------------------
+
+
+// Headings
+// -------------------------
+
+h1, h2, h3, h4, h5, h6,
+.title-1, .title-2, .title-3, .title-4, .title-5, .title-6 {
+    font-family: $headings-font-family;
+    color: $headings-color;
+    margin: 0 auto; // CUSTOM NRJ
+
+}
+
+.title-1 {
+    @include oswald;
+    @include oswald-medium;
+    @include font-size(2.6);    // =26px
+    line-height: 1.077;         // =28px
+}
+
+.title-2,
+.title-3,
+.title-4,
+.title-5,
+.title-6 {
+    @include lato-bold;
+}
+
+.title-2 {
+    @include font-size(2.0);    // =20px
+    line-height: 1.100;         // =22px
+}
+
+.title-3 {
+    @include font-size(1.6);    // =16px
+    line-height: 1.250;         // =20px
+}
+
+.title-4,
+.title-5,
+.title-6 {
+    @include font-size(1.4);    // =14px
+    line-height: 1.286;         // =18px
+}
+
+
+// Body text
+// -------------------------
+
+p {
+    margin: 0 0 ($line-height-computed / 2);
+}
+
+// Lists
+// -------------------------
+
+// Unordered and Ordered lists
+ul,
+ol {
+    @include reset-list;
+}

@@ -1,0 +1,80 @@
+/*
+Styleguide Helpers
+*/
+
+/*
+1 - Helpers
+
+.mx-auto - Code de base du bouton
+
+Styleguide Helpers - Helpers
+*/
+
+.visuallyHidden {
+    @include visuallyHidden;
+}
+
+// stylelint-disable at-rule-no-unknown
+.textEllipsis {
+    @include ellipsis;
+}
+// stylelint-enable at-rule-no-unknown
+
+.mx-auto {
+    align-items: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+/*
+2 - Parallax
+
+Markup: /style_guide/0_base/_parallax.html.twig
+
+.parallax - Code de base du bouton
+
+Styleguide Helpers - Helper
+*/
+
+// Parallax
+.parallax {
+    position: relative;
+
+    &-parent {
+        overflow: hidden;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        z-index: 0;
+    }
+
+    &-child {
+        background: no-repeat center center;
+        background-size: cover;
+        height: 200%;
+        position: relative;
+        top: -100%;
+    }
+
+    &-content {
+        z-index: 1;
+        position: relative;
+    }
+}
+
+// Temporary helper (waiting grid 24)
+.flRight {
+    @media (min-width: $breakpoint-lg) {
+        float: right;
+    }
+}
+
+// flex
+.flex-column-reverse {
+    @media (max-width: $breakpoint-md-max) {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+}

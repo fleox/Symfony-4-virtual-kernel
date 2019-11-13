@@ -1,0 +1,108 @@
+/*
+Styleguide Flag
+*/
+
+/*
+0 - Les drapeaux
+
+Styleguide Flag - Flag
+*/
+
+/*
+1 - Boutons classiques
+
+Markup: /style_guide/1_atoms/_flag.html.twig
+
+.flag - Code de base du flag
+.flag--dark - Flag Default
+.flag--primary - Flag Primary
+.flag--small - Flag de petite taille
+.flag--large - Flag de de grande taille
+.flag--xLarge - Flag de très grande taille
+.flag--rotate - Flag en rotation
+.flag--radius - Flag arrondi
+.flag--live - Flag "live", précédé d'un point
+.flag--triangle
+
+Styleguide Flag - Flag
+*/
+
+.flag {
+    --flag-backgroundColor: #{$color-white};
+    --flag-padding: #{$spacing-4 $spacing-12};
+    --flag-textColor: #{$color-black};
+    --flag-textSize: #{$font-size-2};
+
+    background-color: var(--flag-backgroundColor);
+    color: var(--flag-textColor);
+    display: inline-block;
+    font: $font-weight-bold var(--flag-textSize)/#{$line-height-small} $font-family-base;
+    padding: var(--flag-padding);
+    position: relative;
+    text-transform: uppercase;
+
+    &--dark,
+    &--primary {
+        --flag-textColor: #{$color-white};
+    }
+
+    &--dark {
+        --flag-backgroundColor: #{$color-black};
+        --flag-textColor: #{$color-white};
+    }
+
+    &--primary {
+        --flag-backgroundColor: #{$color-primary};
+    }
+
+    &--small {
+        --flag-padding: #{$spacing-4 $spacing-8};
+        --flag-textSize: #{$font-size-1};
+    }
+
+    &--large {
+        --flag-textSize: #{$font-size-3};
+    }
+
+    &--xLarge {
+        --flag-textSize: #{$font-size-7};
+        --flag-padding: #{$spacing-8 $spacing-16};
+    }
+
+    &--rotate {
+        transform: rotate(-$rotate-10);
+    }
+
+    &--radius {
+        border-radius: 0.3em;
+    }
+
+    &--live {
+        &::before {
+            content: $enrj-circle;
+            font-family: $icomoon-font-family;
+            font-size: 0.8em;
+            margin-right: 0.5em;
+            pointer-events: none;
+            position: relative;
+            top: -0.03em;
+        }
+    }
+
+    &--triangle {
+        --flag-padding: #{$spacing-4 $spacing-8};
+
+        background-color: transparent;
+        position: relative;
+
+        &::before {
+            content: '';
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            position: absolute;
+            z-index: -1;
+            @include triangle($color: var(--flag-backgroundColor), $direction: 'top-left', $size: 4.8);
+        }
+    }
+}

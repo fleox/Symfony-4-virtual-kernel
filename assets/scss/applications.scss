@@ -1,0 +1,368 @@
+@import "assets/scss/variables";
+
+.page--applications {
+    position: relative;
+
+    &::before {
+        background-color: $color-gray-10;
+        content: "";
+        height: ($spacing-base * 22);
+        left: 0;
+        pointer-events: none;
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+
+    .contentSite {
+        color: $color-gray-80;
+        font-size: $font-size-3;
+
+        @media (min-width: $breakpoint-md) {
+            font-size: $font-size-7;
+        }
+    }
+
+    .sectionPage--backgroundSkew {
+        margin-bottom: $spacing-32;
+    }
+
+    .headerPage {
+        position: relative;
+        z-index: 1;
+
+        &-container {
+            background-color: transparent;
+        }
+    }
+}
+
+// **
+// * Area Apps Features
+// * These sub areas describes each feature
+// **
+
+$areaAppsFeaturesPrefix: 'areaAppsFeatures';
+
+.#{$areaAppsFeaturesPrefix} {
+    background-color: rgba($color-white, $opacity-5);
+    padding: $spacing-22;
+
+    @media (min-width: $breakpoint-md) {
+        padding: $spacing-48;
+    }
+
+    &-header {
+        @media (max-width: $breakpoint-sm-max) {
+            justify-content: center;
+            text-align: center;
+        }
+
+        @media (min-width: $breakpoint-md) {
+            margin-bottom: $spacing-32;
+        }
+
+        [class^="heading"] {
+            font-size: $font-size-4;
+            text-transform: none;
+
+            @media (min-width: $breakpoint-md) {
+                font-size: $font-size-6;
+            }
+
+            @media (min-width: $breakpoint-lg) {
+                font-size: $font-size-7;
+            }
+
+            @media (min-width: $breakpoint-xl) {
+                font-size: $font-size-8;
+            }
+        }
+    }
+
+    &-footer {
+        margin-top: $spacing-28;
+
+        @media (min-width: $breakpoint-md) {
+            justify-content: flex-start;
+            margin-top: $spacing-32;
+        }
+
+        // Check after refactoring
+        .callToAction,
+        .callToActionList {
+            &:only-child {
+                margin-top: 0;
+            }
+        }
+    }
+
+    .description {
+        font-size: inherit;
+        line-height: $line-height-small;
+
+        &:not(:last-child) {
+            margin-bottom: $spacing-20;
+        }
+    }
+
+    .button-img {
+        max-width: none;
+        width: $size-100;
+
+        @media (min-width: $breakpoint-lg) {
+            width: $size-150;
+        }
+    }
+
+    &--highlight {
+        background-color: transparent;
+
+        .#{$areaAppsFeaturesPrefix}-header {
+            margin-bottom: $spacing-32;
+
+            [class^="heading"] {
+                font-size: $font-size-6;
+
+                @media (max-width: $breakpoint-sm-max) {
+                    text-align: center;
+                }
+
+                @media (min-width: $breakpoint-md) {
+                    font-size: $font-size-7;
+                }
+
+                @media (min-width: $breakpoint-lg) {
+                    font-size: $font-size-8;
+                }
+
+                @media (min-width: $breakpoint-xl) {
+                    font-size: $font-size-10;
+                }
+            }
+        }
+    }
+}
+
+// **
+// * Apps Features
+// **
+
+.appsFeatures {
+    &-item {
+        padding-top: $spacing-48;
+        position: relative;
+        text-align: center;
+
+        @media (min-width: $breakpoint-md) {
+            padding: 0 0 0 $spacing-64;
+            text-align: left;
+        }
+
+        &:not(:last-child) {
+            margin-bottom: $spacing-22;
+        }
+
+        .enrj-icon {
+            font-size: $font-size-12;
+            left: 50%;
+            position: absolute;
+            top: 0;
+            transform: translateX(-50%);
+
+            @media (min-width: $breakpoint-md) {
+                left: 0;
+                top: $spacing-12;
+                transform: translateX(0);
+            }
+        }
+    }
+}
+
+// **
+// * Area Apps Main
+// * Main Areas Grouping children like other areas and Thumbnail
+// **
+
+$areaAppsMainPrefix: 'areaAppsMain';
+
+.#{$areaAppsMainPrefix} {
+    &-header {
+        [class^="heading"] {
+            font-size: $font-size-6;
+            text-align: center;
+            text-transform: none;
+
+            @media (min-width: $breakpoint-md) {
+                font-size: $font-size-7;
+            }
+
+            @media (min-width: $breakpoint-lg) {
+                font-size: $font-size-8;
+            }
+
+            @media (min-width: $breakpoint-xl) {
+                font-size: $font-size-9;
+            }
+        }
+    }
+
+    &-visual {
+        @media (min-width: $breakpoint-md) {
+            padding-left: $spacing-40;
+            padding-right: $spacing-40;
+        }
+
+        @media (min-width: $breakpoint-lg) {
+            padding-left: $spacing-64;
+            padding-right: $spacing-64;
+        }
+
+        @media (min-width: $breakpoint-xl) {
+            padding-left: ($spacing-40 * 4);
+            padding-right: ($spacing-40 * 4);
+        }
+    }
+
+    // **
+    // * Summary: "les avantages"
+    // **
+
+    &--summary {
+        .#{$areaAppsMainPrefix}-header {
+            margin-bottom: $spacing-64;
+        }
+
+        .#{$areaAppsFeaturesPrefix} {
+            @media (min-width: $breakpoint-lg) {
+                margin-right: -$spacing-48;
+            }
+            @media (min-width: $breakpoint-xl) {
+                margin-left: -$spacing-96;
+                margin-right: -$spacing-64;
+            }
+        }
+    }
+
+    // **
+    // * Universe
+    // **
+
+    &--universe {
+        .#{$areaAppsMainPrefix}-visual {
+            padding-left: 0;
+            padding-right: 0;
+
+            @media (min-width: $breakpoint-lg) {
+                padding-top: $spacing-22;
+            }
+
+            @media (min-width: $breakpoint-xl) {
+                margin-top: -$spacing-16;
+                padding-top: 0;
+            }
+        }
+
+        @media (max-width: $breakpoint-md-max) {
+            .#{$areaAppsFeaturesPrefix} {
+                background-color: transparent;
+            }
+        }
+    }
+}
+
+// **
+// * Section Apps Universe
+// **
+
+.sectionAppsUniverse {
+    & > [class^="heading"] {
+        margin: $spacing-48 0;
+        text-align: center;
+    }
+}
+
+// **
+// * Section Pages
+// **
+
+.sectionPage--appsIntro {
+    @media (min-width: $breakpoint-md) {
+        .sectionPage-visual {
+            order: -1;
+        }
+    }
+}
+
+.sectionPage--appsBroadcasts {
+    @media (min-width: $breakpoint-lg) {
+        background: url('https://www.nrj.fr/uploads/assets/nrj/applications/background-broadcasts.jpg') no-repeat 100% 50% / 45%;
+    }
+
+    @media (min-width: $breakpoint-xl) {
+        background-size: auto;
+    }
+
+    @media (max-width: $breakpoint-md-max) {
+        .sectionPage-container {
+            padding-top: 0;
+        }
+    }
+
+    .sectionPage-gridVisual {
+        @media (max-width: $breakpoint-md-max) {
+            background: url('https://www.nrj.fr/uploads/assets/nrj/applications/background-broadcasts.jpg') no-repeat 50% 50% / 150%;
+            height: $size-250;
+            margin-left: -$spacing-16;
+            margin-right: -$spacing-16;
+        }
+
+        @media (min-width: $breakpoint-md) and (max-width: $breakpoint-md-max) {
+            background-size: 120%;
+            margin-left: -$spacing-24;
+            margin-right: -$spacing-24;
+        }
+    }
+}
+
+.sectionPage--appsUniverse {
+    background: $color-gray-10 no-repeat 100% 0 / contain;
+
+    @media (min-width: $breakpoint-lg) {
+        background-image: url('https://www.nrj.fr/uploads/assets/nrj/applications/background-alexa-5.jpg');
+    }
+}
+
+.sectionPage--appsCardplay {
+    background: $color-gray-10 no-repeat 50% 50% / cover;
+
+    @media (max-width: $breakpoint-sm-max) {
+        .sectionPage-container {
+            padding-top: 0;
+        }
+
+        .sectionPage-visual {
+            background: url('https://www.nrj.fr/uploads/assets/nrj/applications/sectionpage-cardplay-xs.jpg') no-repeat 50% 50% / cover;
+            height: 0;
+            margin-left: -($spacing-16);
+            margin-right: -($spacing-16);
+            padding-bottom: percentage(3 / 4);
+        }
+
+        .#{$areaAppsFeaturesPrefix} {
+            background-color: transparent;
+        }
+    }
+
+    @media (min-width: $breakpoint-md) and (max-width: $breakpoint-md-max) {
+        background-image: url('https://www.nrj.fr/uploads/assets/nrj/applications/sectionpage-cardplay-s.jpg');
+    }
+
+    @media (min-width: $breakpoint-lg) and (max-width: $breakpoint-lg-max) {
+        background-image: url('https://www.nrj.fr/uploads/assets/nrj/applications/sectionpage-cardplay-m.jpg');
+    }
+
+    @media (min-width: $breakpoint-xl) {
+        background-image: url('https://www.nrj.fr/uploads/assets/nrj/applications/sectionpage-cardplay-l.jpg');
+    }
+}

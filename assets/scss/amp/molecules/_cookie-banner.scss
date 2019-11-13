@@ -1,0 +1,43 @@
+/* 
+ * @filename    : amp/molecules/_cookie-banner.scss
+ * @description : Contient les styles de la bannière CNIL
+ * @projet      : NRJ 2017 (nouveau site NRJ)
+ * @date        : MAI 2017
+ * @author      : Trésor ILOYI
+ * -------------------------------------------- */
+
+.cookie-banner {
+    z-index: 9999999;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    text-align: left;
+    padding: 0.5rem; // =5px
+    font-size: 1rem; // =10px
+    border-bottom: 0.1rem solid #eeeeee;
+
+    p {
+        @include font-size(1.3); // =13px
+        font-weight: bold;
+    }
+
+    .btn-sm {
+        padding: 0 0.8rem; // =0 8px
+        height: 3.5rem; // =35px
+        margin: 0 0.2rem; // =0 2px
+    }
+
+    .cnil-buttons {
+        margin-top: 1rem; // =10px
+    }
+
+    .cnil-banner-link {
+        text-decoration:underline;
+    }
+
+    .cnil-ok-button, .cnil-cancel-button {
+        margin: 0 0.4rem; // =0 4px
+    }
+}

@@ -1,0 +1,258 @@
+/*
+Styleguide Footer Site
+*/
+
+/*
+0 - Footer Site
+Styleguide Footer Site - Footer Site
+*/
+
+/*
+Footer du site
+
+Markup: /style_guide/3_organisms/_footer-site.html.twig
+
+.footerSite - Classe principale du site
+
+Styleguide Footer Site - Footer Site
+*/
+
+$footerSitePrefix: 'footerSite';
+
+.#{$footerSitePrefix} {
+    background-color: $color-black;
+
+    @media (min-width: $breakpoint-md) {
+        .navFooter-item {
+            margin-bottom: 0;
+            padding: 0 $spacing-12;
+
+            &:first-child {
+                padding-left: 0;
+            }
+
+            &:last-child {
+                padding-right: 0;
+            }
+        }
+    }
+
+    &-nav {
+        padding: $spacing-44 0;
+    }
+
+    .buttonNav,
+    .button {
+        outline-color: $color-white;
+    }
+}
+
+$navFooterPrefix: 'navFooter';
+
+.#{$navFooterPrefix} {
+    .button {
+        margin-bottom: $spacing-8;
+    }
+
+    &-search {
+        position: relative;
+        margin-top: $spacing-44;
+
+        .formControl {
+            height: $spacing-44;
+        }
+
+        .formSubmit {
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+    }
+
+    &-item {
+        margin-bottom: $spacing-16;
+        color: $color-white;
+        border-top: 0.1rem solid $color-gray-50;
+
+        @media (min-width: $breakpoint-md) {
+            border-top: none;
+        }
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        .button-icon {
+            transition: transform 0.2s ease-in-out;
+
+            @media (min-width: $breakpoint-md) {
+                display: none;
+            }
+        }
+
+        &.hidden {
+            margin-bottom: 0;
+
+            .button-icon {
+                transform: rotate(180deg) translateY(50%);
+            }
+        }
+    }
+
+    &-app {
+        margin-bottom: $spacing-20;
+
+        @media (min-width: $breakpoint-md) {
+            margin-top: $spacing-16;
+            margin-bottom: 0;
+        }
+
+        &List {
+            display: flex;
+            justify-content: center;
+
+            @media (min-width: $breakpoint-md) {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+
+            &Item {
+                flex: 1;
+
+                &:not(:first-child) {
+                    margin-left: $spacing-16;
+
+                    @media (min-width: $breakpoint-md) {
+                        margin-bottom: $spacing-4;
+                        margin-left: 0;
+                    }
+                }
+            }
+
+            .button {
+                display: block;
+                margin-left: 0;
+
+                &-img {
+                    display: inline-block;
+                    height: $size-50;
+
+                    @media (min-width: $breakpoint-md) {
+                        height: auto;
+                        width: $size-150;
+                    }
+                }
+            }
+        }
+    }
+}
+
+$footerSocialPrefix: 'footerSocial';
+
+.sectionPage--#{$footerSocialPrefix} {
+    .container {
+        position: relative;
+        top: $spacing-20;
+        padding-top: $spacing-20;
+        padding-bottom: 0;
+    }
+}
+
+.#{$footerSocialPrefix} {
+    display: flex;
+    justify-content: space-between;
+
+    &-logo {
+        display: flex;
+        flex-flow: column;
+        align-items: flex-start;
+
+        @media (min-width: $breakpoint-md) {
+            flex-flow: row;
+        }
+    }
+
+    &-img {
+        max-width: $spacing-64;
+
+        @media (min-width: $breakpoint-md) {
+            max-width: 100%;
+        }
+
+        &--nrj {
+            background: $color-white;
+            box-shadow: ($spacing-base * 0.4375) (-$spacing-base * 0.375) ($spacing-base * 0.625) rgba($color-black, 0.16); // 0.7rem -0.6rem 1rem
+            padding: $spacing-4;
+
+            @media (min-width: $breakpoint-md) {
+                width: ($spacing-base * 6.625); // 10.6rem
+                height: ($spacing-base * 6.625); // 10.6rem
+                margin-top: -$spacing-22;
+                margin-right: $spacing-40;
+            }
+        }
+
+        &--slogan {
+            margin-top: $spacing-4;
+        }
+    }
+
+    .buttonSquare {
+        @media (max-width: $breakpoint-sm-max) {
+            width: ($spacing-base * 2.125); // 3.4rem
+            height: ($spacing-base * 2.125); // 3.4rem
+            font-size: $font-size-3;
+        }
+    }
+}
+
+$footerBottomPrefix: 'footerBottom';
+
+.#{$footerBottomPrefix} {
+    padding: $spacing-16 $spacing-24;
+    font-size: $font-size-2;
+
+    @media (min-width: $breakpoint-md) {
+        border-top: 0.1rem solid $color-gray-50;
+    }
+
+    &-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    &-listItem {
+        position: relative;
+
+        &:last-child {
+            &::after {
+                display: none;
+            }
+        }
+
+        &::after {
+            content: "|";
+            position: absolute;
+            right: -0.2rem;
+            top: 0;
+            color: $color-white;
+        }
+    }
+
+    &-listLink {
+        position: relative;
+        padding: 0 $spacing-8;
+        color: $color-white;
+        text-decoration: none;
+
+        @media (min-width: $breakpoint-md) {
+            padding: 0 $spacing-12;
+        }
+
+        &:hover,
+        &:focus {
+            text-decoration: underline;
+        }
+    }
+}

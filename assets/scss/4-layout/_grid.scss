@@ -1,0 +1,101 @@
+/*
+Styleguide Grid Layout
+*/
+
+/*
+0 - Grille
+
+Styleguide Grid Layout - Grid Layout
+*/
+
+/*
+1 - Le site NRJ utilise différents points de rupture : mobile (0 à 575.9px), phablettes (576 à 767.9px), tablettes (768px à 1059.9px), écrans intermédiaires (1060px à 1299.9px) et écrans larges (1300px et au-delà).
+
+Styleguide Grid Layout - Breakpoints
+*/
+
+/*
+2 - Un container à largeur maximale fixe
+
+Markup: <div class="container $modifierClass">.$modifierClass</div>
+
+.container - Classe utilisée pour générer un container de largeur maximale fixe
+.container--fluid - Classe modificatrice utilisée pour générer un container sans largeur fixe
+
+Styleguide Grid Layout - Containers
+*/
+
+/*
+3 - Une grille de base. Par défaut, chaque item de grille occupe 12/12eme de large (100%), et ce, dans toutes les résolutions.
+
+Markup: <div class="grid $modifierClass"><div class="grid-item">.grid-item</div><div class="grid-item grid-item--6">.grid-item .grid-item--6</div><div class="grid-item grid-item--6">.grid-item .grid-item--6</div></div>
+
+.grid - Grille
+.grid--noGap - Grille sans gouttières
+
+Styleguide Grid Layout - Grille de base
+*/
+
+/*
+4- Grille avec différentes tailles de colonnes appliquées : 100% en mobile, 50% puis 33.33% en tablette et supérieur. Un dernier item est, quant à lui, d'une largeur de 50% en large (desktop) et de 100% en extra-large.
+
+Markup: <div class="grid"><div class="grid-item grid-item--md6">.grid-item .grid-item--md6</div><div class="grid-item grid-item--md6">.grid-item .grid-item--md6</div><div class="grid-item grid-item--md4">.grid-item .grid-item--md4</div><div class="grid-item grid-item--md4">.grid-item .grid-item--md4</div><div class="grid-item grid-item--md4">.grid-item .grid-item--md4</div><div class="grid-item grid-item--md4 grid-item--lg6 grid-item--xl12">.grid-item .grid-item--md4 .grid-item--lg6 .grid-item--xl12</div></div>
+
+.grid - Classe utilisée pour générer la grille
+
+Styleguide Grid Layout - Grille avec différentes options
+*/
+
+@include make-container;
+
+@include make-grid-wrapper;
+
+@include make-grid-items;
+
+.grid--border {
+    @media (max-width: $breakpoint-md) {
+        grid-gap: $spacing-8;
+    }
+}
+
+.grid-item--border,
+.area-item--border {
+    border-bottom: $border-width-1 solid $color-gray-10;
+    padding-bottom: $spacing-8;
+
+    @media (min-width: $breakpoint-md) {
+        padding-bottom: $spacing-16;
+    }
+
+    &Xs {
+        @media (min-width: $breakpoint-md) {
+            border-bottom: none;
+
+            &:last-child {
+                padding-bottom: $spacing-16;
+            }
+        }
+    }
+
+    .sectionPage--grey & {
+        border-bottom-color: $color-white;
+    }
+
+    &:last-child {
+        border-bottom: none;
+    }
+}
+
+.sectionPage--dark {
+    .grid-item--border,
+    .area-item--border {
+        border-color: $color-gray-80;
+    }
+}
+
+.headerPlaylist {
+    .grid-item--border,
+    .area-item--border {
+        border-bottom: $border-width-1 solid rgba($color-white, $opacity-5);
+    }
+}

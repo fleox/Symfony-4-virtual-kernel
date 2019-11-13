@@ -1,0 +1,439 @@
+/*
+Styleguide Cards
+*/
+
+/*
+0 - Cards
+
+Styleguide Cards - Cards
+*/
+
+/*
+1 Card default
+
+Markup: /style_guide/2_molecules/cards/_card.html.twig
+
+.card - Card par défaut
+.card--column - Card de type colonne
+.card--columnXs - Card de type colonne uniquement en XS
+.card--columnSmall - Petite image, utilisée dans le cas des pochettes en 1:1
+.card--columnMedium - Moyenne image, utilisée dans le cas des pochettes en 1:1
+.card--columnXl-row - Card de type colonne uniquement en XL
+.card--column .card--valignBottom - Aligné verticalement en bas
+.card--invert - Card avec inversion image / texte
+.card--grayLight - Card avec un fond gris clair
+.card--grayDark - Card avec un fond gris foncé
+.card--light - Card avec un fond clair
+.card--dark - Card avec un thème sombre
+.card--column .card--dark - Exemple de card sombre avec affichage en colonnes
+.card--centered - Card avec contenus centrés
+.card--overlay - Card avec contenus superposés à l'image
+.card--overlay .card--columnXs - Card avec contenus superposés à l'image et et en colonne en mobile
+.card--tile - Card de type tuile couleur avec contenus superposés à l'image
+.card--webradio - Card de type webradio, ombre portée sous l'image, texte centré et overflow ellipsis
+.card--hideVisualXs - Masque le visuel en mobile
+
+Styleguide Cards - Card par défault
+*/
+
+$cardPrefix: 'card';
+
+@mixin cardColumn($cardHeaderWidth: ($spacing-12 * 11)) {
+    .#{$cardPrefix}-wrapper {
+        align-items: flex-start;
+        flex-direction: row;
+    }
+
+    .#{$cardPrefix}-header {
+        flex: 0 0 $cardHeaderWidth;
+        margin: 0 $spacing-12 0 0;
+    }
+
+    .#{$cardPrefix}-content {
+        flex: 1;
+        min-width: 0; // For text-ellipsis bug fix
+        padding-top: 0;
+        position: relative; // For "Flag" positionning
+    }
+
+    .flag {
+        bottom: auto;
+        left: $spacing-12;
+        top: -$spacing-12;
+    }
+}
+
+.#{$cardPrefix} {
+    width: 100%;
+
+    &,
+    &-wrapper {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &--colored {
+        border-radius: $spacing-8;
+        background-color: $color-primary;
+        box-shadow: 0 $spacing-8 $spacing-20 rgba(0, 0, 0, 0.1), 0 $spacing-8 $spacing-8 rgba(0, 0, 0, 0.11);
+
+        &.gradient-white {
+            color: $color-primary-100;
+        }
+
+        .card-content {
+            padding-top: 0;
+        }
+
+        [class^="heading"] {
+            top: 50%;
+            position: relative;
+            transform: translateY(-50%);
+            text-align: center;
+        }
+    }
+
+    &-wrapper {
+        margin-bottom: auto;
+        text-decoration: none;
+
+        @at-root a#{&} {
+            &:hover,
+            &:focus {
+                [class^="heading"] {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+
+    &-header {
+        position: relative;
+    }
+
+    .flag {
+        top: 0;
+        left: 0;
+        position: absolute;
+        z-index: 1;
+    }
+
+    &-content {
+        padding-top: $spacing-12;
+    }
+
+    &--column {
+        @include cardColumn;
+    }
+
+    &--columnXs {
+        @media (max-width: $breakpoint-sm-max) {
+            @include cardColumn;
+
+            [class^=heading] {
+                font-size: $font-size-3;
+            }
+        }
+    }
+
+    &--columnSmall {
+        @include cardColumn($cardHeaderWidth: ($spacing-8 * 9));
+    }
+
+    &--columnMedium {
+        @include cardColumn($cardHeaderWidth: ($spacing-12 * 11));
+    }
+
+    &--columnLarge {
+        @include cardColumn($cardHeaderWidth: ($spacing-32 * 10));
+        @media (max-width: $breakpoint-sm-max) {
+            .#{$cardPrefix}-header {
+                flex: 0 0 ($spacing-12 * 11);
+            }
+        }
+    }
+
+    &--columnXl-row {
+        @media (min-width: $breakpoint-md) {
+            @include cardColumn;
+        }
+    }
+
+    &--columnHighlight {
+        @include cardColumn;
+
+        [class^=heading] {
+            font-size: $font-size-3;
+        }
+
+        @media (min-width: $breakpoint-md) {
+            @include cardColumn($cardHeaderWidth: ($spacing-16 * 10));
+
+            padding-right: $spacing-16;
+
+            [class^=heading] {
+                font-size: $font-size-4;
+            }
+        }
+    }
+
+    &--invert {
+        &[class*="card--column"] {
+            .#{$cardPrefix}-header {
+                margin: 0 0 0 $spacing-12;
+            }
+        }
+
+        .#{$cardPrefix}-content {
+            order: -1;
+            padding-bottom: $spacing-12;
+            padding-top: 0;
+        }
+    }
+
+    &--valignBottom {
+        .#{$cardPrefix}-wrapper {
+            align-items: flex-end;
+        }
+    }
+
+    &--light,
+    &--dark,
+    &--grayDark,
+    &--grayLight,
+    &--overlay {
+        .#{$cardPrefix}-content {
+            padding: $spacing-12;
+        }
+    }
+
+    &--dark,
+    &--grayDark,
+    &--overlay {
+        .#{$cardPrefix}-content {
+            color: $color-white;
+        }
+    }
+
+    &--light {
+        background-color: $color-white;
+    }
+
+    &--dark {
+        background-color: $color-black;
+    }
+
+    &--grayDark {
+        background-color: $color-gray-70;
+    }
+
+    &--grayLight {
+        background-color: $color-gray-10;
+    }
+
+    &--overlay {
+        position: relative;
+
+        .#{$cardPrefix}-content {
+            background-color: rgba($color-black, $opacity-7);
+            bottom: 0;
+            left: 0;
+            position: absolute;
+            right: 0;
+        }
+
+        &.#{$cardPrefix}--columnXs {
+            @media (max-width: $breakpoint-sm-max) {
+                .#{$cardPrefix}-content {
+                    background-color: transparent;
+                    color: inherit;
+                    position: static;
+                    padding: 0;
+                }
+            }
+        }
+
+        &Red {
+            .#{$cardPrefix}-content {
+                background-color: transparent;
+                color: $color-white;
+                bottom: 0.4rem;
+                left: 0.6rem;
+                padding: $spacing-2 $spacing-8;
+                line-height: 1.4;
+            }
+
+            @media (min-width: $breakpoint-md) {
+                .#{$cardPrefix}-content {
+                    bottom: $spacing-12;
+                    left: $spacing-12;
+                }
+            }
+        }
+    }
+
+    &--tile {
+        .#{$cardPrefix}-content {
+            top: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            text-transform: uppercase;
+            background: none;
+        }
+
+        .thumbnail {
+            background: $color-primary-100;
+        }
+
+        .thumbnail-visual {
+            opacity: 0;
+        }
+    }
+
+    &--centered {
+        text-align: center;
+    }
+
+    &--playable {
+        position: relative;
+
+        .#{$cardPrefix}-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: stretch;
+        }
+
+        .#{$cardPrefix}-content {
+            flex-grow: 1;
+        }
+
+        .#{$cardPrefix}-player {
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: 100%;
+            display: flex;
+            align-items: center;
+        }
+    }
+
+    &--webradio {
+        text-align: center;
+
+        .card-time {
+            margin-bottom: $spacing-4;
+        }
+
+        .#{$cardPrefix}-header {
+            background-color: $color-gray-80;
+            overflow: hidden;
+            box-shadow: 0 $spacing-8 $spacing-20 rgba(0, 0, 0, 0.1), 0 $spacing-8 $spacing-8 rgba(0, 0, 0, 0.1);
+            transition: all 0.2s ease-in-out;
+
+            &:hover {
+                box-shadow: 0 $spacing-12 $spacing-22 rgba(0, 0, 0, 0.2), 0 $spacing-12 $spacing-12 rgba(0, 0, 0, 0.2);
+                transition: all 0.2s ease-in-out;
+            }
+
+            &::after {
+                content: "";
+                position: absolute;
+                z-index: 1;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background-color: rgba($color-black, 0);
+                transition: background-color 0.2s ease-in-out;
+            }
+        }
+
+        &:hover,
+        &:focus {
+            .#{$cardPrefix}-header::after {
+                background-color: rgba($color-black, 0.7);
+            }
+
+            .enrj-play {
+                opacity: 1;
+            }
+        }
+
+        .enrj-play {
+            position: absolute;
+            z-index: 2;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%);
+            font-size: $font-size-12;
+            opacity: 0;
+            transition: opacity 0.2s ease-in-out;
+        }
+
+        .equalizer {
+            position: absolute;
+            z-index: 2;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%);
+            opacity: 0;
+            transition: opacity 0.2s ease-in-out;
+        }
+    }
+
+    &--noEllipsis {
+        text-align: center;
+
+        [class^=heading],
+        .description {
+            @include unEllipsis;
+        }
+    }
+
+    &--hideVisualXs {
+        @media (max-width: $breakpoint-sm-max) {
+            .#{$cardPrefix}-header {
+                @include visuallyHidden;
+            }
+        }
+    }
+
+    .supTitle {
+        margin-bottom: $spacing-4;
+    }
+
+    [class^="heading"] {
+        &:not(:last-child) {
+            margin-bottom: $spacing-4;
+        }
+    }
+
+    .description {
+        &:not(:last-child) {
+            margin-bottom: $spacing-8;
+        }
+    }
+
+    .playerAudio {
+        margin-top: $spacing-16;
+
+        & * {
+            max-width: 100% !important;
+        }
+    }
+
+    .headingLink {
+        text-decoration: none;
+
+        &:hover,
+        &:focus {
+            text-decoration: underline;
+        }
+    }
+
+    .callToAction {
+        margin-top: $spacing-12;
+    }
+}

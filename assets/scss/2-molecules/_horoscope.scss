@@ -1,0 +1,53 @@
+/*
+Styleguide Horoscope
+*/
+
+/*
+0 - Horoscope
+
+Styleguide Horoscope - Horoscope
+*/
+
+/*
+Horoscope
+
+Markup: /style_guide/2_molecules/_horoscope.html.twig
+
+.horoscope - Horoscope par défaut
+
+Styleguide Horoscope - Horoscope par défaut
+*/
+
+.horoscope {
+    margin-bottom: $spacing-12;
+    background-color: $color-gray-10;
+    padding: $spacing-12;
+    flex-flow: column;
+
+    &-title {
+        margin-bottom: $spacing-12;
+        padding-bottom: $spacing-12;
+        border-bottom: 0.1rem solid $color-gray-90;
+        text-align: center;
+    }
+
+    &-icon {
+        text-align: center;
+        display: block;
+        padding-top: $spacing-8;
+        padding-bottom: $spacing-8;
+        flex-shrink: 0;
+        font-size: $font-size-10*2;
+    }
+
+    @media (min-width: $breakpoint-md) {
+        &-content {
+            display: flex;
+        }
+
+        &-icon {
+            width: $spacing-96;
+            padding-top: $spacing-12;
+        }
+    }
+}

@@ -1,0 +1,21 @@
+.page--playlistDetail {
+    .contentAside {
+        @media (max-width: $breakpoint-md-max) {
+            order: -1;
+        }
+    }
+
+    .sidebar {
+        @media (max-width: $breakpoint-md-max) {
+            position: sticky;
+            margin: 0 -$spacing-base;
+            transition: top 0.2s ease-in-out;
+            z-index: 1;
+        }
+    }
+
+    .equalizer {
+        align-self: center;
+        margin-right: $spacing-4;
+    }
+}

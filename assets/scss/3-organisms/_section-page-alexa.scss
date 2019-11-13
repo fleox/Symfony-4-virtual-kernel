@@ -1,0 +1,360 @@
+.sectionPage {
+    &--alexa-header {
+        margin-bottom: $spacing-20;
+        padding-top: $spacing-12;
+        position: relative;
+        text-align: center;
+
+        @media (max-width: $breakpoint-md) {
+            background: url(#{$imagePath}amazon-alexa/area-header-frieze-xs.jpg) repeat-x 50% calc(100% - 7rem);
+        }
+        @media (min-width: $breakpoint-md) and (max-width: $breakpoint-lg) {
+            background: url(#{$imagePath}amazon-alexa/area-header-frieze-s.jpg) repeat-x 50% calc(100% - 9.5rem);
+            padding-top: $spacing-24;
+        }
+        @media (min-width: $breakpoint-lg) {
+            background: url(#{$imagePath}amazon-alexa/area-header-frieze-m.jpg) repeat-x 50% 15.7rem;
+            margin-bottom: $spacing-32;
+            padding-top: $spacing-32;
+        }
+        @media (min-width: $breakpoint-xl) {
+            background-position: 50% 18.1rem;
+        }
+
+        .area-header {
+            justify-content: center;
+            margin-bottom: $spacing-24;
+
+            @media (min-width: $breakpoint-xl) {
+                margin-bottom: $spacing-28;
+            }
+        }
+
+        .area-body {
+            padding-bottom: 26.4rem;
+
+            @media (min-width: $breakpoint-md) {
+                padding-bottom: 31.8rem;
+            }
+            @media (min-width: $breakpoint-lg) {
+                padding-bottom: 0;
+            }
+
+            &::after {
+                @media (max-width: $breakpoint-lg) {
+                    background: url(#{$imagePath}amazon-alexa/enceintes-amazon-alexa-grey-black.png) no-repeat 0 0 / 100% auto;
+                    content: "";
+                    left: 50%;
+                    transform: translateX(-50%);
+                    position: absolute;
+                }
+                @media (max-width: $breakpoint-md) {
+                    bottom: 1.8rem;
+                    height: 25.575rem;
+                    width: 32.242rem;
+                }
+                @media (min-width: $breakpoint-md) and (max-width: $breakpoint-lg) {
+                    bottom: 1.3rem;
+                    height: 31.028rem;
+                    width: 39.117rem;
+                }
+            }
+        }
+
+        .description {
+            @media (min-width: $breakpoint-md) {
+                font-size: $font-size-6;
+            }
+        }
+
+        .heading2 {
+            margin-bottom: $spacing-20;
+            font-weight: $font-weight-bold;
+            font-size: $font-size-8;
+        }
+
+        .player {
+            box-shadow: 0 0 0.7rem 0 rgba($color-black, 0.5);
+            background: $color-white;
+            border: 0.1rem solid $color-gray-30;
+            margin: 0 -2rem $spacing-28;
+            position: relative;
+
+            @media (min-width: $breakpoint-md) and (max-width: $breakpoint-lg) {
+                margin: 0 $spacing-24 $spacing-32;
+            }
+            @media (min-width: $breakpoint-lg) {
+                margin: 0 auto 7.4rem;
+                max-width: 65.8rem;
+            }
+            @media (min-width: $breakpoint-xl) {
+                max-width: 74.8rem;
+            }
+
+            &::before,
+            &::after {
+                @media (min-width: $breakpoint-lg) {
+                    content: "";
+                    pointer-events: none;
+                    position: absolute;
+                    z-index: 1;
+                }
+            }
+
+            &::before {
+                @media (min-width: $breakpoint-lg) {
+                    background: url(#{$imagePath}amazon-alexa/enceinte-amazon-alexa-black.png) no-repeat;
+                    bottom: -7rem;
+                    height: 36.8rem;
+                    left: -25rem;
+                    width: 28.2rem;
+                }
+            }
+
+            &::after {
+                @media (min-width: $breakpoint-lg) {
+                    background: url(#{$imagePath}amazon-alexa/enceinte-amazon-alexa-grey.png) no-repeat;
+                    bottom: -7.5rem;
+                    height: 35.4rem;
+                    right: -30.7rem;
+                    width: 32.9rem;
+                }
+            }
+        }
+
+        .areaHeader-brand {
+            margin: 0;
+            position: absolute;
+            width: 20.6rem;
+
+            @media (max-width: $breakpoint-lg) {
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            @media (min-width: $breakpoint-lg) {
+                right: $spacing-16;
+                top: 11.5rem;
+                width: 19.2rem;
+            }
+            @media (min-width: $breakpoint-xl) {
+                top: 12.9rem;
+            }
+        }
+
+        .sectionPage-container {
+            background-color: transparent;
+        }
+    }
+
+    &--skill {
+        background: url(#{$imagePath}amazon-alexa/bg-area-desc-xs.jpg) no-repeat 50% 0;
+
+        @media (min-width: $breakpoint-md) {
+            margin-bottom: 0;
+            background: url(#{$imagePath}amazon-alexa/bg-area-desc-s.jpg) no-repeat 50% 0;
+        }
+        @media (min-width: $breakpoint-lg) {
+            background: url(#{$imagePath}amazon-alexa/bg-area-desc-m.jpg) no-repeat 50% 0;
+        }
+        @media (min-width: $breakpoint-xl) {
+            background: url(#{$imagePath}amazon-alexa/bg-area-desc-l.jpg) no-repeat 50% 0;
+        }
+    }
+
+    &--tuto {
+        .area-header {
+            justify-content: center;
+            margin-bottom: $spacing-16;
+            text-align: center;
+
+            @media (min-width: $breakpoint-md) {
+                margin-bottom: $spacing-24;
+            }
+        }
+    }
+
+    &--install {
+        text-align: center;
+
+        @media (min-width: $breakpoint-md) {
+            padding: $spacing-20 0;
+        }
+
+        .area-upper {
+            @media (min-width: $breakpoint-md) {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+            @media (min-width: $breakpoint-md) and (max-width: $breakpoint-lg) {
+                padding: 0 $spacing-24;
+            }
+        }
+
+        .area-inner {
+
+            @media (min-width: $breakpoint-lg) {
+                margin-top: -10.5rem;
+                padding-right: 50%;
+            }
+        }
+
+        .description {
+            margin-bottom: $spacing-16;
+
+            @media (min-width: $breakpoint-md) and (max-width: $breakpoint-lg) {
+                padding: 0 $spacing-32;
+                font-size: $font-size-5;
+            }
+            @media (min-width: $breakpoint-lg) {
+                flex: 0 0 40rem;
+                font-size: $font-size-6;
+            }
+            @media (min-width: $breakpoint-xl) {
+                flex: 0 0 48rem;
+            }
+        }
+
+        strong {
+            font-weight: $font-weight-bold;
+        }
+
+        .areaInstall-cta {
+            display: flex;
+            align-items: flex-end;
+            margin-bottom: $spacing-12;
+
+            @media (min-width: $breakpoint-lg) {
+                display: block;
+                margin-left: -10rem;
+            }
+        }
+
+        .button--cta {
+            @media (min-width: $breakpoint-lg) {
+                width: 22.4rem;
+            }
+        }
+
+        .note {
+            margin: 0;
+            text-align: left;
+            font-size: $font-size-1;
+        }
+
+        .areaInstall-visual {
+            margin-bottom: $spacing-12;
+
+            @media (min-width: $breakpoint-md) {
+                flex: 0 0 41rem;
+            }
+            @media (min-width: $breakpoint-lg) {
+                flex: 0 0 56rem;
+            }
+            @media (min-width: $breakpoint-xl) {
+                flex: 0 0 66rem;
+            }
+        }
+    }
+
+    &--howto {
+        margin-bottom: $spacing-32;
+        text-align: center;
+        background: $color-white url(#{$imagePath}amazon-alexa/bg-area-howto-xs.jpg) no-repeat 50% 100%;
+
+        @media (min-width: $breakpoint-md) {
+            margin-bottom: 3.7rem;
+        }
+        @media (min-width: $breakpoint-md) and (max-width: $breakpoint-lg) {
+            background: $color-white url(#{$imagePath}amazon-alexa/bg-area-howto-s.jpg) no-repeat 50% 0;
+        }
+        @media (min-width: $breakpoint-lg) {
+            background: $color-white url(#{$imagePath}amazon-alexa/bg-area-howto-m.jpg) no-repeat 50% 0;
+            margin-bottom: $spacing-32;
+        }
+
+        .container {
+            padding-bottom: 0;
+
+            @media (min-width: $breakpoint-lg) {
+                padding-top: 5.2rem;
+            }
+        }
+
+        .area-title {
+            margin-bottom: $spacing-20;
+
+            @media (max-width: $breakpoint-sm) {
+                font-size: $font-size-5;
+            }
+        }
+    }
+
+    &--catalog {
+        margin-bottom: $spacing-24;
+        padding-bottom: 15rem;
+        background: url(#{$imagePath}amazon-alexa/bg-area-catalog-xs.jpg) no-repeat 50% 100%;
+
+        @media (min-width: $breakpoint-md) {
+            padding-bottom: 0;
+            background: url(#{$imagePath}amazon-alexa/bg-area-catalog-s.jpg) no-repeat 100% bottom;
+        }
+        @media (min-width: $breakpoint-lg) {
+            background: none;
+        }
+
+        .container {
+            position: relative;
+        }
+
+        .area {
+
+            @media (min-width: $breakpoint-lg) {
+                padding: $spacing-16 0;
+            }
+
+            &::before {
+                @media (min-width: $breakpoint-lg) {
+                    position: absolute;
+                    z-index: -1;
+                    right: -14rem;
+                    top: 0;
+                    bottom: 0;
+                    content: "";
+                    display: block;
+                    width: 72.5rem;
+                    background: url(#{$imagePath}amazon-alexa/bg-area-catalog-m.jpg) no-repeat;
+                    pointer-events: none;
+                    padding-top: 5.2rem;
+                }
+                @media (min-width: $breakpoint-xl) {
+                    right: -3rem;
+                }
+            }
+        }
+
+        .area-title {
+            margin-bottom: $spacing-16;
+            text-align: center;
+            font-weight: $font-weight-bold;
+        }
+
+        .citationBadge {
+            filter: drop-shadow(0.5rem 0.5rem 0.5rem rgba(0, 0, 0, 0.2));
+        }
+    }
+}
+// stylelint-disable selector-max-specificity
+.page--alexa {
+    .sectionPage--skill {
+        .area-body {
+            padding-left: $spacing-20;
+        }
+    }
+
+    .blockDisplay-inner {
+        text-align: center;
+    }
+}
+// styline-enable selector-max-specificity

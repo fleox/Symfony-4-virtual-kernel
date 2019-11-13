@@ -1,0 +1,110 @@
+/*
+ * @filename    : common/_enrj-icons.scss
+ * @description : Contient les déclarations des polices d'icônes
+ * @projet      : NRJ 2017 (nouveau site NRJ)
+ * @date        : AVRIL 2017
+ * @author      : Trésor ILOYI
+ * -------------------------------------------- */
+
+/***
+ * E-NRJ
+ * Font "enrj" : il s'agit de la police d'icônes génériques aux sites du groupe
+ */
+
+@font-face {
+    font-family: 'enrj';
+    src: url('#{$fontPath}enrj.woff?4zqwaw') format('woff'),
+         url('#{$fontPath}enrj.ttf?4zqwaw') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="enrj-"], [class*=" enrj-"] {
+    font-family: 'enrj';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.enrj-apps:before {
+  content: "\e912";
+}
+.enrj-arrow-left-thin:before {
+  content: "\e923";
+}
+.enrj-arrow-right:before {
+  content: "\e902";
+}
+.enrj-arrow-right-thin:before {
+  content: "\e900";
+}
+.enrj-cross:before {
+  content: "\e903";
+}
+.enrj-fb:before {
+  content: "\e904";
+}
+.enrj-gplus:before {
+  content: "\e905";
+}
+.enrj-instagram:before {
+  content: "\e906";
+}
+.enrj-linkedin:before {
+  content: "\e926";
+}
+.enrj-logged:before {
+  content: "\e907";
+}
+.enrj-login:before {
+  content: "\e908";
+}
+.enrj-mail:before {
+  content: "\e921";
+}
+.enrj-newsletter:before {
+  content: "\e909";
+}
+.enrj-phone:before {
+  content: "\e913";
+}
+.enrj-pinterest:before {
+  content: "\e925";
+}
+.enrj-search:before {
+  content: "\e901";
+}
+.enrj-share:before {
+  content: "\e924";
+}
+.enrj-sms:before {
+  content: "\e90b";
+}
+.enrj-snapchat:before {
+  content: "\e90a";
+}
+.enrj-tchat:before {
+  content: "\e90c";
+}
+.enrj-tt:before {
+  content: "\e910";
+}
+.enrj-webradio:before {
+  content: "\e911";
+}
+.enrj-website:before {
+  content: "\e927";
+}
+.enrj-whatsapp:before {
+  content: "\e922";
+}
+.enrj-youtube:before {
+  content: "\e914";
+}

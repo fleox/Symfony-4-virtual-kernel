@@ -1,0 +1,200 @@
+/*
+Styleguide Timeline Shedule
+*/
+
+/*
+0 - Timeline
+
+Styleguide Timeline Shedule - Timeline Shedule
+*/
+
+/*
+1 - Style d'une Timeline Shedule de base
+
+Markup: <section class="timelineShedule"> <header class="timelineShedule-header"> <div class="timelineShedule-heading"> <h2 class="heading1 " > <time class="timelineShedule-time" datetime="2019-02-04T06:00:00">6h00</time> <time class="timelineShedule-time" datetime="2019-02-04T09:00:00">9h00</time> </h2> </div><figure class="thumbnail"> <div class="thumbnail-wrapper"> <picture class="thumbnail-inner"> <source srcset="http://via.placeholder.com/1x1" data-srcset="http://via.placeholder.com/810x304" media="(min-width: 1470px)"> <source srcset="http://via.placeholder.com/1x1" data-srcset="http://via.placeholder.com/656x246" media="(min-width: 1170px)"> <source srcset="http://via.placeholder.com/1x1" data-srcset="http://via.placeholder.com/940x352" media="(min-width: 1024px)"> <source srcset="http://via.placeholder.com/1x1" data-srcset="http://via.placeholder.com/738x277" media="(min-width: 768px)"> <img class="thumbnail-visual lazy" src="http://via.placeholder.com/1x1" data-src="http://via.placeholder.com/402x151" alt=""/> </picture> </div></figure> </header> <div class="timelineShedule-body"> <div class="timelineShedule-content"> <h3 class="heading2 " > Manu dans le 6/9 sur NRJ </h3> <p class="description ">Description lorem ipsum dolor sit amet consequer</p><div class="nav nav--columnXs" > <ul class="nav-list" > <li class="nav-item" > <a href="#" class="button button--dark button--small" > Voir le site de Manu </a> </li><li class="nav-item" > <a href="#" class="button button--dark button--small" > Écouter les Podcasts </a> </li></ul></div><div class="timelineShedule-broadcast"> <article class="card card--column"> <div class="card-wrapper"> <div class="card-header"> <a class="card-headerInner" href="#" rel="nofollow"> <figure class="thumbnail "> <div class="thumbnail-wrapper --"> <div class="thumbnail-wrapper --"> <div class="thumbnail-inner "> <img alt="Écoutez l’émission gratuitement sur la radio digitale NRJ Manu dans le 6/9" class="thumbnail-visual " src="https://picsum.photos/848/473"/> </div></div></div></figure> </a> </div><div class="card-content"> <h5 class="heading4 " > <a class="headingLink" href="#"> Écoutez l’émission gratuitement sur la radio digitale NRJ Manu dans le 6/9 </a> </h5> <p class="callToAction"> <a href="#" class="button button--separator button--dark button--small" rel="nofollow"> <span class="button-icon enrj-play" aria-hidden="true"></span> Écoutez sa radio </a> </p></div></div></article> </div></div></div></section>
+
+.timelineShedule - Timeline Classe de base
+
+Styleguide Timeline Shedule - Timeline Shedule par défaut
+*/
+
+.timelineShedule {
+    &:not(:last-child) {
+        margin-bottom: $spacing-48;
+    }
+
+    // **
+    // * Timeline Header
+    // **
+
+    &-header {
+        position: relative;
+        @media (max-width: $breakpoint-sm-max) {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+    &-heading {
+        @media (max-width: $breakpoint-sm-max) {
+            margin: 0 0 $spacing-12 $spacing-12;
+            order: -1;
+        }
+        @media (min-width: $breakpoint-md) {
+            left: $spacing-16;
+            position: absolute;
+            text-align: center;
+            transform: translateY($spacing-96 - $spacing-8);
+            width: ($spacing-12 * 11);
+            z-index: 1;
+        }
+        @media (min-width: $breakpoint-lg) {
+            left: ($spacing-24 - $spacing-4);
+            transform: translateY($spacing-64 + $spacing-8);
+        }
+        @media (min-width: $breakpoint-xl) {
+            left: $spacing-44;
+            transform: translateY($spacing-96);
+        }
+
+        [class^="heading"] {
+            line-height: 1;
+        }
+    }
+
+    // **
+    // * Timeline Time
+    // * @Comment: this tag is inside the Heading Tag
+    // **
+
+    &-time {
+        @media (max-width: $breakpoint-sm-max) {
+            &:first-child::after {
+                content: ' /';
+            }
+        }
+        @media (min-width: $breakpoint-md) {
+            display: block;
+        }
+    }
+
+    // **
+    // * Timeline Body
+    // **
+
+    &-body {
+        position: relative;
+
+        &::before {
+            background-color: $color-black;
+            bottom: 0;
+            content: "";
+            left: $spacing-16;
+            position: absolute;
+            top: 0;
+            width: ($spacing-4 / 2);
+            z-index: 1;
+            @media (min-width: $breakpoint-md) {
+                left: ($spacing-4 * 21);
+                top: (-$spacing-96 + $spacing-4);
+            }
+            @media (min-width: $breakpoint-lg) {
+                top: (-$spacing-64 - $spacing-16);
+            }
+            @media (min-width: $breakpoint-xl) {
+                left: ($spacing-12 * 9);
+                top: (-$spacing-96 - $spacing-8);
+            }
+        }
+    }
+
+    // **
+    // * Timeline Content
+    // **
+
+    &-content {
+        padding: $spacing-24 0 0 $spacing-28;
+        position: relative;
+        z-index: 1;
+        @media (min-width: $breakpoint-md) {
+            padding-left: ($spacing-8 * 13);
+        }
+        @media (min-width: $breakpoint-lg) {
+            padding-left: ($spacing-12 * 9);
+        }
+        @media (min-width: $breakpoint-xl) {
+            padding-left: ($spacing-12 * 11);
+        }
+
+        > [class^="heading"] {
+            margin-bottom: $spacing-8;
+        }
+    }
+
+    // **
+    // * List Cards
+    // * Component: '2_molecules/_list-cards.scss'
+    // **
+
+    .listCards {
+        margin: (-$spacing-48) 0 0 (-$spacing-24);
+        @media (min-width: $breakpoint-md) {
+            margin-left: (-$spacing-40);
+        }
+        @media (min-width: $breakpoint-xl) {
+            margin-left: (-$spacing-48);
+        }
+
+        &-item {
+            margin-bottom: $spacing-24;
+        }
+    }
+
+    // **
+    // * Alert
+    // **
+
+    .alert {
+        &-wrapper {
+            @media (min-width: $breakpoint-lg) {
+                padding-left: $spacing-48;
+            }
+            @media (min-width: $breakpoint-xl) {
+                padding-left: $spacing-64;
+            }
+        }
+    }
+
+    // **
+    // * Nav
+    // **
+
+    .nav {
+        margin-top: $spacing-16;
+    }
+
+    // **
+    // * Timeline Broadcast
+    // * @Comment: on low resolutions, a specific display is set inside this block
+    // **
+    &-broadcast {
+        @media (max-width: $breakpoint-sm-max) {
+            margin-top: $spacing-8;
+
+            .card {
+                background-color: transparent;
+            }
+
+            .card-content {
+                padding: 0;
+            }
+
+            .callToAction {
+                margin-top: 0;
+            }
+        }
+        @media (min-width: $breakpoint-md) {
+            margin-top: $spacing-24;
+        }
+    }
+}

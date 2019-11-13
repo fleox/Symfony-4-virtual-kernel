@@ -1,0 +1,40 @@
+$skinPrefix: 'skin';
+
+.#{$skinPrefix} {
+    position: relative;
+
+    &-title {
+        @media (max-width: $breakpoint-lg) {
+            @include visuallyHidden;
+        }
+    }
+
+    .thumbnail-visual {
+        padding: 1rem 0;
+        width: auto;
+
+        @media (min-width: $breakpoint-lg) {
+            max-height: 27rem;
+        }
+        @media (min-width: $breakpoint-xl) {
+            max-height: 35rem;
+        }
+    }
+
+    .listLogo {
+        position: absolute;
+        right: 0.6rem;
+        top: -2.1rem;
+
+        @media (max-width: $breakpoint-lg) {
+            @include visuallyHidden;
+        }
+        @media (min-width: $breakpoint-md) {
+            right: 1rem;
+            top: -2.7rem;
+        }
+        @media (min-width: $breakpoint-lg) {
+            top: 1rem;
+        }
+    }
+}

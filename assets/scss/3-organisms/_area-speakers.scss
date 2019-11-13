@@ -1,0 +1,28 @@
+// *
+// * @filename    : 3-organisms/_area-speakers.scss
+// * @description : Area Speakers
+// * @projet      : NRJ 2019
+// * @date        : 05/2019
+// * @author      : Nicolas BOURLES
+// * --------------------------------------------
+
+.area--speakers {
+    .area-header {
+        margin: 0 $spacing-16;
+
+        @media (min-width: $breakpoint-md) {
+            margin: 0 $spacing-24 $spacing-2;
+        }
+
+        @media (min-width: $breakpoint-lg) {
+            margin-left: 0;
+            margin-right: 0;
+        }
+    }
+
+    .tns-ovh {
+        @media (min-width: $breakpoint-lg) {
+            overflow: visible;
+        }
+    }
+}

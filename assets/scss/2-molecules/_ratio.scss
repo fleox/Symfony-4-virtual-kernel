@@ -1,0 +1,132 @@
+/*
+Styleguide Ratios
+*/
+
+/*
+0 - Les Ratios
+
+Styleguide Ratios - Ratios
+*/
+
+/*
+Les classes de ratios peuvent être appliquées sur n'importe quelle structure : il n'existe pas de fichier Twig "ratio" à proprement parler. Afin de donner un exemple plus parlant, voici son application sur sur un "embed". Les "embed" peuvent être utilisés pour charger une vidéo, une iframe, un article Facebook, Twitter, Instagram.
+
+Markup: /style_guide/2_molecules/_embed.html.twig
+
+.ratio - Classe par défaut
+.ratio--4by3 - Modificateur 4/3
+.ratio--4by3Xs - Modificateur 4/3 XS
+.ratio--1by1 - Modificateur 1/1
+.ratio--1by2 - Modificateur 1/2
+.ratio--2by3 - Modificateur 2/3
+.ratio--8by3 - Modificateur 8/3
+.ratio--centered - Modificateur pour centrer le contenu d'un ratio. N'est pas compatible avec une Iframe.
+
+Styleguide Ratios - Ratio Default
+*/
+
+$ratioPrefix: 'ratio';
+
+.#{$ratioPrefix} {
+    display: block;
+    height: 0;
+    overflow: hidden;
+    padding: 0 0 percentage(9 / 16);
+    position: relative;
+
+    &-inner {
+        bottom: 0;
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+    }
+
+    &-media,
+    iframe {
+        border: none;
+        display: inline-block;
+        width: 100%;
+    }
+
+    iframe {
+        height: 100%;
+    }
+
+    // **
+    // * Ratio 4/3
+    // **
+
+    &--4by3 {
+        padding-bottom: percentage(3 / 4);
+    }
+
+    // **
+    // * Ratio 4/3 XS
+    // **
+
+    &--4by3Xs {
+        @media (max-width: $breakpoint-sm-max) {
+            padding-bottom: percentage(3 / 4);
+        }
+    }
+
+    // **
+    // * Ratio 1/1
+    // **
+
+    &--1by1 {
+        padding-bottom: 100%;
+    }
+
+    // **
+    // * Ratio 1/2
+    // **
+
+    &--1by2 {
+        padding-bottom: percentage(2 / 1);
+    }
+
+    // **
+    // * Ratio 2/3
+    // **
+
+    &--2by3 {
+        padding-bottom: percentage(15 / 10);
+    }
+
+    // **
+    // * Ratio 8/3
+    // **
+
+    &--8by3 {
+        padding-bottom: percentage(3 / 8);
+
+        &-md {
+            @media (min-width: $breakpoint-md) {
+                padding-bottom: percentage(3 / 8);
+            }
+        }
+    }
+
+    // **
+    // * Ratio Centered
+    // **
+
+    &--centered {
+        .#{$ratioPrefix}-inner {
+            text-align: center;
+        }
+
+        .#{$ratioPrefix}-media,
+        iframe {
+            height: auto;
+            max-height: 100%;
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+            width: auto;
+        }
+    }
+}

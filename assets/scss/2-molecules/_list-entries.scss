@@ -1,0 +1,39 @@
+/*
+Styleguide List entries
+*/
+
+/*
+0 - List entries
+
+Styleguide List entries - List entries
+*/
+
+/*
+List entries
+
+Markup: /style_guide/2_molecules/_list-entries.html.twig
+
+.listEntries - Classe par défaut
+.listEntries--columns - Colonnage en grandes résolutions (2 colonnes)
+.listEntries--columns .listEntries--columns3 - 3 colonnes
+
+Styleguide List entries - List entries par défaut
+*/
+
+.listEntries {
+    @media (min-width: $breakpoint-lg) {
+        &--columns {
+            break-inside: avoid-column;
+            column-count: 2;
+            column-gap: $spacing-32;
+        }
+
+        &--columns3 {
+            column-count: 3;
+        }
+    }
+
+    .button {
+        margin: 0 (-$spacing-16); // Align button text due of padding left and right
+    }
+}

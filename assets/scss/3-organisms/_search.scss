@@ -1,0 +1,45 @@
+/*
+Styleguide Recherche
+*/
+
+/*
+0 - Recherche
+
+Styleguide Recherche - Formulaires de recherche
+*/
+
+/*
+1 - Style de la Recherche
+
+Markup: /style_guide/3_organisms/_search.html.twig
+
+.search
+
+Styleguide Recherche - Recherche
+*/
+
+.search {
+    background-color: $color-white;
+    border-radius: $spacing-4;
+    box-shadow: 0 0 $spacing-8 $color-gray-50;
+    position: relative;
+
+    .form-row {
+        align-items: center;
+    }
+
+    .formControl {
+        border-radius: $spacing-4;
+    }
+
+    .buttonSquare {
+        @media (max-width: $breakpoint-sm-max) {
+            height: $spacing-32;
+            width: $spacing-32;
+
+            &-icon {
+                font-size: $font-size-5;
+            }
+        }
+    }
+}

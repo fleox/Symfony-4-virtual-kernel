@@ -1,0 +1,50 @@
+/*
+Styleguide Track
+*/
+
+/*
+0 - Track
+Styleguide Track - Track
+*/
+
+/*
+1 Track classique
+Markup: /style_guide/2_molecules/_track.html.twig
+.Track - Thumbnail par défaut
+Styleguide Track - Track classique
+*/
+
+.track {
+    align-items: center;
+    display: flex;
+    padding: $spacing-16;
+
+    &-icon,
+    &-visual {
+        margin-right: $spacing-24;
+    }
+
+    &-icon {
+        font-size: $font-size-6;
+    }
+
+    &-visual {
+        flex: 0 0 6rem;
+    }
+
+    &-content {
+        flex: 1;
+    }
+
+    // stylelint-disable selector-max-specificity
+    // Doing this because of bug on Stylelint for now
+    a:not(.track-visual) {
+        text-decoration: none;
+
+        &:hover,
+        &:focus {
+            text-decoration: underline;
+        }
+    }
+    // stylelint-enable
+}

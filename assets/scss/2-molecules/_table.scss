@@ -1,0 +1,113 @@
+/*
+Styleguide Table
+*/
+
+/*
+0 - Table
+
+Styleguide Table - Table
+*/
+
+/*
+Table
+
+Markup: <div class="tableScroller"><table class="table"> <caption class="table-caption">Titre du tableau</caption> <thead class="table-header"> <tr class="table-row"> <th class="table-heading" scope="col">Colonne 1</th> <th class="table-heading" scope="col">Colonne 2</th> <th class="table-heading" scope="col">Colonne 3</th> <th class="table-heading" scope="col">Colonne 4</th> <th class="table-heading" scope="col">Colonne 5</th> <th class="table-heading" scope="col">Colonne 6</th> <th class="table-heading" scope="col">Colonne 7</th> <th class="table-heading" scope="col">Colonne 8</th> <th class="table-heading" scope="col">Colonne 9</th> <th class="table-heading" scope="col">Colonne 10</th> </tr></thead> <tbody class="table-body"> <tr class="table-row"> <td class="table-data">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer condimentum augue sed aliquet laoreet. Aenean vitae elit egestas, ultrices sem eu, feugiat massa.</td><td class="table-data">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</td><td class="table-data">Phasellus pharetra neque in tincidunt finibus. Suspendisse vitae lectus vitae velit tempus efficitur vel eget leo.</td><td class="table-data">Pellentesque in malesuada nulla. Maecenas ut nunc condimentum, eleifend purus sed, elementum enim.</td><td class="table-data">Nunc massa sapien, ultrices a sodales sed, ultricies sed dui.</td><td class="table-data">Proin convallis felis sem, vitae elementum dolor auctor ut.</td><td class="table-data">Sed imperdiet sollicitudin eros sed pharetra. Cras vehicula erat id volutpat dignissim. In mattis mi lectus, vitae elementum enim vestibulum ut.</td><td class="table-data">Nam metus ante, tincidunt sed sagittis quis, viverra in nisl. Cras at viverra urna, at porttitor felis. Etiam interdum leo eu risus porta rhoncus.</td><td class="table-data">Suspendisse potenti. Duis vestibulum interdum erat quis pellentesque. Donec elit odio, aliquet non lobortis eget, tristique non eros.</td><td class="table-data">Sed risus sapien, feugiat eget maximus sed, mattis id sem. Curabitur velit diam, consequat ac luctus vitae, cursus quis ligula. Cras elementum neque metus, eget dapibus enim ultricies vitae.</td></tr></tbody> <tfoot class="table-footer"> <tr class="table-row"> <td class="table-data" colspan="10">Pied de page lorem ipsum dolor sit amet</td></tr></tfoot></table></div>
+
+.table - Code de base
+
+Styleguide Table - Table
+*/
+
+$tablePrefix: 'table';
+
+.#{$tablePrefix} {
+    max-width: 100%;
+    width: 100%;
+
+    // **
+    // * Table Scroller
+    // * External to the table structure generate an horizontal scroll, but need improvements
+    // **
+
+    &Scroller {
+        @media (max-width: $breakpoint-sm-max) {
+            min-height: 0.01%;
+            overflow-x: auto;
+            overflow-y: hidden;
+            width: 100%;
+        }
+    }
+
+    // **
+    // * Table Caption
+    // **
+
+    &-caption {
+        font-size: $font-size-6;
+        font-weight: $font-weight-bold;
+        line-height: $line-height-small;
+        margin-bottom: $spacing-8;
+    }
+
+    // **
+    // * Table Footer
+    // * Correspond to the tfoot Tag
+    // **
+
+    &-footer {
+        border-top: $spacing-4 solid $color-gray-30;
+        font-size: $font-size-2;
+    }
+
+    &-heading,
+    &-data {
+        padding: $spacing-8 $spacing-12;
+    }
+
+    // **
+    // * Table Heading
+    // * Correspond to the th Tag
+    // **
+
+    &-heading {
+        font-weight: $font-weight-bold;
+
+        &--w100 {
+            width: 10rem;
+        }
+    }
+
+    // **
+    // * Table Header
+    // * Correspond to the thead Tag
+    // **
+
+    &-header {
+        border-bottom: $spacing-4 solid $color-gray-30;
+
+        .#{$tablePrefix}-heading {
+            vertical-align: middle;
+        }
+    }
+
+    // **
+    // * Table Row
+    // * Correspond to the tr Tag
+    // **
+
+    &-row {
+        &:not(:last-child) {
+            border-bottom: 0.1rem solid $color-gray-30;
+        }
+    }
+
+    &--striped {
+        .#{$tablePrefix}-row:nth-of-type(odd) {
+            background-color: $color-gray-10;
+        }
+
+        .#{$tablePrefix}-row:only-child {
+            background-color: inherit;
+        }
+    }
+}

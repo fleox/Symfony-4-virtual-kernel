@@ -1,0 +1,31 @@
+.listTracks {
+    .track {
+        border-bottom: 0.1rem solid $color-gray-30;
+
+        &:first-child {
+            border-top: 0.1rem solid $color-gray-30;
+        }
+    }
+
+    @at-root ol#{&} {
+        counter-reset: trackList;
+
+        .track {
+            padding-left: $spacing-40;
+            position: relative;
+
+            &::before {
+                content: counter(trackList);
+                counter-increment: trackList;
+                font-size: $font-size-5;
+                font-weight: $font-weight-bold;
+                left: 0;
+                position: absolute;
+                text-align: center;
+                top: 50%;
+                transform: translateY(-50%);
+                width: $spacing-32;
+            }
+        }
+    }
+}

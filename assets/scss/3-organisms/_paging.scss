@@ -1,0 +1,47 @@
+/*
+Styleguide Pagination
+*/
+
+/*
+0 - Pagination
+
+Styleguide Pagination
+*/
+
+/*
+Pagination
+
+Markup: /style_guide/3_organisms/_paging.html.twig
+
+.paging - Pagination de base
+
+Styleguide Pagination - Pagination
+*/
+
+.paging {
+    background-color: $color-white;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    @media (max-width: $breakpoint-xs-max) {
+        flex-direction: column;
+    }
+
+    &-control {
+        &--disabled {
+            display: none;
+        }
+    }
+
+    .nav {
+        margin: 0 $spacing-12;
+
+        &-list {
+            flex-wrap: nowrap;
+        }
+
+        &-item {
+            padding: 0;
+        }
+    }
+}

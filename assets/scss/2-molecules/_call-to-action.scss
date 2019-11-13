@@ -1,0 +1,39 @@
+/*
+Styleguide Call-to-Action
+*/
+
+/*
+0 - Call-to-Action
+
+Styleguide Call-to-Action - Call-to-Action
+*/
+
+/*
+1 - Call-to-Action
+
+Markup: /style_guide/2_molecules/_call-to-action.html.twig
+
+.callToAction
+
+Styleguide Call-to-Action - Call-to-Action
+*/
+
+/*
+2 - Call-to-Action List
+
+Markup: /style_guide/2_molecules/_call-to-action-list.html.twig
+
+.callToActionList
+
+Styleguide Call-to-Action - Call-to-Action List
+*/
+
+.callToActionList {
+    display: flex;
+
+    &-item {
+        &:not(:first-child) {
+            margin-left: $spacing-40;
+        }
+    }
+}

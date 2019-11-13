@@ -1,0 +1,32 @@
+/*
+Styleguide Form Optin Box
+*/
+
+/*
+0 - Form Optin Box
+
+Styleguide Form Optin Box - Form Optin Box
+*/
+
+/*
+1 - Form Optin Box
+
+Markup: /style_guide/1_atoms/_form-optin-box.html.twig
+
+.formOptinBox - Classe de base
+
+Styleguide Form Optin Box - Form Optin Box
+*/
+
+.formOptinBox {
+    background-color: $color-gray-50;
+    border-radius: $spacing-16;
+    display: flex;
+    justify-content: space-between;
+    padding: $spacing-20;
+
+    &-picto,
+    &-preview {
+        flex: 0 0 10.2rem;
+    }
+}

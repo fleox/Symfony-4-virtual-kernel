@@ -1,0 +1,74 @@
+.sectionPage--nmaHowTo {
+    [class^=heading] {
+        margin-bottom: $spacing-24;
+    }
+
+    .description {
+        margin-bottom: $spacing-24;
+    }
+}
+
+.grid-item--howTo {
+
+    @for $i from 1 through 3 {
+        &:nth-child(#{$i}) {
+            .description {
+                &::before {
+                    content: '#{$i}';
+                }
+            }
+        }
+    }
+
+    .description {
+        position: relative;
+        padding-left: $spacing-48;
+
+        &::before {
+            position: absolute;
+            left: 0;
+            z-index: 1;
+            width: 4rem;
+            line-height: 0.9em;
+            font-weight: 700;
+            font-size: 7.2rem;
+            text-align: center;
+        }
+    }
+
+    &:nth-child(1) {
+        @media (min-width: $breakpoint-md) {
+            .description {
+                margin-bottom: $spacing-24;
+            }
+
+            .thumbnail {
+                transform: rotate(3.23deg);
+            }
+        }
+    }
+
+    &:nth-child(2) {
+        @media (min-width: $breakpoint-md) {
+            display: flex;
+            flex-direction: column-reverse;
+
+            .thumbnail {
+                margin: $spacing-12 0 $spacing-32;
+                transform: rotate(-6.43deg);
+            }
+        }
+    }
+
+    &:nth-child(3) {
+        @media (min-width: $breakpoint-md) {
+            .description {
+                margin-bottom: $spacing-24;
+            }
+
+            .thumbnail {
+                transform: rotate(2.25deg);
+            }
+        }
+    }
+}

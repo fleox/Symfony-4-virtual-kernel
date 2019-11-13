@@ -1,0 +1,402 @@
+/*
+Styleguide Form Base
+*/
+
+/*
+0 - Les formulaires
+
+Styleguide Form Base - Form Base
+*/
+
+/*
+1 - Form Label
+
+Markup: /style_guide/1_atoms/_form-label.html.twig
+
+.formLabel - Code d'un Form Label
+
+Styleguide Form Base - Form Label
+*/
+
+.formLabel {
+    display: block;
+
+    &--large {
+        font-size: $font-size-4;
+        font-weight: $font-weight-bold;
+    }
+}
+
+/*
+2 - Form Control
+
+Markup: /style_guide/1_atoms/_form-control.html.twig
+
+.formControl - Code d'un Form Control
+.formControl--transparent - Code d'un Form Control à fond transparent
+.formControl--dark - Code d'un Form Control couleurs inversés
+.formControl--large - Code d'un Form Control de grande taille
+.formControl--2digits - Largeur correspondant à 2 caractères
+.formControl--4digits - Largeur correspondant à 4 caractères
+
+Styleguide Form Base - Form Control
+*/
+
+$formControlPrefix: 'formControl';
+
+.#{$formControlPrefix} {
+    --formControl-backgroundColor: #{$color-white};
+    --formControl-borderColor: #{$color-gray-30};
+    --formControl-borderSize: 0.1rem;
+    --formControl-borderRadius: 0;
+    --formControl-padding: #{$spacing-8};
+    --formControl-textColor: #{$color-base};
+    --formControl-TextFamily: #{$font-family-base};
+    --formControl-textSize: #{$font-size-2};
+    --formControl-width: 100%;
+    --formControl-placeholderTextColor: #{$color-gray-30};
+
+    background-color: var(--formControl-backgroundColor);
+    border: var(--formControl-borderSize) solid var(--formControl-borderColor);
+    border-radius: var(--formControl-borderRadius);
+    color: var(--formControl-textColor);
+    font-family: var(--formControl-textFamily);
+    font-size: var(--formControl-textSize);
+    width: var(--formControl-width);
+
+    @media (min-width: $breakpoint-md) {
+        --formControl-textSize: #{$font-size-3};
+        --formControl-padding: #{$spacing-8 $spacing-12};
+    }
+
+    &:not([type="checkbox"]):not([type="radio"]) {
+        padding: var(--formControl-padding);
+    }
+
+    &[type="checkbox"],
+    &[type="radio"] {
+        --formControl-height: #{$spacing-12};
+        --formControl-width: #{$spacing-12};
+
+        appearance: none;
+        height: var(--formControl-height);
+        position: relative;
+    }
+
+    &[type="checkbox"] {
+        &:checked {
+            background-color: $color-primary;
+        }
+    }
+
+    &[type="number"] {
+        // Turn Off Number Input Spinners (See: https://css-tricks.com/snippets/css/turn-off-number-input-spinners)
+        appearance: textField;
+
+        &::-webkit-inner-spin-button,
+        &::-webkit-outer-spin-button {
+            appearance: none;
+            margin: 0;
+        }
+    }
+
+    &[type="radio"] {
+        border-radius: 50%;
+
+        &:checked {
+            &::before {
+                background-color: $color-primary;
+                border-radius: 50%;
+                content: "";
+                height: calc(var(--formControl-height) - #{$spacing-4});
+                left: 50%;
+                position: absolute;
+                top: 50%;
+                width: calc(var(--formControl-width) - #{$spacing-4});
+                transform: translate(-50%, -50%);
+            }
+        }
+    }
+
+    & + .formLabel {
+        display: inline;
+        vertical-align: text-bottom;
+    }
+
+    // &[type="file"] {
+    //     @include visuallyHidden;
+
+    //     & + .formLabel {
+    //         --formControl-backgroundColor: #{$color-white};
+    //         --formControl-borderColor: #{$color-gray-30};
+    //         --formControl-borderSize: 0.2rem;
+    //         --formControl-padding: #{$spacing-8};
+    //         --formControl-textColor: #{$color-base};
+
+    //         background-color: var(--formControl-backgroundColor);
+    //         border: var(--formControl-borderSize) solid var(--formControl-borderColor);
+    //         cursor: pointer;
+    //         color: var(--formControl-textColor);
+    //         display: block;
+    //         padding: var(--formControl-padding);
+    //         text-align: center;
+
+    //         &::before {
+    //             content: $enrj-download;
+    //             display: block;
+    //             font-family: $icomoon-font-family;
+    //             font-size: $font-size-12;
+    //             margin-bottom: $spacing-4;
+    //             speak: none;
+    //         }
+    //     }
+
+    //     &.#{$formControlPrefix}--large {
+    //         + .formLabel {
+    //             --formControl-padding: #{$spacing-16 $spacing-8};
+    //         }
+    //     }
+
+    //     &.#{$formControlPrefix}--xLarge {
+    //         + .formLabel {
+    //             --formControl-padding: #{$spacing-32 $spacing-8};
+    //         }
+    //     }
+
+    //     &.#{$formControlPrefix}--primary {
+    //         & + .formLabel {
+    //             --formControl-backgroundColor: #{$color-primary-80};
+    //             --formControl-borderColor: #{$color-primary};
+    //             --formControl-textColor: #{$color-white};
+    //         }
+    //     }
+    // }
+
+    @at-root textarea#{&} {
+        min-height: ($spacing-96 * 2);
+        resize: vertical;
+    }
+
+    &::placeholder {
+        color: var(--formControl-placeholderTextColor);
+    }
+
+    &--2digits {
+        --formControl-width: 5.8rem;
+
+        &[type="number"] {
+            --formControl-width: 7.2rem;
+        }
+    }
+
+    &--4digits {
+        --formControl-width: 8.8rem;
+
+        &[type="number"] {
+            --formControl-width: 10.4rem;
+        }
+    }
+
+    &--transparent {
+        --formControl-backgroundColor: transparent;
+        --formControl-borderColor: transparent;
+    }
+
+    &--dark {
+        --formControl-backgroundColor: #{$color-gray-90};
+        --formControl-borderColor: #{$color-gray-60};
+        --formControl-textColor: #{$color-white};
+    }
+
+    &--large {
+        @media (min-width: $breakpoint-md) {
+            --formControl-textSize: #{$font-size-5};
+            --formControl-padding: #{$spacing-20 $spacing-16};
+        }
+
+        &[type="checkbox"],
+        &[type="radio"] {
+            --formControl-height: #{$spacing-22};
+            --formControl-width: #{$spacing-22};
+        }
+
+        &[type="checkbox"] {
+            border-radius: $spacing-4;
+        }
+    }
+}
+
+/*
+3 - Form Control Toggler
+
+Markup: /style_guide/1_atoms/_form-control-toggler.html.twig
+
+.formControlToggler - Code d'un Form Control Toggler
+
+Styleguide Form Base - Form Control Toggler
+*/
+
+.formControlToggler {
+    text-align: right;
+    width: 10.8rem;
+}
+
+/*
+4 - Form Text
+
+Markup: /style_guide/1_atoms/_form-text.html.twig
+
+.formText - Code d'un Form Text
+.formText--center - Form text aligné au centre
+.formText--right - Form text aligné à droite
+
+Styleguide Form Base - Form Text
+*/
+
+.formText {
+    font-family: $font-family-base;
+    font-size: $font-size-2;
+    line-height: $line-height-small;
+
+    &--center {
+        text-align: center;
+    }
+
+    &--right {
+        text-align: right;
+    }
+
+    .button--transparent {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+/*
+5 - Form Help
+
+Markup: /style_guide/1_atoms/_form-help.html.twig
+
+.formHelp - Classe par défaut
+
+Styleguide Form Base - Form Help
+*/
+
+.formHelp {
+    color: $color-gray-70;
+    font-size: $font-size-1;
+    line-height: $line-height-small;
+}
+
+.formError,
+.formSuccess {
+    font-size: $font-size-1;
+    line-height: $line-height-small;
+
+    &::before {
+        color: inherit;
+        font-family: $icomoon-font-family;
+        font-size: $font-size-5;
+        line-height: 0.7;
+        margin-right: 0.4em;
+        speak: none;
+        vertical-align: top;
+    }
+
+    &--center {
+        text-align: center;
+    }
+
+    &--right {
+        text-align: right;
+    }
+}
+
+/*
+6 - Form Error
+
+Markup: /style_guide/1_atoms/_form-error.html.twig
+
+.formError - Classe par défaut
+.formError--center - Form error aligné au centre
+.formError--right - Form error aligné à droite
+
+Styleguide Form Base - Form Error
+*/
+
+.formError {
+    color: $color-danger;
+
+    &::before {
+        content: $enrj-exclamation-circle;
+    }
+}
+
+/*
+7 - Form Success
+
+Markup: /style_guide/1_atoms/_form-success.html.twig
+
+.formSuccess - Classe par défaut
+.formSuccess--center - Form success aligné au centre
+.formSuccess--right - Form success aligné à droite
+
+Styleguide Form Base - Form Success
+*/
+
+.formSuccess {
+    color: $color-info;
+
+    &::before {
+        content: $enrj-check;
+    }
+}
+
+/*
+8 - Form Field Checker
+
+Markup: /style_guide/1_atoms/_form-field-checker.html.twig
+
+.formFieldChecker - Classe par défaut (état validé)
+.formFieldChecker--error - Etat avec erreur
+
+Styleguide Form Base - Form Field Checker
+*/
+
+.formFieldChecker {
+    font-family: $font-family-base;
+    font-size: $font-size-2;
+    line-height: $line-height-small;
+    padding-left: $spacing-20;
+    position: relative;
+
+    &::before {
+        color: $color-info;
+        content: $enrj-check;
+        left: 0;
+        font-family: $icomoon-font-family;
+        position: absolute;
+        speak: none;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    &--error {
+        &::before {
+            color: $color-primary;
+            content: $enrj-circle;
+        }
+    }
+}
+
+// **
+// * Google Recaptcha
+// **
+
+.g-recaptcha {
+    & * {
+        @media (max-width: $breakpoint-xs-max) {
+            width: 100% !important; // Override inline styles
+        }
+    }
+}

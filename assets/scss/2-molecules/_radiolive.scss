@@ -1,0 +1,74 @@
+/*
+Styleguide Radio
+*/
+
+/*
+0 - Radio Live
+
+Styleguide Radio - Radio Live
+*/
+
+/*
+1 - Style de la radio dans le header
+
+Markup: /style_guide/2_molecules/_radiolive.html.twig
+
+.radioLive
+
+Styleguide Radio - Radio Live
+*/
+
+.radioLive {
+    display: flex;
+    background-color: $color-primary-100;
+
+    &-direct {
+        align-items: center;
+        text-decoration: none;
+        color: $color-white;
+        font-size: $font-size-2;
+        position: relative;
+        background-color: rgba($color-black, 0.4);
+        padding-right: $spacing-8;
+    }
+
+    &-img {
+        flex: 0 0 $spacing-64;
+        margin-right: $spacing-8;
+        height: auto;
+        display: block;
+        width: $spacing-64;
+
+        &[src*="logo-nrj.svg"] {
+            background-color: $color-white;
+            padding: $spacing-4;
+        }
+    }
+
+    &-infos {
+        display: flex;
+        flex-direction: column;
+        max-width: 13rem;
+    }
+
+    &-title {
+        font-weight: $font-weight-bold;
+        letter-spacing: ($spacing-16 * 0.00625); //0.01rem
+
+        &::before {
+            content: $enrj-play;
+            font-family: '#{$icomoon-font-family}';
+            speak: none;
+            font-style: normal;
+            font-weight: normal;
+            font-variant: normal;
+            text-transform: none;
+            line-height: 1;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            color: $color-white;
+            font-size: $font-size-1;
+            margin-right: $spacing-4;
+        }
+    }
+}

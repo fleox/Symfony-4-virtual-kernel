@@ -1,0 +1,182 @@
+$accountStepsPrefix: 'accountSteps';
+
+.#{$accountStepsPrefix} {
+    display: flex;
+
+    &-header {
+        @media (max-width: $breakpoint-md-max) {
+            @include visuallyHidden;
+        }
+        @media (min-width: $breakpoint-lg) {
+            color: $color-white;
+            display: flex;
+            flex: 1;
+        }
+
+        &Inner {
+            margin: auto;
+        }
+
+        .heading1 {
+            align-items: flex-end;
+            display: flex;
+            margin-bottom: $spacing-20;
+        }
+
+        .heading2 {
+            margin-bottom: $spacing-40;
+        }
+    }
+
+    &-headingLogo {
+        background-color: $color-white;
+        box-shadow: 0.7rem -0.6rem 1rem rgba($color-black, $opacity-5);
+        flex: 0 0 10.4rem;
+        margin-right: $spacing-32;
+        padding: $spacing-4;
+        width: 10.4rem;
+    }
+
+    &-headingBaseline {
+        flex: 0 0 20rem;
+    }
+
+    &-features {
+        font-size: $font-size-4;
+        font-weight: $font-weight-bold;
+
+        &Item {
+            margin-bottom: $spacing-12;
+            position: relative;
+            padding-left: $spacing-20;
+
+            &::before {
+                background-color: $color-white;
+                border-radius: 50%;
+                content: "";
+                height: $spacing-12;
+                left: 0;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                width: $spacing-12;
+            }
+        }
+    }
+
+    &-back {
+        margin-bottom: $spacing-8;
+
+        .button {
+            &--small {
+                color: $color-gray-70;
+                font-size: $font-size-1;
+                margin-left: (-$spacing-12);
+                padding-left: $spacing-28;
+            }
+
+            &-icon {
+                font-size: $font-size-2;
+            }
+        }
+    }
+
+    &-body {
+        background-color: $color-gray-20;
+        border-top: 0.2rem solid $color-black;
+        display: flex;
+        flex: 1;
+        overflow-x: hidden;
+        overflow-y: auto;
+        scrollbar-color: $color-gray-50;
+        scrollbar-width: thin;
+
+        // stylelint-disable selector-max-specificity
+        &::-webkit-scrollbar {
+            width: 0.5rem;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background-color: $color-gray-50;
+        }
+        // stylelint-enable
+
+        @media (min-width: $breakpoint-lg) {
+            box-shadow: -0.5rem 0 1rem rgba($color-black, 0.25);
+            flex: 0 0 38rem;
+        }
+    }
+
+    &-section {
+        display: flex;
+        flex: 0 0 100%;
+        flex-direction: column;
+
+        &--hidden {
+            display: none;
+        }
+
+        &Main {
+            background-color: $color-white;
+            display: flex;
+            flex: 1;
+            flex-direction: column;
+            padding: $spacing-20;
+        }
+
+        &Header {
+            margin-bottom: $spacing-20;
+        }
+
+        &Body {
+            &:only-child {
+                align-items: center;
+                display: flex;
+                flex: 1;
+
+                .#{$accountStepsPrefix}-sectionContent {
+                    text-align: center;
+                }
+            }
+
+            .heading3 {
+                margin-bottom: $spacing-22;
+            }
+
+            .description,
+            .supTitle {
+                &:not(:last-child) {
+                    margin-bottom: $spacing-16;
+                }
+            }
+
+            .callToAction {
+                margin: 0 auto;
+                max-width: 34rem;
+            }
+
+            .formOptinBox {
+                margin-bottom: $spacing-8;
+            }
+        }
+
+        &Footer {
+            padding: $spacing-20;
+
+            .subTitle {
+                &:not(:last-child) {
+                    margin-bottom: $spacing-4;
+                }
+            }
+
+            a:hover,
+            a:focus {
+                text-decoration: none;
+            }
+        }
+    }
+
+    .socialNetworkAccount {
+        margin-bottom: $spacing-20;
+    }
+}

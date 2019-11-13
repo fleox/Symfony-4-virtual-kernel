@@ -1,0 +1,35 @@
+/*
+Styleguide Players
+*/
+
+/*
+0 - Lecteurs de sons et de vidéos
+
+Styleguide Players - Players
+*/
+
+/*
+1 - Player Audio
+
+Markup: /style_guide/2_molecules/_player-audio.html.twig
+
+.playerAudio - Player Audio, classe par défaut
+
+Styleguide Players - Player Audio
+*/
+
+/*
+2 - Player Video - Variables disponibles : playerVideoFile: définit l'URL du fichier vidéo - playerVideoId: définit l'ID de la vidéo - playerVideoPoster: définit le "poster" de la vidéo, l'URL de l'image apparaissant sur la balise vidéo tant que la vidéo n'est pas lue ou chargée.
+
+Markup: /style_guide/2_molecules/_player-video.html.twig
+
+.playerVideo - Player Video, classe par défaut
+
+Styleguide Players - Player Video
+*/
+
+.sticky-video {
+    .playerVideo {
+        background-color: $color-black;
+    }
+}

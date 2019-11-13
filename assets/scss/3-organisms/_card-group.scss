@@ -1,0 +1,64 @@
+// *
+// * @filename    : _card-group.scss
+// * @description : Group of cards, used for example at "musicawards-palmares" page
+// * @projet      : NRJ SF4
+// * @date        : 05/2019
+// * @author      : Nicolas BOURLES
+// * --------------------------------------------
+
+.cardGroup {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: center;
+    width: 100%;
+
+    &-header {
+        @media (min-width: $breakpoint-md) {
+            align-items: center;
+            display: flex;
+            flex: 0 0 6.8rem;
+            justify-content: center;
+        }
+
+        [class^="heading"] {
+            margin-bottom: $spacing-16;
+        }
+    }
+
+    &-secondary {
+        flex: 1;
+        margin-top: $spacing-12;
+
+        [class^="heading"] {
+            &:not(:last-child) {
+                margin-bottom: $spacing-8;
+            }
+        }
+    }
+
+    [class^="description"] {
+        margin-bottom: $spacing-8;
+    }
+
+    .listCards {
+        justify-content: center;
+    }
+
+    .listCards-item {
+        flex: 0 0 100%;
+        padding: 0 $spacing-8;
+        @media (max-width: $breakpoint-sm-max) {
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+        @media (min-width: $breakpoint-md) {
+            flex: 0 0 32%;
+
+            &:nth-child(n+4) {
+                margin-bottom: 0;
+            }
+        }
+    }
+}

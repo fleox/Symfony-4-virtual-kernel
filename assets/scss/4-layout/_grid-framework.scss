@@ -1,0 +1,108 @@
+@function breakpoint-infix($name, $breakpoints: $grid-breakpoints) {
+    @return if(breakpoint-min($name, $breakpoints) == null, "", "#{$name}");
+}
+
+@function breakpoint-min($name, $breakpoints: $grid-breakpoints) {
+    $min: map-get($breakpoints, $name);
+    @return if($min != 0, $min, null);
+}
+
+@mixin media-breakpoint-up($name, $breakpoints: $grid-breakpoints) {
+    $min: breakpoint-min($name, $breakpoints);
+    @if $min {
+        @media (min-width: $min) {
+            @content;
+        }
+    }
+    @else {
+        @content;
+    }
+}
+
+@mixin make-container($container-name: $container-className, $breakpoints: $grid-breakpoints, $max-widths: $container-max-widths) {
+    .#{$container-name} {
+        margin: 0 auto;
+        padding: 0 $spacing-16;
+        @media (min-width: $breakpoint-md) {
+            padding-left: $spacing-24;
+            padding-right: $spacing-24;
+        }
+        @media (min-width: $breakpoint-lg) {
+            box-sizing: content-box;
+        }
+    }
+    @each $breakpoint, $container-max-width in $max-widths {
+        @include media-breakpoint-up($breakpoint, $breakpoints) {
+            .#{$container-name} {
+                max-width: $container-max-width;
+            }
+        }
+    }
+
+    .#{$container-name}--fluid {
+        max-width: 100%;
+        @media (min-width: $breakpoint-lg) {
+            box-sizing: border-box;
+        }
+    }
+
+    .#{$container-name}--small {
+        @media (min-width: $breakpoint-lg) {
+            max-width: $container-max-width-lg;
+        }
+    }
+
+    .#{$container-name}--navSub {
+        position: relative;
+        background: $color-white;
+
+        @media (min-width: $breakpoint-md) {
+            margin-bottom: $spacing-32;
+            padding-left: $spacing-8;
+            padding-right: $spacing-8;
+            overflow: hidden;
+        }
+    }
+}
+
+@mixin make-grid-wrapper($grid-prefix: $grid-className) {
+    .#{$grid-prefix} {
+        display: grid;
+        grid-gap: $grid-gap;
+        grid-template-columns: repeat($grid-template-columns-number, 1fr);
+        @media (min-width: $breakpoint-md) {
+            grid-gap: $grid-gap-md;
+        }
+
+        &--noGap {
+            grid-gap: 0;
+        }
+
+        &--gapHalf {
+            grid-gap: $grid-gap/2;
+        }
+    }
+}
+
+@mixin make-grid-items($grid-column-prefix: $gridItem-className, $breakpoints: $grid-breakpoints, $grid-template-columns-number: $grid-template-columns-number) {
+    .#{$grid-column-prefix} {
+        --gc: auto / span #{$grid-template-columns-number};
+
+        grid-column: var(--gc);
+    }
+    @each $breakpoint in map-keys($breakpoints) {
+        $grid-infix: breakpoint-infix($breakpoint, $breakpoints);
+
+        @include media-breakpoint-up($breakpoint, $breakpoints) {
+            @for $i from 1 through $grid-template-columns-number {
+                .#{$grid-column-prefix}--#{$grid-infix}#{$i} {
+                    --gc: auto / span #{$i};
+                }
+
+                .#{$grid-column-prefix}--start#{$i} {
+                    grid-column-start: #{$i};
+                }
+            }
+        }
+    }
+}

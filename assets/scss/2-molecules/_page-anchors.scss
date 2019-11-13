@@ -1,0 +1,32 @@
+/*
+Styleguide Page Anchors
+*/
+
+/*
+0 - Page Anchors
+
+Styleguide Page Anchors - Page Anchors
+*/
+
+/*
+1 Page Anchors classique
+
+Markup: /style_guide/2_molecules/_page-anchors.html.twig
+
+.pageAnchors - Classe par défaut
+
+Styleguide Page Anchors - Page Anchors classique
+*/
+
+.pageAnchors {
+    bottom: $spacing-32;
+    position: fixed;
+    right: $spacing-32;
+    z-index: 2;
+
+    &-item {
+        &:not(:last-child) {
+            margin-bottom: $spacing-16;
+        }
+    }
+}

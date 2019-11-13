@@ -1,0 +1,109 @@
+/**
+ * @filename    : article/organisms/_article.scss
+ * @description : Contient les styles d'un ARTICLE
+ * @projet      : NRJ 2017 (nouveau site NRJ)
+ * @date        : MAI 2017
+ * @author      : Trésor ILOYI
+ * -------------------------------------------- */
+
+.article {
+    padding-top: 1.8rem;
+
+    /**
+     * ARTICLE CONTAINER
+     * Contient les styles de la zone .article-container
+     */
+
+    &-container {
+
+        &:after {
+            background: $white url(https://nrj.fr/uploads/assets/nrj/bg-trame-pub.png);
+            content: "";
+            display: block;
+            height: 1.3rem; // =13px
+            margin-top: 3.6rem; // =36px
+        }
+    }
+}
+
+
+/***
+ * ARTICLE - TEXTE
+ * Styles des éléments de texte de l'article
+ */
+
+.article-text {
+    @include clear-after;
+    @include font-size(1.5); // =15px
+    line-height: 1.6; // =24px
+
+    h2 {
+        @include font-size(1.8); // =18px
+        line-height: 1.25; // =12px
+        margin: 2.1rem auto .9rem; // =20px auto 9px
+    }
+
+    h3 {
+        font-size: inherit;
+        margin: 1.7rem auto .6rem; // =18px auto 6px
+    }
+
+    p {
+        margin: 0 auto 1.7rem; // =0 auto 17px
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    ol,
+    ul {
+        margin-bottom: 1.8rem;
+
+        ol,
+        ul {
+            margin: .5rem 0 .5rem 1.8rem;
+        }
+    }
+
+    ol {
+        list-style: decimal inside;
+    }
+
+    ul {
+        list-style: disc inside;
+    }
+
+    a {
+        @include article-link;
+    }
+
+    em {
+        font-style: italic;
+    }
+
+    mark {
+        background: none;
+        text-decoration: underline;
+    }
+
+    // HACK pour les images insérées dans le corps de l'article
+    // par l'ancien back-office
+    img[align="left"] {
+        display: block;
+        float: left;
+        max-width: 51.5%;
+        width: 100%;
+    }
+}
+
+.article-text-lyrics {
+    @include font-size(1.8); // =18px
+    padding: $grid-gutter-mobile-width; // =12px
+}
+
+.lyricsCopyright {
+    @include font-size(1.4); // =14px
+    font-style: italic;
+    line-height: 1.286; // =18px
+}

@@ -1,0 +1,37 @@
+/*
+ * @filename    : common/fonts/_oswald.scss
+ * @description : Contient les déclarations de la webfont OSWALD
+ * @projet      : NRJ 2017
+ * @date        : NOVEMBRE 2017
+ * @author      : Trésor ILOYI
+ * -------------------------------------------- */
+
+/* OSWALD LIGHT */
+@font-face {
+    font-family: 'Oswald';
+    src: url('#{$fontPath}oswald-light.woff2') format('woff2'),
+         url('#{$fontPath}oswald-light.woff') format('woff'),
+         url('#{$fontPath}oswald-light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+/* OSWALD REGULAR */
+@font-face {
+    font-family: 'Oswald';
+    src: url('#{$fontPath}oswald-regular.woff2') format('woff2'),
+         url('#{$fontPath}oswald-regular.woff') format('woff'),
+         url('#{$fontPath}oswald-regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* OSWALD MEDIUM */
+@font-face {
+    font-family: 'Oswald';
+    src: url('#{$fontPath}oswald-medium.woff2') format('woff2'),
+         url('#{$fontPath}oswald-medium.woff') format('woff'),
+         url('#{$fontPath}oswald-medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}

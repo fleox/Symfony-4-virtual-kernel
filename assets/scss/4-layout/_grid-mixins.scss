@@ -1,0 +1,5 @@
+@mixin make-grid {
+    display: grid;
+    grid-gap: $grid-gap;
+    grid-template-columns: repeat($grid-template-columns-number, 1fr);
+}

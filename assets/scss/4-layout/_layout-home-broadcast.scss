@@ -1,0 +1,7 @@
+.tab-list {
+    .button {
+        @media (min-width: $breakpoint-lg) and (max-width: $breakpoint-lg-max) {
+            font-size: $font-size-1;
+        }
+    }
+}

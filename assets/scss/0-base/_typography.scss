@@ -1,0 +1,86 @@
+/*
+Styleguide Fonts
+*/
+
+/*
+0 - Les typos
+
+Styleguide Fonts - Typographies
+*/
+
+/*
+1 - Typefaces
+
+Styleguide Fonts - Font Size
+*/
+
+/*
+2 - Typefaces, primary
+
+Markup: /style_guide/0_base/_base-typography-type.html.twig
+
+font-family-base: $font-family-base - lato.
+
+Styleguide Fonts - Primary typeface
+*/
+
+@font-face {
+    font-display: swap;
+    font-family: 'lato';
+    src:
+        url('#{$fontPath}lato-regular.woff2') format('woff2'),
+        url('#{$fontPath}lato-regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-display: swap;
+    font-family: 'lato';
+    src:
+        url('#{$fontPath}lato-bold.woff2') format('woff2'),
+        url('#{$fontPath}lato-bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+}
+
+/*
+3 - Typefaces, secondary
+
+Markup: /style_guide/0_base/_base-typography-type.html.twig
+
+font-family-alternate: $font-family-alternate - Montserrat.
+
+Styleguide Fonts - Secondary typeface
+*/
+
+@font-face {
+    font-display: swap;
+    font-family: 'montserrat';
+    src:
+        url('#{$fontPath}montserrat-bold.woff2') format('woff2'),
+        url('#{$fontPath}montserrat-bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+}
+
+/*
+4 - Text Sizes
+
+Markup: /style_guide/0_base/_base-typography.html.twig
+
+font-size-1:  $font-size-1 - Font size 1 (12px).
+font-size-2:  $font-size-2 - Font size 2 (14px).
+font-size-3:  $font-size-3 - Font size 3 (16px).
+font-size-4:  $font-size-4 - Font size 4 (18px).
+font-size-5:  $font-size-5 - Font size 5 (20px).
+font-size-6:  $font-size-6 - Font size 6 (22px).
+font-size-7:  $font-size-7 - Font size 7 (24px).
+font-size-8:  $font-size-8 - Font size 8 (28px).
+font-size-9:  $font-size-9 - Font size 9 (32px).
+font-size-10:  $font-size-10 - Font size 10 (38px).
+font-size-11:  $font-size-11 - Font size 11 (44px).
+font-size-12:  $font-size-12 - Font size 12 (46px).
+
+Styleguide Fonts - Font Size
+*/

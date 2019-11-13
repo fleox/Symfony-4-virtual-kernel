@@ -1,0 +1,28 @@
+/*
+Styleguide List Tag
+*/
+
+/*
+0 - List Tag
+
+Styleguide List Tag - List Tag
+*/
+
+/*
+1 List Tag
+
+Markup: /style_guide/2_molecules/_list-tag.html.twig
+
+.listTag - Classe par défaut
+
+Styleguide List Tag - List Tag Default
+*/
+
+.listTag {
+    margin-top: -$spacing-12;
+
+    &-item {
+        display: inline-block;
+        margin: $spacing-12 $spacing-12 0 0;
+    }
+}

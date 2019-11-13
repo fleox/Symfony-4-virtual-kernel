@@ -1,0 +1,499 @@
+/*
+Styleguide Card Podcast
+*/
+
+/*
+0 - Card Podcast
+
+Styleguide Card Podcast - Card Podcast
+*/
+
+/*
+1 Card Podcast
+
+Markup: /style_guide/2_molecules/cards/_card-podcast.html.twig
+
+.cardPodcast - Podcast par défaut
+.cardPodcast--highlight - Code d'un Podcast mis en avant
+.cardPodcast--small - Code d'un Podcast à taille réduite
+.cardPodcast--column - Code d'un Podcast en colonne
+.cardPodcast--overlay - Code d'un Podcast avec texte en overlay
+.cardPodcast--overlay .cardPodcast--player - Code d'un Podcast jouable directement
+
+Styleguide Card Podcast - Card Podcast Default
+*/
+
+$podcastPrefix: 'cardPodcast';
+
+.#{$podcastPrefix} {
+    width: 100%;
+
+    &-wrapper {
+        position: relative;
+        width: 100%;
+        text-decoration: none;
+
+        @at-root a#{&} {
+            &:hover,
+            &:focus {
+                [class^="heading"] {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+
+    &-upper {
+        position: relative;
+    }
+
+    .thumbnail-visual {
+        border-radius: $radius;
+    }
+
+    &-progression {
+        position: absolute;
+        z-index: 1;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        padding: $spacing-4 $spacing-4 $spacing-12;
+        text-align: center;
+        color: $color-white;
+        background: rgba($color-gray-90, 0.9);
+    }
+
+    &-progressionText {
+        font-size: $font-size-1;
+
+        @media (min-width: $breakpoint-md) {
+            font-size: $font-size-3;
+        }
+    }
+
+    &-progressionTrack {
+        position: absolute;
+        z-index: 1;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 0.4rem;
+    }
+
+    &-progressionTrackFill {
+        position: absolute;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 0%;
+        height: 0.4rem;
+        background: $color-primary;
+    }
+
+    &-inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+
+    &-header {
+        flex: 0 0 $spacing-48;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    &-content {
+        flex-grow: 1;
+
+        @media (min-width: $breakpoint-md) {
+            padding-left: $spacing-12;
+        }
+    }
+
+    &-footer {
+        flex: 0 0 $spacing-48;
+
+        .buttonSquare-icon {
+            font-size: $font-size-7;
+        }
+    }
+
+    .equalizer {
+        display: none;
+    }
+
+    &--active {
+        background: $color-primary;
+
+        .equalizer {
+            display: block;
+        }
+    }
+
+    &--paused {
+        .equalizer {
+            i {
+                animation: pause 0.3s ease-in-out forwards;
+            }
+        }
+    }
+
+    @keyframes pause {
+        100% {
+            transform: scaleY(0.15);
+        }
+    }
+
+    [class^=heading] {
+        margin-bottom: $spacing-8;
+        font-size: $font-size-4;
+    }
+
+    .description {
+        font-size: $font-size-2;
+
+        @include ellipsis;
+    }
+
+    .formControl {
+        @media (min-width: $breakpoint-md) {
+            width: 50%;
+        }
+    }
+
+    /* Highlight */
+    &--highlight {
+        .#{$podcastPrefix}-wrapper {
+            display: flex;
+            width: 35rem;
+            background: $color-white;
+
+            @media (min-width: $breakpoint-md) {
+                width: 42.6rem;
+            }
+        }
+
+        .#{$podcastPrefix}-upper {
+            flex: 0 0 15rem;
+
+            @media (min-width: $breakpoint-md) {
+                flex: 0 0 22rem;
+            }
+        }
+
+        .#{$podcastPrefix}-inner {
+            width: 20rem;
+            padding: $spacing-12 $spacing-16;
+            flex-flow: column-reverse;
+            justify-content: center;
+            background: $color-white;
+
+            @media (min-width: $breakpoint-md) {
+                width: auto;
+            }
+        }
+
+        .#{$podcastPrefix}-content {
+            flex-grow: 0;
+            width: 100%;
+            margin-bottom: $spacing-2;
+            padding-left: 0;
+
+            @media (min-width: $breakpoint-md) {
+                margin-bottom: $spacing-22;
+            }
+        }
+
+        .buttonSquare {
+            width: auto;
+            height: auto;
+            padding: $spacing-8;
+            font-size: $font-size-3;
+
+            @media (min-width: $breakpoint-md) {
+                padding: $spacing-8 $spacing-28 $spacing-8 $spacing-16;
+                font-size: $font-size-5;
+            }
+
+            &:not(span):hover,
+            &:not(span):focus {
+                --button-backgroundColor: #{$color-gray-80};
+                --button-borderColor: #{$color-gray-80};
+            }
+        }
+
+        .buttonSquare-text {
+            @include visuallyVisible;
+        }
+
+        .buttonSquare-icon {
+            position: relative;
+            top: auto;
+            left: auto;
+            margin-right: $spacing-8;
+            font-size: $font-size-1;
+
+            @media (min-width: $breakpoint-md) {
+                top: 0.1rem;
+                margin-right: $spacing-12;
+                font-size: $font-size-3;
+            }
+        }
+
+        [class^=heading] {
+            @media (min-width: $breakpoint-md) {
+                @include unEllipsis;
+            }
+        }
+
+        .description {
+            @media (min-width: $breakpoint-md) {
+                @include unEllipsis;
+            }
+        }
+    }
+
+    /* Small */
+    &--small {
+        .#{$podcastPrefix}-upper {
+            width: 13rem;
+
+            @media (min-width: $breakpoint-md) {
+                width: 22rem;
+            }
+        }
+
+        .#{$podcastPrefix}-inner {
+            width: 13rem;
+            padding: $spacing-12 0;
+
+            @media (min-width: $breakpoint-md) {
+                width: 22rem;
+            }
+        }
+
+        .#{$podcastPrefix}-header {
+            display: none;
+
+            @media (min-width: $breakpoint-md) {
+                display: block;
+                flex: 0 0 $spacing-20;
+            }
+        }
+
+        .#{$podcastPrefix}-content {
+            width: 100%;
+        }
+
+        .buttonSquare {
+            width: $spacing-20;
+            height: $spacing-20;
+        }
+
+        [class^=heading] {
+            margin-bottom: $spacing-2;
+            font-size: $font-size-3;
+            @include unEllipsis;
+        }
+
+        .description {
+            @include unEllipsis;
+        }
+    }
+
+    /* Column */
+    &--column {
+        .#{$podcastPrefix}-wrapper {
+            display: flex;
+            width: 25rem;
+        }
+
+        .#{$podcastPrefix}-upper {
+            position: initial;
+            flex: 0 0 auto;
+        }
+
+        .#{$podcastPrefix}-progression {
+            left: auto;
+            right: 0;
+            width: calc(100% - 6.6rem);
+            padding: 0;
+        }
+
+        .#{$podcastPrefix}-progressionText {
+            display: none;
+        }
+
+        .#{$podcastPrefix}-progressionTrack {
+            background: $color-gray-30;
+        }
+
+        .ratio--1by1 {
+            width: 5.4rem;
+        }
+
+        .ratio-inner {
+            position: relative;
+        }
+
+        .#{$podcastPrefix}-inner {
+            display: block;
+            width: 19.6rem;
+            padding-left: $spacing-12;
+        }
+
+        .#{$podcastPrefix}-header {
+            float: left;
+        }
+
+        .buttonSquare {
+            position: relative;
+            top: 0.3rem;
+            width: $spacing-16;
+            height: $spacing-16;
+            margin-right: $spacing-4;
+        }
+
+        .buttonSquare-icon {
+            font-size: $font-size-3;
+        }
+
+        .#{$podcastPrefix}-content {
+            padding-left: 0;
+        }
+
+        [class^=heading] {
+            margin-bottom: $spacing-4;
+            font-size: $font-size-3;
+
+            @include ellipsis;
+        }
+
+        .description {
+            font-size: $font-size-1;
+
+            @include ellipsis;
+        }
+    }
+
+    /* Column */
+    &--overlay {
+        .#{$podcastPrefix}-wrapper {
+            display: block;
+        }
+
+        .#{$podcastPrefix}-progression {
+            z-index: 2;
+            padding: 0;
+            background: none;
+        }
+
+        .#{$podcastPrefix}-progressionText {
+            @include visuallyHidden;
+        }
+
+        .formItem {
+            position: absolute;
+            top: 65%;
+            width: 100%;
+            padding: 0 $spacing-12;
+            transform: translateY(-50%);
+            text-align: center;
+        }
+
+        .#{$podcastPrefix}-inner {
+            position: absolute;
+            z-index: 1;
+            bottom: 0;
+            left: 0;
+            padding: $spacing-2 0;
+            background: rgba($color-black, 0.8);
+
+            @include ellipsis;
+
+            @media (min-width: $breakpoint-md) {
+                padding: $spacing-12 $spacing-8;
+
+                @include unEllipsis;
+            }
+        }
+
+        .#{$podcastPrefix}-content {
+            color: $color-white;
+
+            @include ellipsis;
+
+            @media (min-width: $breakpoint-md) {
+                @include unEllipsis;
+            }
+        }
+
+        [class^=heading] {
+            margin-bottom: $spacing-2;
+            font-size: $font-size-3;
+
+            @media (min-width: $breakpoint-md) {
+                margin-bottom: $spacing-8;
+                font-size: $font-size-4;
+            }
+        }
+
+        .#{$podcastPrefix}-footer {
+            flex: 0 1 100%;
+            @media (min-width: $breakpoint-md) {
+                flex: 0 1 $spacing-64*3;
+            }
+        }
+
+        .range {
+            margin: 0 $spacing-12 $spacing-16;
+            color: $color-white;
+
+            @media (min-width: $breakpoint-md) {
+                top: -0.7rem;
+                margin: 0;
+            }
+        }
+
+        &.#{$podcastPrefix}--active {
+            background: initial;
+
+            .buttonSquare {
+                display: block;
+            }
+
+            .equalizer {
+                display: none;
+            }
+        }
+    }
+
+    &--player {
+        .#{$podcastPrefix}-inner {
+            position: relative;
+            flex-wrap: wrap;
+
+            @media (min-width: $breakpoint-md) {
+                position: absolute;
+                flex-wrap: nowrap;
+            }
+        }
+
+        .#{$podcastPrefix}-content {
+            padding-right: 1.2rem;
+
+            @media (min-width: $breakpoint-md) {
+                width: calc(70% - 4.8rem);
+            }
+        }
+
+        .#{$podcastPrefix}-footer {
+            @media (min-width: $breakpoint-md) {
+                flex: 0 0 30%;
+            }
+        }
+    }
+}

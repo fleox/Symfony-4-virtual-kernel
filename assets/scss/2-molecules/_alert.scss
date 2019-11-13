@@ -1,0 +1,152 @@
+/*
+Styleguide Alert
+*/
+
+/*
+0 - Alerts
+
+Styleguide Alert - Alert
+*/
+
+/*
+1 - Style d'une alerte de base
+
+Markup: /style_guide/2_molecules/_alert.html.twig
+
+.alert - Alerte Classe de base
+.alert--dark - Alerte sombre
+.alert--primary - Alerte Primary
+.alert--centered - Alerte centrée
+
+Styleguide Alert - Alert par défaut
+*/
+
+$alertPrefix: 'alert';
+
+.#{$alertPrefix} {
+    &-wrapper {
+        background-color: $color-white;
+        padding: $spacing-8 $spacing-16;
+        @media (min-width: $breakpoint-md) {
+            padding-left: $spacing-24;
+            padding-right: $spacing-24;
+        }
+    }
+
+    &-container {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        @media (min-width: $breakpoint-md) {
+            align-items: center;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+    }
+
+    &-content,
+    &-button {
+        @media (max-width: $breakpoint-sm-max) {
+            display: flex;
+            justify-content: center;
+        }
+    }
+
+    &-content {
+        margin-bottom: $spacing-12;
+        @media (min-width: $breakpoint-md) {
+            margin: 0 $spacing-16 0 0;
+        }
+    }
+
+    .button--separator {
+        &,
+        &::before {
+            border-color: $color-black;
+        }
+
+        &:not(span):hover,
+        &:not(span):focus {
+            background-color: transparent;
+            color: $color-black;
+
+            &,
+            &::before {
+                border-color: $color-black;
+            }
+        }
+    }
+
+    &--dark,
+    &--primary {
+        .#{$alertPrefix}-wrapper {
+            color: $color-white;
+        }
+    }
+
+    &--dark {
+        .#{$alertPrefix}-wrapper {
+            background-color: $color-gray-90;
+        }
+
+        .button--separator {
+            &,
+            &::before {
+                border-color: $color-white;
+            }
+
+            &:not(span):hover,
+            &:not(span):focus {
+                background-color: transparent;
+                color: $color-white;
+
+                &,
+                &::before {
+                    border-color: $color-white;
+                }
+            }
+        }
+    }
+
+    &--primary {
+        .#{$alertPrefix}-wrapper {
+            background-color: $color-primary;
+        }
+
+        .button--separator {
+            color: $color-primary;
+
+            &,
+            &::before {
+                border-color: $color-primary;
+            }
+
+            &:not(span):hover,
+            &:not(span):focus {
+                background-color: transparent;
+                color: $color-white;
+
+                &,
+                &::before {
+                    border-color: $color-white;
+                }
+            }
+        }
+    }
+
+    &--centered {
+        .#{$alertPrefix}-container {
+            justify-content: center;
+        }
+    }
+
+    &--flag {
+        padding-top: $spacing-28;
+    }
+
+    .flag {
+        left: 0;
+        position: absolute;
+        top: (-$spacing-28);
+    }
+}

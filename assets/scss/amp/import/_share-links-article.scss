@@ -1,0 +1,118 @@
+/**
+ * @filename    : article/molecules/_share-links-article.scss
+ * @description : Contient les styles des liens de partages présents dans les pages de type "ARTICLE" du site
+ * @projet      : NRJ 2017 (nouveau site NRJ)
+ * @date        : JUILLET 2017
+ * @author      : Trésor ILOYI
+ * -------------------------------------------- */
+
+/**
+ * ARTICLE TOOLS
+ * Conteneur de la liste des liens de partages
+ */
+
+.shareTools {
+
+    @media (max-width: $mobile-only) {
+        padding-top: 1.1rem; // =11px
+    }
+
+    &-btnMore {
+        .article:not(.article--long) & {
+            display: none;
+        }
+    }
+}
+
+
+/**
+ * POSITIONNONEMENT
+ * Les liens de partages sont stické en haut à gauche sur les pages article
+ * à l'exception des pages article de type "CLIPS"
+ */
+
+.article--long {
+
+    // Conteneur de la liste des liens de partages
+    .shareTools {
+
+        @media (min-width: $tablet) {
+            @include transition(opacity .4s);
+            position: absolute;
+            opacity: 0;
+            top: 0;
+            width: 6rem; // =60px
+        }
+
+        .shareLinks {
+            @media (max-width: $mobile-only) {
+                @include transition(opacity .4s);
+            }
+        }
+
+        // Lorsque la page est totalement chargée
+        &--ready {
+            opacity: 1;
+        }
+
+        // Lorsqu'on veut sticky les liens de partages
+        &--sticky {
+
+            .shareLinks {
+
+                @media (max-width: $mobile-only) {
+                    background: $white;
+                    bottom: 0;
+                    box-shadow: 0.8rem 0.4rem 0.6rem 0.2rem #888; // 8px 4px 6px 2px #888
+                    left: 0;
+                    opacity: 1;
+                    padding: 0.2rem 0 0.6rem; // =2px 0 6px
+                    position: fixed;
+                    width: 100%;
+                    z-index: 2147483641; // Obligé de mettre une valeur élevé en raison de la barre de gestion de confidentialité
+                }
+            }
+
+            @media (min-width: $tablet) {
+                @supports (position: sticky) {
+                    position: -webkit-sticky;
+                    position: sticky;
+                    top: 7rem !important;
+                }
+            }
+
+            .artiste-actu & {
+                @media (min-width: $tablet) and (max-width: $desktop-less) {
+                    @supports (position: sticky) {
+                        top: 12rem !important;
+                    }
+                }
+            }
+        }
+
+        &--bottom {
+            @media (max-width: $mobile-only) {
+                margin-top: 0.5rem; // =5px
+            }
+
+            .shareLinks {
+                @media (max-width: $mobile-only) {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}
+
+
+// **
+// * PAROLES CHANSONS
+// * Comportement du block de partage au sein des paroles de chansons
+// */
+.artiste-parole-chanson {
+    .shareTools {
+        @media (min-width: $tablet) {
+            padding-top: 3.3rem; // =33px
+        }
+    }
+}

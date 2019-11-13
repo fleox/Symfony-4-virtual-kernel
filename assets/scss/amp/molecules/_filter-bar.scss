@@ -1,0 +1,40 @@
+/*
+ * @filename    : amp/molecules/_filter-bar.scss
+ * @description : Contient les styles de la barre de filtre présente à divers endroits du site
+ * @projet      : NRJ
+ * @date        : AVRIL 2017
+ * @author      : Trésor ILOYI
+ * -------------------------------------------- */
+
+.filterBar {
+    border-bottom: .1rem solid $gray-1;
+    border-top: .1rem solid $gray-1;
+    padding: 2.2rem 0 1.7rem; // =22px 0 17px
+}
+
+.filterBar-container {
+    position: relative;
+}
+
+.filterBar-subtitle,
+.filterBar-wrap {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.filterBar-subtitle {
+    @include font-size(1.2); // =12px
+    @include lato-bold;
+    padding: 0 1.7rem .7rem 0; // =0 17px 7px 0
+    text-transform: uppercase;
+}
+
+.filterBar-wrap {
+    overflow: hidden;
+}
+
+.filterBar-item {
+    display: inline-block;
+    margin-right: 1rem;
+    margin-bottom: .7rem; // =7px;
+}

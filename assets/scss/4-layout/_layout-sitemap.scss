@@ -1,0 +1,14 @@
+.siteMap-primaryItem,
+.siteMap-secondaryItem {
+    &::before {
+        display: none;
+    }
+}
+
+.siteMap-primaryLink {
+    margin-left: -$spacing-24;
+}
+
+.siteMap-secondaryLink {
+    margin-left: -$spacing-12;
+}

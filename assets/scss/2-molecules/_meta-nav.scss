@@ -1,0 +1,51 @@
+.metaNav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    background: $color-gray-90;
+    color: $color-white;
+    overflow: hidden;
+
+    &-list {
+        display: flex;
+    }
+
+    &-listItem {
+        font-size: $font-size-1;
+    }
+
+    &-listLink {
+        position: relative;
+        display: block;
+        padding: $spacing-2 $spacing-28 $spacing-2 $spacing-16;
+        text-decoration: none;
+
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+        }
+
+        &::before {
+            @include triangle(right, $color-gray-90, 2.2, rem, 2);
+
+            z-index: 2;
+            right: 0.1rem;
+        }
+
+        &::after {
+            @include triangle(right, $color-white, 2.2, rem, 2);
+
+            z-index: 1;
+            right: 0;
+        }
+    }
+
+    &-listCurrent {
+        display: block;
+        padding: $spacing-2 $spacing-16;
+    }
+}

@@ -1,0 +1,84 @@
+// *
+// * @filename    : nrj-amp.scss
+// * @description : Fichier important les styles utilisés de manière commune sur les pages AMP du site NRJ
+// * @projet      : NRJ 2017 (nouveau site NRJ)
+// * @date        : MAI 2017
+// * @author      : Trésor ILOYI
+// * -------------------------------------------- */
+
+/***
+ * UTILITIES
+ * Import des fichiers utiles aux pages "AMP" (variables, mixins, etc...)
+ */
+
+    //** Utilities
+@import "import/variables-common";
+@import "import/variables-header";
+@import "import/variables-bootstrap";
+@import "assets/scss/variables";
+@import "import/mixins-common";
+@import "../0-base/typography";
+@import "../0-base/mixins";
+@import "../0-base/icons";
+
+
+/***
+ * LAYOUT
+ * Import des fichiers de style du HEADER et du FOOTER
+ */
+
+    //** Bootstrap
+@import "bootstrap-amp";
+
+    //** Layout - AMP
+@import "layout-amp";
+
+@import "assets/scss/variables";
+
+    //** Header - AMP
+@import "header/site-header";
+@import "../3-organisms/header-site";
+@import "layout/site-footer";
+@import "import/share-links-article";
+
+
+/***
+ * ATOMS
+ * Import des fichiers ATOMS utiles aux pages "AMP"
+ */
+
+    //** Atoms - COMMON
+@import "../1-atoms/buttons";
+@import "../1-atoms/site-logo";
+
+
+/***
+ * MOLECULES
+ * Import des fichiers MOLECULES utiles aux pages "AMP"
+ */
+
+    //** Organisms - Update from nrj/common
+@import "molecules/filter-bar";
+@import "molecules/slideshow-launcher";
+@import "../2-molecules/navigation";
+
+    //** Organisms - Update from nrj/article
+@import "molecules/filter-bar-article";
+@import "molecules/block-concert";
+@import "molecules/share-links-article";
+@import "molecules/contentblock-link";
+
+
+/***
+ * ORGANISMS
+ * Import des fichiers ORGANISMS utiles aux pages "AMP"
+ */
+    //** Organisms - Update from nrj/common
+@import "organisms/card-artist";
+
+    //** Organisms - Update from nrj/article
+@import "organisms/article";
+@import "organisms/article-header";
+@import "organisms/article-content-block";
+@import "organisms/article-pursuit";
+@import "organisms/push-readtoo";

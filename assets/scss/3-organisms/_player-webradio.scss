@@ -1,0 +1,805 @@
+/*
+Styleguide Player Webradio
+*/
+
+/*
+0 - Player Webradio
+
+Styleguide Player Webradio - Player Webradio
+*/
+
+/*
+1 - Player Webradio.
+
+Markup: /style_guide/3_organisms/_player-webradio.html.twig
+
+.playerWebradio - Player Webradio
+
+Styleguide Player Webradio - Player Webradio Default
+*/
+
+$playerWebradioPrefix: 'playerWebradio';
+
+.#{$playerWebradioPrefix} {
+    align-items: center;
+    background-color: $color-white;
+    color: $color-black;
+    display: flex;
+    height: 6.4rem;
+    transition: height 0.3s ease-in-out;
+    position: relative;
+
+    @media (min-width: $breakpoint-md) {
+        height: auto;
+    }
+
+    &--dark {
+        background-color: $color-black;
+        color: $color-white;
+        border-top: 0.1rem solid $color-gray-50;
+    }
+
+    &--sticked {
+        bottom: 0;
+        left: 0;
+        position: fixed;
+        right: 0;
+        z-index: 56;
+    }
+
+    .page--webradio & {
+        transform: translateY(15rem);
+    }
+
+    .webradio--loaded & {
+        transition: transform 0.5s ease-in-out;
+        transform: translateY(0);
+        z-index: 999;
+    }
+
+    // ***
+    // ** 1 - Webradio Player Main
+    // ***
+
+    &-main {
+        align-items: center;
+        display: flex;
+        flex: 1;
+        justify-content: space-between;
+        @media (min-width: $breakpoint-lg) {
+            flex: 0 0 auto;
+            justify-content: flex-start;
+        }
+    }
+
+    // ***
+    // ** 1 a - Webradio Player Header
+    // ***
+
+    &-header {
+        align-items: center;
+        display: flex;
+        flex: 1;
+        padding-right: $spacing-24;
+        @media (min-width: $breakpoint-lg) {
+            padding-right: $spacing-24;
+        }
+    }
+
+    &-headerVisual {
+        display: flex;
+        margin-right: $spacing-12;
+        @media (min-width: $breakpoint-lg) {
+            margin-right: 0;
+        }
+    }
+
+    &-headerContent {
+        flex: 1;
+        position: relative; // For expand trigger
+        margin-left: $spacing-16;
+
+        @media (min-width: $breakpoint-lg) {
+            flex: 0 0 ($spacing-20 * 10 + $spacing-16 * 9);
+            padding-left: $spacing-16;
+            width: ($spacing-20 * 10 + $spacing-16 * 9);
+            margin-left: 0;
+        }
+
+        [class^="heading"] {
+            max-height: 3.2rem;
+            overflow: hidden;
+            margin-bottom: $spacing-4;
+            font-size: $font-size-2;
+
+            @media (min-width: $breakpoint-lg) {
+                max-height: none;
+                font-size: $font-size-3;
+
+                @include ellipsis;
+            }
+        }
+
+        .headingLink {
+            display: block;
+            text-decoration: none;
+
+            &:hover,
+            &:focus {
+                text-decoration: underline;
+            }
+        }
+
+        .description {
+            font-size: $font-size-2;
+
+            @include ellipsis;
+
+            @media (min-width: $breakpoint-lg) {
+                font-size: $font-size-3;
+            }
+        }
+    }
+
+    &-branding,
+    &-cover {
+        @media (min-width: $breakpoint-lg) {
+            flex: 0 0 ($spacing-12 * 8);
+            width: ($spacing-12 * 9);
+        }
+    }
+
+    &-branding {
+        display: none;
+
+        @media (min-width: $breakpoint-lg) {
+            display: block;
+            background-color: $color-white;
+        }
+    }
+
+    &-cover {
+
+        @media (max-width: $breakpoint-md-max) {
+            flex: 0 0 $spacing-64;
+            width: $spacing-64;
+        }
+    }
+
+    &-expandTrigger {
+        bottom: 0;
+        left: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+        @media (min-width: $breakpoint-lg) {
+            display: none;
+        }
+
+        .buttonSquare {
+            display: block;
+            height: 100%;
+            width: 100%;
+            background-color: transparent;
+
+            &-icon {
+                right: -1rem;
+                left: unset;
+            }
+        }
+    }
+
+    // **
+    // * 1 b - Webradio Player Content
+    // **
+
+    &-content {
+        position: absolute;
+        left: 7.5rem;
+        margin-left: auto;
+        margin-right: $spacing-16;
+
+        @media (min-width: $breakpoint-lg) {
+            position: relative;
+            left: auto;
+        }
+    }
+
+    &-lyricsTrigger {
+        display: none;
+    }
+
+    &-lyrics {
+        display: none;
+        opacity: 0;
+    }
+
+    &-controls {
+        display: flex;
+        align-items: center;
+
+        @media (min-width: $breakpoint-lg) {
+            position: relative; // For "playerWebradio-controlsItem--action" absolute positionning
+            justify-content: flex-end;
+        }
+
+        .enrj-play {
+            margin-left: 0.1em; // Optical horizontal centering
+        }
+
+        .button {
+            font-size: $font-size-2;
+
+            @media (min-width: $breakpoint-lg) {
+                height: $spacing-44;
+                padding: 0;
+                position: relative;
+                width: $spacing-44;
+                font-size: $font-size-6;
+            }
+
+            &-icon {
+                @media (min-width: $breakpoint-lg) {
+                    left: 50%;
+                    position: absolute;
+                    top: 50%;
+                    transform: translate(-50%, -50%);
+                }
+            }
+
+            &-text {
+                @media (min-width: $breakpoint-lg) {
+                    @include visuallyHidden;
+                }
+            }
+        }
+    }
+
+    &-controlsItem {
+        @media (min-width: $breakpoint-lg) {
+            &:not(:last-child) {
+                margin-right: $spacing-16;
+            }
+        }
+
+        &:not(.#{$playerWebradioPrefix}-controlsItem--action) {
+            display: none;
+            @media (min-width: $breakpoint-lg) {
+                display: list-item;
+            }
+        }
+
+        &--forward,
+        &--backward {
+            padding: 0 $spacing-8;
+
+            @media (min-width: $breakpoint-lg) {
+                padding: 0;
+            }
+
+            .button {
+                padding: $spacing-22;
+            }
+
+            .button-icon {
+                font-size: $font-size-9;
+            }
+
+            .button-text {
+                position: absolute;
+                top: 1.5rem;
+                left: 50%;
+                transform: translateX(-50%);
+                font-size: $font-size-1;
+
+                @media (min-width: $breakpoint-lg) {
+                    @include visuallyVisible;
+
+                    position: absolute;
+                }
+            }
+        }
+    }
+
+    &-controlsItem--action {
+        @media (min-width: $breakpoint-lg) {
+            .buttonSquare {
+                height: $spacing-64;
+                width: $spacing-64;
+            }
+        }
+    }
+
+    // ***
+    // ** 2 - Webradio Player Aside
+    // ***
+
+    &-aside {
+        display: none;
+        @media (min-width: $breakpoint-lg) {
+            display: flex;
+            flex-direction: column;
+            margin-left: auto;
+            padding-right: $spacing-16;
+            width: 48.8rem;
+        }
+
+        .#{$playerWebradioPrefix}-controlsItem {
+            display: inline-block;
+        }
+    }
+
+    &-asideHeader {
+        [class^="heading"] {
+            margin-bottom: $spacing-8;
+            font-weight: normal;
+            font-size: $font-size-2;
+            letter-spacing: 0.01rem;
+        }
+    }
+
+    &-asideContent {
+        [class^="heading"],
+        .description {
+            @include ellipsis;
+        }
+    }
+
+    .post-text {
+        color: inherit;
+    }
+
+    // **
+    // * Slider
+    // **
+
+    .sliderContainer {
+        margin-left: (-$spacing-44);
+        margin-right: (-$spacing-24);
+        white-space: nowrap; // Fix the cards display when Javascript isn't loaded and executed
+
+        &--outside {
+            padding: 0 0 0 $spacing-44;
+
+            @media (min-width: $breakpoint-lg) {
+                margin-right: 0;
+                padding: 0 $spacing-44;
+            }
+        }
+
+        &-item {
+            display: inline-block; // Fix the cards display when Javascript isn't loaded and executed
+        }
+    }
+
+    .card-header {
+        @media (min-width: $breakpoint-lg) {
+            flex: 0 0 $spacing-44;
+        }
+    }
+
+    // ***
+    // ** 3 - Webradio Player Range
+    // ***
+    &-range {
+        display: none;
+
+        @media (min-width: $breakpoint-lg) {
+            display: block;
+            width: 40rem;
+            margin: auto;
+        }
+    }
+
+    // **
+    // * State Expanded
+    // **
+
+    &--expanded {
+        @media (max-width: $breakpoint-md-max) {
+            align-items: stretch;
+            flex-direction: column;
+            justify-content: center;
+            padding: $spacing-24;
+            height: 100%;
+            z-index: 999;
+
+            .enrj-pause {
+                font-size: $font-size-4;
+            }
+        }
+
+        .buttonSquare {
+            width: $spacing-64;
+            height: $spacing-64;
+
+            &-icon {
+                font-size: $font-size-9;
+            }
+        }
+
+        .enrj-angle-up-light {
+            transform: rotate(180deg);
+        }
+
+        .#{$playerWebradioPrefix}-progression {
+            top: -0.4rem;
+        }
+
+        .#{$playerWebradioPrefix}-main {
+            @media (max-width: $breakpoint-md-max) {
+                align-items: stretch;
+                flex: 0 0 auto;
+                flex-direction: column;
+            }
+        }
+
+        .#{$playerWebradioPrefix}-header {
+            @media (max-width: $breakpoint-md-max) {
+                flex-direction: column;
+                margin-bottom: $spacing-12;
+                padding-right: 0;
+                text-align: center;
+            }
+        }
+
+        .#{$playerWebradioPrefix}-headerVisual {
+            @media (max-width: $breakpoint-md-max) {
+                flex-direction: column;
+                margin: 0 0 $spacing-12;
+                padding-top: $spacing-44;
+                position: relative;
+            }
+        }
+
+        .#{$playerWebradioPrefix}-branding {
+            @media (max-width: $breakpoint-md-max) {
+                border-radius: $spacing-8;
+                display: block;
+                left: 50%;
+                position: absolute;
+                z-index: 1;
+                width: 6rem;
+                top: 0;
+                transform: translateX(-50%);
+                opacity: 0;
+                animation: fadeIn 0.3s ease-in-out forwards;
+                background-color: white;
+            }
+        }
+
+        .#{$playerWebradioPrefix}-cover {
+            @media (max-width: $breakpoint-md-max) {
+                width: ($spacing-20 * 10);
+                opacity: 0;
+                animation: fadeIn 0.3s ease-in-out 0.05s forwards;
+
+                .thumbnail-visual {
+                    border-radius: $spacing-8;
+                }
+            }
+        }
+
+        .#{$playerWebradioPrefix}-headerContent {
+            margin-left: 0;
+
+            @media (max-width: $breakpoint-md-max) {
+                position: static;
+                opacity: 0;
+                animation: fadeIn 0.3s ease-in-out 0.1s forwards;
+            }
+        }
+
+        .#{$playerWebradioPrefix}-expandTrigger {
+            @media (max-width: $breakpoint-md-max) {
+                bottom: auto;
+                left: auto;
+                right: $spacing-12;
+                top: $spacing-12;
+
+                .buttonSquare {
+                    --button-textColor: #{$color-black};
+
+                    height: $spacing-44;
+                    width: $spacing-44;
+
+                    &-icon {
+                        display: inline;
+                    }
+                }
+            }
+        }
+
+        &.#{$playerWebradioPrefix}--dark {
+            @media (max-width: $breakpoint-md-max) {
+                .#{$playerWebradioPrefix}-expandTrigger {
+                    .buttonSquare {
+                        --button-textColor: #{$color-white};
+                    }
+                }
+            }
+        }
+
+        .#{$playerWebradioPrefix}-content {
+            @media (max-width: $breakpoint-md-max) {
+                position: relative;
+                left: auto;
+                margin: $spacing-8 0;
+                opacity: 0;
+                animation: fadeIn 0.3s ease-in-out 0.15s forwards;
+            }
+        }
+
+        .#{$playerWebradioPrefix}-controls {
+            @media (max-width: $breakpoint-md-max) {
+                justify-content: space-evenly;
+                margin-bottom: $spacing-16;
+            }
+        }
+
+        .#{$playerWebradioPrefix}-controlsItem {
+            @media (max-width: $breakpoint-md-max) {
+                display: list-item;
+            }
+
+            &--volume {
+                @media (max-width: $breakpoint-md-max) {
+                    display: none;
+                }
+            }
+
+            &--lyrics {
+                @media (max-width: $breakpoint-md-max) {
+                    order: -1;
+                }
+            }
+        }
+
+        .#{$playerWebradioPrefix}-aside {
+            @media (max-width: $breakpoint-md-max) {
+                display: block;
+                margin-top: auto;
+                opacity: 0;
+                animation: fadeIn 0.3s ease-in-out 0.2s forwards;
+            }
+        }
+
+        .#{$playerWebradioPrefix}-range {
+            @media (max-width: $breakpoint-md-max) {
+                display: block;
+                opacity: 0;
+                animation: fadeIn 0.3s ease-in-out 0.25s forwards;
+            }
+        }
+
+        .rateSelector {
+            margin-bottom: 0;
+        }
+    }
+
+    // **
+    // * State Lyrics
+    // **
+
+    &--lyrics {
+        @media (min-width: $breakpoint-lg) {
+            align-items: flex-end;
+            top: 0;
+        }
+
+        .#{$playerWebradioPrefix}-main {
+            @media (max-width: $breakpoint-md-max) {
+                align-items: center;
+                bottom: $spacing-24;
+                left: $spacing-24;
+                position: absolute;
+                right: $spacing-24;
+                top: $spacing-24;
+            }
+        }
+
+        .#{$playerWebradioPrefix}-header {
+            @media (max-width: $breakpoint-md-max) {
+                align-items: center;
+                flex: 0 0 ($spacing-40 * 2);
+                flex-direction: row;
+                margin-bottom: 0;
+                text-align: left;
+                animation: fadeIn 0.3s ease-in-out forwards;
+            }
+        }
+
+        .#{$playerWebradioPrefix}-headerVisual {
+            @media (max-width: $breakpoint-md-max) {
+                margin: 0 $spacing-16 0 0;
+                padding-top: 0;
+            }
+        }
+
+        .#{$playerWebradioPrefix}-branding {
+            @media (max-width: $breakpoint-md-max) {
+                display: none;
+            }
+        }
+
+        .#{$playerWebradioPrefix}-cover {
+            @media (max-width: $breakpoint-md-max) {
+                width: ($spacing-40 * 2);
+            }
+        }
+
+        .#{$playerWebradioPrefix}-content {
+            position: static;
+            @media (max-width: $breakpoint-md-max) {
+                display: flex;
+                flex-direction: column;
+                height: calc(100% - #{$spacing-40 * 2});
+            }
+        }
+
+        .#{$playerWebradioPrefix}-expandTrigger {
+            @media (max-width: $breakpoint-md-max) {
+                right: -$spacing-12;
+                top: -$spacing-12;
+            }
+        }
+
+        .#{$playerWebradioPrefix}-lyrics {
+            align-items: center;
+            display: flex;
+            justify-content: center;
+            animation: fadeIn 0.3s ease-in-out 0.1s forwards;
+            @media (max-width: $breakpoint-md-max) {
+                height: calc(100% - #{$spacing-48 + $spacing-4});
+                order: -1;
+                padding: $spacing-40 0;
+            }
+            @media (min-width: $breakpoint-lg) {
+                bottom: ($spacing-12 * 9);
+                left: 0;
+                padding: $spacing-96 $spacing-48 $spacing-48;
+                position: absolute;
+                right: 0;
+                top: 0;
+            }
+        }
+
+        .#{$playerWebradioPrefix}-lyricsTrigger {
+            @media (min-width: $breakpoint-lg) {
+                display: block;
+                position: absolute;
+                z-index: 1;
+                right: $spacing-20;
+                top: $spacing-20;
+            }
+        }
+
+        .#{$playerWebradioPrefix}-controls {
+            @media (max-width: $breakpoint-md-max) {
+                align-items: center;
+            }
+        }
+
+        .#{$playerWebradioPrefix}-controlsItem--action {
+            .buttonSquare {
+                @media (max-width: $breakpoint-md-max) {
+                    height: ($spacing-48 + $spacing-4);
+                    width: ($spacing-48 + $spacing-4);
+                }
+            }
+        }
+
+        .post {
+            max-height: 100%;
+            width: 100%;
+            overflow: hidden;
+            overflow-y: auto;
+            text-align: center;
+            scrollbar-color: $color-gray-50;
+            scrollbar-width: thin;
+
+            // stylelint-disable selector-max-specificity
+            &::-webkit-scrollbar {
+                width: 0.5rem;
+            }
+
+            &::-webkit-scrollbar-thumb {
+                background-color: $color-gray-50;
+            }
+            // stylelint-enable
+        }
+
+        .#{$playerWebradioPrefix}-aside {
+            padding-bottom: $spacing-16;
+            @media (max-width: $breakpoint-md-max) {
+                display: none;
+            }
+        }
+    }
+
+    &--podcast {
+        .#{$playerWebradioPrefix}-content {
+            @media (min-width: $breakpoint-lg) {
+                position: absolute;
+                left: $spacing-64*2;
+            }
+        }
+
+        .#{$playerWebradioPrefix}-headerContent {
+            @media (min-width: $breakpoint-lg) {
+                flex: 0 0 ($spacing-44*10);
+                width: $spacing-44*10;
+            }
+        }
+
+        .#{$playerWebradioPrefix}-controls {
+            align-items: center;
+        }
+
+        .#{$playerWebradioPrefix}-aside {
+            flex-direction: row;
+            justify-content: flex-end;
+
+            .#{$playerWebradioPrefix}-controls {
+                display: flex;
+                justify-content: space-between;
+            }
+
+            .button {
+                @media (max-width: $breakpoint-md-max) {
+                    padding: $spacing-32 $spacing-2 $spacing-8;
+                }
+            }
+        }
+
+        .#{$playerWebradioPrefix}-controlsItem {
+            margin-right: $spacing-12;
+        }
+
+        .#{$playerWebradioPrefix}-controlsItem--action {
+            position: relative;
+            left: auto;
+            top: auto;
+            transform: none;
+        }
+
+        &.#{$playerWebradioPrefix}--expanded {
+            .#{$playerWebradioPrefix}-range {
+                display: block;
+            }
+
+            .#{$playerWebradioPrefix}-controlsItem {
+                display: inline-block;
+                margin-right: 0;
+            }
+
+            .#{$playerWebradioPrefix}-controlsItem--lyrics {
+                order: 0;
+            }
+        }
+    }
+
+    &-progression {
+        position: absolute;
+        top: -0.3rem;
+        left: 0;
+        width: 100%;
+        height: 0.3rem;
+        background: rgba($color-gray-20, 0.9);
+
+        @media (min-width: $breakpoint-lg) {
+            display: none;
+        }
+    }
+
+    &-progressionTrack {
+        position: absolute;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 0;
+        height: 0.3rem;
+        border-radius: 0.5rem;
+        background: $color-primary;
+    }
+}

@@ -9,7 +9,7 @@ class DefaultController extends AbstractController
 {
     public function index(): Response
     {
-        return new Response('Accueil Jobeet - Hello');
+        return new Response('Accueil - Hello');
     }
 
 }

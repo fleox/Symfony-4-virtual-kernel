@@ -1,0 +1,40 @@
+/*
+Styleguide Site Logo
+*/
+
+/*
+0 - Logo du site
+
+Styleguide Site Logo - Site Logo
+*/
+
+/*
+Logo du site
+
+Markup: /style_guide/1_atoms/_site-logo.html.twig
+
+.siteLogo - Code de base du logo
+
+Styleguide Site Logo - Logo du site
+*/
+
+.siteLogo {
+    background-color: $color-white;
+    padding: $spacing-4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &-img {
+        display: block;
+        height: auto;
+    }
+
+    @media (min-width: $breakpoint-md) {
+        margin-right: $spacing-32;
+
+        &-img {
+            width: 5rem;
+        }
+    }
+}

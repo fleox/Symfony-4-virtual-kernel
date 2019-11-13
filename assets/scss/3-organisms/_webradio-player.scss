@@ -1,0 +1,87 @@
+/*
+Styleguide Webradio Player
+*/
+
+/*
+0 - Webradio Player
+
+Styleguide Webradio Player - Webradio Player
+*/
+
+/*
+1 - Webradio Player.
+
+Markup: /style_guide/3_organisms/_webradio-player.html.twig
+
+.webradioPlayer - webradio-player
+
+Styleguide Webradio Player - Webradio Player 1
+*/
+
+.webradioPlayer-list {
+    background-color: $color-primary;
+    color: $color-white;
+    padding: $spacing-8;
+    @media (min-width: $breakpoint-md) {
+        display: flex;
+        align-items: center;
+    }
+
+    [class^="heading"] {
+        @media (max-width: $breakpoint-sm-max) {
+            margin: $spacing-8 0 $spacing-12;
+            text-align: center;
+        }
+        @media (min-width: $breakpoint-md) {
+            padding-left: $spacing-24;
+        }
+    }
+
+    .sliderContainer {
+        padding: 0 $spacing-48;
+        @media (min-width: $breakpoint-md) {
+            width: 80%;
+        }
+    }
+}
+
+// Player : not styled yet, no design.
+
+.webradioPlayer-content {
+    background-color: $color-white;
+    z-index: 10;
+}
+
+.webradioPlayer-content .inPlay {
+    width: 20%;
+    height: $spacing-24 * 10;
+    background-size: 100%;
+}
+
+.logo-webradio {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.img-bg {
+    background-size: cover;
+    background-position: -1000rem;
+    background-repeat: no-repeat;
+    background-color: $color-gray-70;
+
+    &:hover {
+        background-position: 50%;
+
+        .logo-webradio {
+            display: none;
+        }
+    }
+}
+
+.module-4 {
+    position: relative;
+    padding-top: 100%;
+    background-color: $color-white;
+}

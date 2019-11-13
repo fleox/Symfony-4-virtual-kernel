@@ -1,0 +1,61 @@
+/*
+Styleguide List Playlist
+*/
+
+/*
+0 - List Playlist
+
+Styleguide List Playlist - List Playlist
+*/
+
+/*
+Liste de Playlists, comportant tous les cas possibles d'affichage.
+
+Markup: /style_guide/3_organisms/lists/_list-playlist.html.twig
+
+.listPlaylist - Classe par défaut
+
+Styleguide List Playlist - List Playlist
+*/
+
+.listPlaylist {
+    &-item {
+        align-items: center;
+        display: flex;
+
+        &:not(:last-child) {
+            margin-bottom: $spacing-8;
+        }
+
+        @media (max-width: $breakpoint-sm-max) {
+            [class^="heading"] {
+                font-size: $font-size-2;
+            }
+        }
+    }
+
+    .grid-item--border {
+        padding-bottom: $spacing-8;
+        margin-bottom: $spacing-8;
+    }
+
+    &-item--sm-row {
+        @media (max-width: $breakpoint-sm-max) {
+            flex-direction: column;
+            align-items: flex-start;
+
+            &:not(:last-child) {
+                margin-bottom: $spacing-12;
+            }
+        }
+
+        [class^="heading"] {
+            margin-right: $spacing-16;
+        }
+    }
+
+    .equalizer {
+        align-self: center;
+        margin-right: $spacing-8;
+    }
+}

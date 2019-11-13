@@ -1,0 +1,66 @@
+/*
+Styleguide List Bookings
+*/
+
+/*
+0 - List Bookings
+
+Styleguide List Bookings - List Bookings
+*/
+
+/*
+1 - Liste Bookings Default
+
+Markup: /style_guide/3_organisms/lists/_list-bookings.html.twig
+
+.listBookings - Classe par défaut
+
+Styleguide List Bookings - List Bookings par défault
+*/
+
+/*
+2 - Possibilité d'ajout d'un bouton unique en fin de liste (url + texte)
+
+Markup: 'listBookingUrl': '#',
+'listBookingUrlText': 'Réserver'
+
+Styleguide List Bookings - List Bookings bouton unique
+*/
+
+.listBookings {
+    .booking {
+        border-bottom: 0.1rem solid $color-gray-30;
+
+        &:first-child {
+            border-top: 0.1rem solid $color-gray-30;
+        }
+    }
+
+    @at-root ol#{&} {
+        counter-reset: trackList;
+
+        .booking {
+            padding-left: $spacing-40;
+            position: relative;
+
+            &::before {
+                content: counter(trackList);
+                counter-increment: trackList;
+                font-size: $font-size-5;
+                font-weight: $font-weight-bold;
+                left: 0;
+                position: absolute;
+                text-align: center;
+                top: 50%;
+                transform: translateY(-50%);
+                width: $spacing-32;
+            }
+        }
+    }
+
+    &-button {
+        margin: 0 auto;
+        padding: $spacing-24 0 0;
+        text-align: center;
+    }
+}

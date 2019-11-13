@@ -1,0 +1,33 @@
+/*
+ * @filename    : amp/organisms/_article-pursuit.scss
+ * @description : Contient les styles des "liens de poursuite de lecture" présents dans les pages de type "ARTICLE" du site
+ * @projet      : NRJ 2017 (nouveau site NRJ)
+ * @date        : JUILLET 2017
+ * @author      : Trésor ILOYI
+ * -------------------------------------------- */
+
+.article-pursuit {
+    @include font-size(1.5); // =15px
+    border-bottom: 0.1rem solid $gray-1;
+    padding-bottom: 5.7rem; // =57px
+
+    .title {
+        margin-bottom: 0.5rem; // =5px
+        text-transform: uppercase;
+    }
+}
+
+.pursuit-listItem {
+
+    &:before {
+        content: "> ";
+    }
+
+    & + .pursuit-listItem {
+        margin-top: 3rem; // =30px
+    }
+}
+
+.pursuit-link {
+    @include article-link;
+}

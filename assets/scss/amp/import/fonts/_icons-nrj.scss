@@ -1,0 +1,110 @@
+/*
+ * @filename    : common/_nrj-icons.scss
+ * @description : Contient les déclarations de la police "NRJ ICONS"
+ * @projet      : NRJ 2017 (nouveau site NRJ)
+ * @date        : JUILLET 2017
+ * @author      : Trésor ILOYI
+ * -------------------------------------------- */
+
+@font-face {
+    font-family: 'icons-nrj';
+    src: url('#{$fontPath}icons-nrj.woff?n2rqk9') format('woff'),
+    url('#{$fontPath}icons-nrj.ttf?n2rqk9') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="icon-nrj-"],
+[class*=" icon-nrj-"] {
+    font-family: 'icons-nrj';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-nrj-googleplus:before {
+    content: "\e903";
+}
+
+.icon-nrj-apps:before {
+    content: "\e90c";
+}
+
+.icon-nrj-book:before {
+    content: "\e914";
+}
+
+.icon-nrj-calendar:before {
+    content: "\e900";
+}
+
+.icon-nrj-comments:before {
+    content: "\e901";
+}
+
+.icon-nrj-cross:before {
+    content: "\e902";
+}
+
+.icon-nrj-frequency:before {
+    content: "\e90e";
+}
+
+.icon-nrj-gift:before {
+    content: "\e90f";
+}
+
+.icon-nrj-guitar:before {
+    content: "\e910";
+}
+
+.icon-nrj-mailing:before {
+    content: "\e904";
+}
+
+.icon-nrj-micro:before {
+    content: "\e905";
+}
+
+.icon-nrj-playlist:before {
+    content: "\e911";
+}
+
+.icon-nrj-podcast:before {
+    content: "\e906";
+}
+
+.icon-nrj-search:before {
+    content: "\e912";
+}
+
+.icon-nrj-share:before {
+    content: "\e907";
+}
+
+.icon-nrj-slideshow:before {
+    content: "\e908";
+}
+
+.icon-nrj-sms:before {
+    content: "\e909";
+}
+
+.icon-nrj-url:before {
+    content: "\e90b";
+}
+
+.icon-nrj-video:before {
+    content: "\e913";
+}
+
+.icon-nrj-video-360:before {
+    content: "\e90a";
+}
+

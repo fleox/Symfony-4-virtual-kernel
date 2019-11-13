@@ -1,0 +1,68 @@
+/*
+Styleguide Progression
+*/
+
+/*
+0 - Progression
+
+Styleguide Progression - Progression
+*/
+
+/*
+1 - Progression classique
+
+Markup: /style_guide/1_atoms/_progression.html.twig
+
+.progression                          - Progression par défaut (NEW)
+.progression--stable                  - Progression stable
+.progression--negative                - Progression négative
+.progression--positive                - Progression positive
+
+Styleguide Progression - Progression
+*/
+
+.progression {
+    --progressionTextColor: #{$color-black};
+
+    color: var(--progressionTextColor);
+    font-size: $font-size-2;
+    font-weight: 700;
+    text-transform: uppercase;
+
+    &::after {
+        display: inline-block;
+        line-height: 0;
+        margin-left: $spacing-4;
+        position: relative;
+        speak: none;
+    }
+
+    &--stable {
+        &::after {
+            content: '=';
+            font-size: $font-size-5;
+            top: 0.1em;
+        }
+    }
+
+    &--negative,
+    &--positive {
+        &::after {
+            content: '';
+            top: -0.1em;
+            @include triangle($color: var(--progressionTextColor), $direction: 'top', $size: 1, $isocele-ratio: 1.5);
+        }
+    }
+
+    &--negative {
+        --progressionTextColor: #{$color-primary};
+
+        &::after {
+            transform: rotate(-180deg);
+        }
+    }
+
+    &--positive {
+        --progressionTextColor: #{$color-info};
+    }
+}

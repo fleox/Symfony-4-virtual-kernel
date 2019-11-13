@@ -1,0 +1,366 @@
+/*
+Styleguide Card Speaker
+*/
+
+/*
+0 - Card Speaker
+
+Styleguide Card Speaker - Card Speaker
+*/
+
+/*
+1 Card Speaker
+
+Markup: /style_guide/2_molecules/_card-speaker.html.twig
+
+.card.card--speaker - Card par défaut
+
+Styleguide Card Speaker - Card Speaker Default
+*/
+
+.card {
+    &--speaker {
+        @media (max-width: $breakpoint-sm-max) {
+            overflow: hidden;
+        }
+
+        .ll-loading,
+        .ll-error {
+            background-color: transparent;
+        }
+
+        // **
+        // * On Air
+        // **
+
+        .onAir {
+            position: absolute;
+            top: -18rem;
+            left: calc(50% - 10rem);
+
+            @media (min-width: $breakpoint-sm) {
+                top: -28rem;
+                left: calc(50% - 13rem);
+            }
+
+            @media (min-width: $breakpoint-md) {
+                top: -32rem;
+            }
+
+            @media (min-width: $breakpoint-lg) {
+                top: -20rem;
+            }
+
+            @media (min-width: $breakpoint-xl) {
+                top: -30rem;
+            }
+        }
+
+        .flag {
+            position: relative;
+            padding-left: $spacing-20;
+            transform: rotate(-9deg);
+
+            &::before {
+                content: "";
+                position: absolute;
+                top: 0.7rem;
+                left: 0.6rem;
+                width: 1rem;
+                height: 1rem;
+                background: $color-primary;
+                border-radius: 50%;
+            }
+        }
+
+        // **
+        // * Speaker Branding
+        // **
+
+        .speakerBranding {
+            position: absolute;
+            z-index: 3;
+            bottom: 7rem;
+            text-align: center;
+
+            &-visual {
+                height: 7rem;
+                border-radius: $spacing-8;
+            }
+        }
+
+        // **
+        // * Heading
+        // **
+
+        [class^="heading"] {
+            color: inherit;
+        }
+
+        @media (min-width: $breakpoint-lg) {
+            &:hover,
+            &:focus {
+                [class^="heading"] {
+                    text-decoration: underline;
+                }
+            }
+        }
+
+        // **
+        // * Thumbnail
+        // **
+
+        .thumbnail {
+            background-color: transparent;
+            flex: 1;
+            margin-bottom: -$spacing-32 - 0.1;
+            overflow: hidden;
+            position: relative;
+            transition: transform 0.125s ease-in;
+
+            &-inner {
+                padding: $spacing-16 $spacing-16 0;
+            }
+
+            &-visual {
+                background-color: transparent;
+                filter: drop-shadow(0 0 1rem rgba($color-black, 0.25));
+            }
+        }
+
+        // **
+        // * Nav
+        // * @Comment: this nav is only inside the "Emissions" page
+        // **
+
+        .nav {
+            margin-top: $spacing-8;
+
+            @media (min-width: $breakpoint-md) and (max-width: $breakpoint-md-max) {
+                overflow-x: hidden; // Due of negative margins below (1)
+            }
+
+            @media (min-width: $breakpoint-lg) {
+                margin: 0 auto;
+                width: ($spacing-24 * 9);
+            }
+
+            &-list {
+                @media (max-width: $breakpoint-md-max) {
+                    justify-content: center;
+                }
+
+                @media (min-width: $breakpoint-md) and (max-width: $breakpoint-md-max) {
+                    margin-left: -$spacing-16; // (1) Negative margins used to display the "Live" and "Podcasts" buttons on one line
+                    margin-right: -$spacing-16; // (1) Negative margins used to display the "Live" and "Podcasts" buttons on one line
+                }
+
+                @media (min-width: $breakpoint-lg) {
+                    flex-direction: column;
+                }
+            }
+
+            &-item {
+                @media (min-width: $breakpoint-lg) {
+                    margin-bottom: $spacing-12;
+                    padding: 0;
+                }
+
+                &:nth-child(3) {
+                    @media (max-width: $breakpoint-md-max) {
+                        @include visuallyHidden;
+                    }
+                }
+            }
+        }
+
+        // **
+        // * Call-to-action
+        // **
+
+        .callToAction {
+            margin-top: $spacing-8;
+        }
+
+        .button--default {
+            border-color: $color-white;
+        }
+
+        // **
+        // * Card Wrapper
+        // **
+
+        .card-wrapper {
+            position: relative;
+            @media (min-width: $breakpoint-lg) {
+                &:hover,
+                &:focus {
+                    // stylelint-disable selector-max-specificity
+                    .thumbnail {
+                        transform: scale(1.05);
+                    }
+                    // styline-enable
+                }
+
+                &:focus {
+                    outline-color: $color-white;
+                }
+            }
+        }
+
+        // **
+        // * Card Header & Card Content
+        // **
+
+        .card-header,
+        .card-content {
+            display: flex;
+            justify-content: center;
+        }
+
+        // **
+        // * Card Header
+        // **
+
+        .card-header {
+            @media (min-width: $breakpoint-lg) {
+                position: relative;
+            }
+        }
+
+        // **
+        // * Card Content
+        // **
+
+        .card-content {
+            position: absolute;
+            z-index: 3;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            flex-direction: column;
+            padding: $spacing-12;
+            color: $color-white;
+
+            @media (min-width: $breakpoint-lg) {
+                bottom: 1rem;
+            }
+
+            &::before {
+                @media (max-width: $breakpoint-md-max) {
+                    background-color: rgba($color-black, 0.85);
+                    bottom: 0;
+                    content: "";
+                    left: 0;
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                    z-index: -1;
+                }
+            }
+        }
+    }
+
+    &--speakerProgram {
+
+        // **
+        // * Flag
+        // **
+
+        .onAir {
+            left: 50%;
+            margin: 0;
+            position: absolute;
+            top: -$spacing-16;
+            transform: translateX(-50%);
+
+            @media (min-width: $breakpoint-lg) {
+                left: 0;
+                transform: translateX(0);
+                top: $spacing-32;
+            }
+        }
+
+        .flag {
+            padding-left: $spacing-24;
+            transform: rotate(-9deg);
+
+            @media (min-width: $breakpoint-lg) {
+                font-size: $font-size-7;
+                font-weight: $font-weight-bold;
+                padding: $spacing-4 $spacing-16 $spacing-4 $spacing-24;
+            }
+
+            &::before {
+                @media (min-width: $breakpoint-lg) {
+                    top: 1.2rem;
+                    width: 1.2rem;
+                    height: 1.2rem;
+                }
+            }
+        }
+
+        // **
+        // * Speaker Branding
+        // **
+
+        .speakerBranding {
+            @media (max-width: $breakpoint-md-max) {
+                @include visuallyHidden;
+            }
+        }
+
+        // **
+        // * Heading
+        // **
+
+        [class^="heading"] {
+            @media (min-width: $breakpoint-lg) {
+                font-size: $font-size-8;
+            }
+        }
+
+        // **
+        // * Buttons
+        // **
+
+        .button {
+            @media (min-width: $breakpoint-lg) {
+                display: block;
+                font-size: $font-size-3;
+                font-weight: $font-weight-bold;
+
+                &--default {
+                    background-color: $color-black;
+                    border-color: $color-black;
+                    color: $color-white;
+
+                    &:hover,
+                    &:focus {
+                        background-color: $color-white;
+                        border-color: $color-white;
+                        color: $color-black;
+                    }
+                }
+
+                &--primary {
+                    background-color: $color-white;
+                    color: $color-black;
+
+                    &:hover,
+                    &:focus {
+                        background-color: $color-black;
+                        border-color: $color-black;
+                        color: $color-white;
+                    }
+                }
+            }
+        }
+    }
+
+    &-content--speaker {
+        .button-icon {
+            margin-right: $spacing-8;
+        }
+    }
+}

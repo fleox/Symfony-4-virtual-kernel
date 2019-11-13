@@ -1,0 +1,191 @@
+/*
+Styleguide Diaporama
+*/
+
+/*
+0 - Diaporama
+Styleguide Diaporama - Diaporama
+*/
+
+/*
+Diaporama par défaut
+
+Markup: /style_guide/3_organisms/_diaporama.html.twig
+
+.diaporama - Classe principale du diaporama
+
+Styleguide Diaporama - Diaporamas
+*/
+
+$diaporamaPrefix: 'diaporama';
+
+.#{$diaporamaPrefix} {
+    position: relative;
+    background-color: $color-black;
+    color: $color-white;
+    overflow: hidden;
+    transition: all 0.5s ease-in-out;
+
+    &-header {
+        position: relative;
+        z-index: 2;
+        width: 100%;
+        padding: $spacing-20;
+        border-bottom: 0.1rem solid $color-gray-70;
+        transition: transform 0.5s ease-in-out;
+        background: rgba($color-gray-90, 0.9);
+
+        @media (min-width: $breakpoint-lg) {
+            position: absolute;
+        }
+
+        .slider-modal & {
+            position: absolute;
+        }
+    }
+
+    [class^=heading] {
+        margin-bottom: $spacing-12;
+        text-align: center;
+    }
+
+    .sliderContainer {
+        padding: 0;
+    }
+
+    .tns {
+        &-slider {
+            display: flex;
+            align-items: stretch;
+            height: 60vh;
+
+            @media (min-width: $breakpoint-lg) {
+                height: auto;
+            }
+
+            .slider-modal & {
+                height: 100vh;
+            }
+        }
+
+        &-inner {
+            @media (min-width: $breakpoint-lg) {
+                padding: $spacing-64 0 0;
+            }
+
+            .slider-modal & {
+                padding-top: 0;
+            }
+        }
+    }
+
+    .thumbnail {
+        position: relative;
+        text-align: center;
+
+        &-wrapper {
+            position: absolute;
+            top: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+
+            @media (min-width: $breakpoint-lg) {
+                position: relative;
+                display: block;
+            }
+        }
+
+        &-inner {
+            .slider-modal & {
+                display: flex;
+                height: 100vh;
+                align-items: center;
+            }
+        }
+
+        &-visual {
+            position: relative;
+            top: -$spacing-64;
+            max-width: 100%;
+            max-height: 60vh;
+            width: auto;
+            margin: auto;
+            overflow: auto;
+
+            @media (min-width: $breakpoint-lg) {
+                top: -$spacing-32;
+            }
+
+            .slider-modal & {
+                top: auto;
+                max-height: 100vh;
+            }
+        }
+
+        &-caption {
+            transition: transform 0.5s ease-in-out;
+        }
+    }
+
+    &--light {
+        .#{$diaporamaPrefix}-header {
+            transform: translateY(-10rem);
+        }
+
+        .thumbnail-caption {
+            transform: translateY(15rem);
+        }
+    }
+}
+
+$diaporamaGalleryPrefix: 'diaporamaGallery';
+
+.#{$diaporamaGalleryPrefix} {
+    position: absolute;
+    z-index: 2;
+    transform: translateX(-100%);
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    padding: $spacing-12;
+    overflow: scroll;
+    background-color: $color-white;
+    color: $color-black;
+    overflow-x: hidden;
+    transition: all 0.5s ease-in-out;
+
+    @media (min-width: $breakpoint-lg) {
+        transform: translateX(-50rem);
+        width: 50rem;
+    }
+
+    &-controls {
+        padding: $spacing-12 0;
+    }
+
+    &--visible {
+        .contentSite {
+            overflow-x: hidden;
+        }
+
+        .#{$diaporamaGalleryPrefix} {
+            transform: translateX(0);
+        }
+
+        .#{$diaporamaPrefix} {
+            transform: translateX(100%);
+
+            @media (min-width: $breakpoint-lg) {
+                transform: none;
+                margin-left: 50rem;
+            }
+        }
+    }
+
+    .tns-nav-active {
+        border: 0.1rem solid $color-gray-90;
+    }
+}

@@ -1,0 +1,43 @@
+.formSelectDate {
+    padding: $spacing-24;
+    text-align: left;
+
+    .formControl {
+        --formControl-borderColor: #{$color-white};
+    }
+
+    @media (max-width: $breakpoint-sm-max) {
+        padding: $spacing-8;
+        text-align: center;
+
+        .form-row {
+            justify-content: center;
+
+            // This following feature should be removed with code improvements
+            // stylelint-disable selector-max-specificity
+            .formItem {
+                flex: 0 0 auto;
+                text-align: left;
+
+                &:not(:last-child) {
+                    margin-right: $spacing-8;
+                }
+
+                &:nth-child(3) {
+                    margin-right: 0;
+                }
+            }
+            // stylelint-enable selector-max-specificity
+        }
+
+        .formAction {
+            flex: 1;
+            margin-top: $spacing-8;
+        }
+
+        .button {
+            max-width: 26.4rem; // Total width of inputs
+            width: 100%;
+        }
+    }
+}

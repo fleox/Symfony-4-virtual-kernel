@@ -1,0 +1,53 @@
+.sliderSkill {
+    &-itemInner {
+        height: 31rem;
+        @media (min-width: $breakpoint-md) {
+            height: 44rem;
+        }
+        @media (min-width: $breakpoint-lg) {
+            height: 64rem;
+        }
+    }
+
+    &-title {
+        margin-bottom: 0.5rem;
+        font-size: $font-size-1;
+
+        @media (min-width: $breakpoint-md) {
+            margin-bottom: $spacing-16;
+            font-size: $font-size-5;
+        }
+
+        @media (min-width: $breakpoint-md) {
+            margin-bottom: $spacing-20;
+            font-size: $font-size-6;
+        }
+    }
+}
+
+.sliderInstall {
+    .sectionPage--howto & {
+        padding: 0 1rem;
+
+        @media (min-width: $breakpoint-md) {
+            max-width: 59.6rem;
+            margin: 0 auto;
+            padding: 0 7rem;
+        }
+        @media (min-width: $breakpoint-lg) {
+            max-width: 69rem;
+        }
+    }
+
+    .tns-nav {
+        position: absolute;
+        bottom: -2.5rem;
+        left: 0;
+        list-style: none;
+        display: block;
+        text-align: center;
+        padding: 0;
+        margin: 0;
+        width: 100%;
+    }
+}

@@ -1,0 +1,134 @@
+// *
+// * @filename    : _layout.scss
+// * @description : Global Layout
+// * @projet      : NRJ SF4
+// * @date        : 05/2019
+// * @author      : Nicolas BOURLES
+// * --------------------------------------------
+
+// **
+// * Content Site & Footer Site
+// * Set z-index with covers (habillages)
+// **
+
+.contentSite,
+.footerSite {
+    position: relative;
+}
+
+// **
+// * Breadcrumbs spacing
+// **
+
+.headerPage {
+    .headerMain {
+        &:not(:last-child) {
+            margin-bottom: $spacing-24;
+        }
+
+        @media (min-width: $breakpoint-lg) {
+            margin-left: $spacing-64;
+            margin-right: $spacing-64;
+        }
+
+        @media (min-width: $breakpoint-md) {
+            margin-top: $spacing-8;
+
+            &:not(:last-child) {
+                margin-bottom: $spacing-24;
+            }
+        }
+    }
+}
+
+.headerPage-container {
+    padding-top: $spacing-12;
+    position: relative;
+    z-index: 5;
+}
+
+.headerPage-container,
+.contentPage-container {
+    background-color: $color-white;
+}
+
+.contentPage-upper {
+    padding-bottom: $spacing-24;
+    padding-top: $spacing-24;
+}
+
+.headerPage-bottom {
+    padding-bottom: $spacing-48;
+    background-color: $color-white;
+}
+
+.contentPage-container {
+    padding-bottom: $spacing-24;
+    padding-top: $spacing-24;
+}
+
+.contentPage--grey {
+    background-color: $color-gray-10;
+
+    .contentPage-container {
+        background-color: inherit;
+    }
+}
+
+.page--emissions {
+    .headerPage-bottom {
+        padding-bottom: 0;
+    }
+
+    .contentPage-container {
+        padding-top: $spacing-24;
+    }
+}
+
+.page--dark {
+    background: $color-gray-90;
+}
+
+.page--landingPage {
+    height: 100vh;
+    overflow: hidden;
+}
+
+// Content Main Share: when the share tools are included in left of the content, a padding-left is added
+.contentMain {
+    &--share {
+        @media (min-width: $breakpoint-lg) {
+            padding-left: $spacing-96;
+        }
+    }
+
+    .share {
+        @media (max-width: $breakpoint-md-max) {
+            margin-bottom: $spacing-24;
+        }
+
+        @media (min-width: $breakpoint-lg) {
+            float: left;
+            margin-left: -$spacing-96;
+            position: absolute;
+            top: 0;
+
+            @supports (position: sticky) {
+                position: sticky;
+                top: 8.8rem;
+            }
+        }
+
+        &-title {
+            @include visuallyHidden;
+        }
+    }
+}
+
+.page--is-headerSiteExpanded {
+    .share {
+        @media (min-width: $breakpoint-lg) {
+            top: $spacing-64 + $spacing-40;
+        }
+    }
+}

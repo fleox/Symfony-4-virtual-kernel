@@ -1,0 +1,11 @@
+.contentAside {
+    &-item {
+        &:not(:last-child) {
+            margin-bottom: $spacing-48;
+        }
+    }
+
+    .blockDisplay-inner {
+        margin-bottom: $spacing-48;
+    }
+}

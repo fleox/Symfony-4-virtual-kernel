@@ -1,0 +1,119 @@
+/*
+Styleguide Card Playlist
+*/
+
+/*
+0 - Card Playlist
+
+Styleguide Card Playlist - Card Playlist
+*/
+
+/*
+1 Card Playlist classique
+
+Markup: /style_guide/2_molecules/cards/_card-playlist.html.twig
+
+.cardPlaylist - Classe par défaut
+.cardPlaylist--transparent - Card Playlist transparente
+
+Styleguide Card Playlist - Card Playlist classique
+*/
+
+$cardPlaylistPrefix: "cardPlaylist";
+
+.#{$cardPlaylistPrefix} {
+    --card-backgroundColor: #{$color-gray-10};
+    --card-hover-backgroundColor: #{$color-gray-20};
+
+    background-color: var(--card-backgroundColor);
+    width: 100%;
+
+    &:hover {
+        background-color: var(--card-hover-backgroundColor);
+    }
+
+    &-inner,
+    &-body {
+        display: flex;
+    }
+
+    &-icon {
+        font-size: $font-size-7;
+        margin-right: $spacing-16;
+    }
+
+    &-visual {
+        flex: 0 0 $spacing-64;
+        margin-right: $spacing-8;
+        position: relative;
+    }
+
+    &-body,
+    &-content {
+        flex: 1;
+    }
+
+    &-body {
+        padding-left: $spacing-12;
+    }
+
+    &-icon,
+    &-content {
+        margin-bottom: auto;
+        margin-top: auto;
+    }
+
+    &-content {
+        margin-right: $spacing-16;
+    }
+
+    &-inner {
+        @at-root a#{&} {
+            text-decoration: none;
+
+            &:hover,
+            &:focus {
+                [class^="heading"] {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+
+    &-infos {
+        --cardInfos-backgroundColor: #{$color-gray-20};
+
+        align-items: center;
+        background-color: var(--cardInfos-backgroundColor);
+        display: flex;
+        flex: 0 0 $spacing-44;
+        justify-content: center;
+        order: 1;
+        @media (min-width: $breakpoint-md) {
+            flex: 0 0 $spacing-64;
+        }
+    }
+
+    &--transparent {
+        --card-backgroundColor: transparent;
+
+        &:hover {
+            background-color: rgba($color-black, 0.1);
+        }
+    }
+
+    .flag {
+        left: 0;
+        position: absolute;
+        z-index: 1;
+    }
+
+    &--selected {
+        background-color: $color-primary;
+        color: $color-white;
+
+        &:hover {
+            background-color: $color-primary;
+        }
+    }
+}

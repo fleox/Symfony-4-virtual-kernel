@@ -93,7 +93,53 @@ Run `composer dump-autoload` to re-generate the autoload config.
     
 Here, creates a `<Name>WebTestCase` class per application in order to execute all tests together.
 
-### Production and vhosts
+### Production and vhosts (NGINX)
+
+Set the environment variable `APP_NAME` for each vhost config :
+
+    server {
+        listen 80;
+        listen 443 ssl;
+        server_name enrj.vk-nrj.fr;
+        root /Users/fredleaux/Sites/NRJ/symfony-skeleton-vkernel/public;
+        
+        ### SET VAR FOR VHOST FASTCGI_PARAM ###
+        set $sfappname nrj;
+        
+        include conf.d/vhost;
+        include conf.d/vhost_dirs;
+    
+        #ssl                  on;
+        ssl_certificate      ssl/phpmyadmin.crt;
+        ssl_certificate_key  ssl/phpmyadmin.key;
+    }
+    
+Set vhost
+
+    index index.php;
+    location ~* \.php$ {
+        fastcgi_index   index.php;
+        fastcgi_pass    127.0.0.1:9000;
+        fastcgi_read_timeout 180;
+        include         fastcgi_params;
+    }
+    location @site {
+        fastcgi_pass    127.0.0.1:9000;
+        fastcgi_read_timeout 180;
+        include         fastcgi_params;
+        fastcgi_param   SCRIPT_FILENAME    $realpath_root/index.php;
+        fastcgi_param   SCRIPT_NAME        index.php;
+        
+        ### GET VAR FOR FASTCGI_PARAM ###
+        fastcgi_param   APP_NAME           $sfappname;
+    }
+    location ~ /\.ht {
+        access_log off;
+        log_not_found off;
+        deny all;
+    }
+    
+### Production and vhosts (APACHE)
 
 Set the environment variable `APP_NAME` for each vhost config in your production server and development machine if prefer:
 

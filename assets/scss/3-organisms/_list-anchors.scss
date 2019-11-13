@@ -1,0 +1,49 @@
+$anchorsListPrefix: 'anchorsList';
+
+.#{$anchorsListPrefix} {
+    &--vertical {
+        position: fixed;
+        right: $spacing-20;
+        top: 50%;
+        transform: translateY(-50%);
+        display: none;
+        z-index: 60;
+
+        @media (min-width: $breakpoint-md) {
+            display: block;
+        }
+
+        .#{$anchorsListPrefix}-item {
+            margin-top: $spacing-24;
+        }
+    }
+
+    &--horizontal {
+        display: flex;
+        justify-content: center;
+
+        .#{$anchorsListPrefix}-item {
+            margin: 0 $spacing-8;
+
+            @media (min-width: $breakpoint-md) {
+                margin: 0 $spacing-24;
+            }
+        }
+    }
+
+    &--crossed {
+        margin-bottom: -4.4rem;
+
+        @media (min-width: $breakpoint-md) {
+            margin-bottom: -8rem;
+        }
+
+        & + .sectionPage {
+            padding-top: 4.4rem;
+
+            @media (min-width: $breakpoint-md) {
+                padding-top: 8rem;
+            }
+        }
+    }
+}

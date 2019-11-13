@@ -1,0 +1,37 @@
+.page--homeRadioShows {
+    .contentSite {
+        z-index: 2;
+    }
+
+    .headerPage-container {
+        max-width: none;
+    }
+}
+
+.page--radioShowsVideos {
+    .contentSite {
+        background-color: $color-white;
+    }
+}
+
+.page--radioShowsPodcasts {
+    background: $color-gray-90;
+
+    .headerPage-container {
+        max-width: none;
+        text-align: center;
+        color: $color-white;
+        background: $color-gray-90;
+    }
+
+    .container-fluid {
+        @media (min-width: $breakpoint-md) {
+            padding-left: $spacing-64;
+            padding-right: $spacing-64;
+        }
+    }
+
+    .listPodcasts {
+        color: $color-white;
+    }
+}

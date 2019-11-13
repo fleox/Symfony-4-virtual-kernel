@@ -1,0 +1,56 @@
+/* 
+ * @filename    : amp/layout/_footer.scss
+ * @description : Contient les styles du FOOTER NRJ
+ * @projet      : NRJ 2017 (nouveau site NRJ)
+ * @date        : AVRIL 2017
+ * @author      : Trésor ILOYI
+ * -------------------------------------------- */
+
+.siteFooter {
+    background: $black;
+
+    a {
+        
+        &,
+        &:active,
+        &:focus,
+        &:hover {
+            color: $white;
+        }
+    }
+}
+
+.siteFooter-listItem {
+    border-top: 1px solid $white;
+
+    &:first-child {
+        border-top: none;
+    }
+}
+
+.siteFooter-link1 {
+    @include font-size(1.5); // =15px
+    @include lato-bold;
+    display: block; 
+    height: 4.2rem; // = 42px
+    padding: 0 14px;
+    line-height: 2.800; // =42px
+    text-transform: uppercase;
+    
+    &:active,
+    &:focus,
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+.siteFooter-sublist {
+    padding-bottom: 14px;
+}
+
+.siteFooter-link2 {
+    @include font-size(1.2); // =12px
+    display: block;
+    padding: 0 24px;
+    line-height: 1.833; // =22px
+}

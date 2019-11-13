@@ -1,0 +1,136 @@
+/*
+Styleguide Card Webradio
+*/
+
+/*
+0 - Card Webradio
+
+Styleguide Card Webradio - Card Webradio
+*/
+
+/*
+1 Card Webradio
+
+Markup: /style_guide/2_molecules/cards/_card-webradio.html.twig
+
+.cardWebradio - Card par défaut sur fond blanc
+.cardWebradio--dark - Card sur fond noir
+
+Styleguide Card Webradio - Card Webradio Default
+*/
+
+.cardWebradio {
+    --cardWebradio-backgroundColor: #{$color-white};
+    --cardWebradio-borderRadius: #{$radius};
+    --cardWebradio-textColor: #{$color-black};
+    --cardWebradioHeading-textSize: #{$font-size-2};
+    --cardWebradioSupHeading-textColor: #{$color-gray-60};
+    --cardWebradioSupHeading-textSize: #{$font-size-1};
+    --cardWebradioThumbnail-backgroundColor: #{$color-gray-20};
+
+    align-items: center;
+    background-color: var(--cardWebradio-backgroundColor);
+    border-radius: var(--cardWebradio-borderRadius);
+    color: var(--cardWebradio-textColor);
+    display: flex;
+    padding-right: $spacing-12;
+    overflow: hidden;
+
+    @media (min-width: $breakpoint-md) {
+        --cardWebradioHeading-textSize: #{$font-size-4};
+    }
+
+    &--dark {
+        --cardWebradio-backgroundColor: #{$color-black};
+        --cardWebradio-textColor: #{$color-white};
+        --cardWebradioSupHeading-textColor: #{$color-gray-30};
+    }
+
+    &-visual {
+        flex: 0 0 $size-80;
+
+        @media (min-width: $breakpoint-md) {
+            flex: 0 0 $size-100;
+        }
+    }
+
+    &-content {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        justify-content: center;
+        min-width: 0;
+        padding: $spacing-8 $spacing-12;
+
+        @media (min-width: $breakpoint-md) {
+            padding: $spacing-12 $spacing-24 $spacing-12 $spacing-12;
+        }
+
+        &Upper {
+            align-items: center;
+            display: flex;
+            margin-bottom: $spacing-4;
+        }
+    }
+
+    .thumbnail-visual {
+        background-color: var(--cardWebradioThumbnail-backgroundColor);
+
+        // ** This following code is due of the incorrect centering of the webradios logos inside the 100*100 picture
+        object-position: 0 ($spacing-8 - $spacing-4 / 2);
+    }
+
+    .supTitle,
+    [class*="heading"] {
+        @media (max-width: $breakpoint-sm-max) {
+            @include ellipsis;
+        }
+    }
+
+    .supTitle {
+        color: var(--cardWebradioSupHeading-textColor);
+        font-size: var(--cardWebradioSupHeading-textSize);
+    }
+
+    .flag {
+        margin-left: $spacing-8;
+    }
+
+    [class*="heading"] {
+        --cardWebradioTitle-textSize: var(--cardWebradioHeading-textSize);
+        --cardWebradioTitle-textColor: var(--cardWebradio-textColor);
+
+        font-size: var(--cardWebradioTitle-textSize);
+        margin-bottom: $spacing-4;
+        letter-spacing: 0.03em;
+        text-transform: uppercase;
+    }
+
+    .description {
+        font-size: $font-size-2;
+        @include ellipsis;
+    }
+
+    .button {
+        @media (max-width: $breakpoint-sm-max) {
+            --button-padding: #{$spacing-8};
+
+            height: $size-40;
+            width: $size-40;
+        }
+
+        &-icon {
+            font-size: $font-size-5;
+
+            @media (min-width: $breakpoint-md) {
+                margin-right: $spacing-8;
+            }
+        }
+
+        &-text {
+            @media (max-width: $breakpoint-sm-max) {
+                @include visuallyHidden;
+            }
+        }
+    }
+}

@@ -1,0 +1,63 @@
+/*
+Styleguide Header 404
+*/
+
+/*
+0 - Entête de la page 404
+
+Styleguide Header 404 - Header 404
+*/
+
+/*
+1 - Header 404
+
+Markup: /style_guide/1_atoms/_header-404.html.twig
+
+.header404 - Code de base
+
+Styleguide Header 404 - Header 404
+*/
+
+.header404 {
+    background: $color-gray-10 no-repeat 50% 0;
+    font-family: $font-family-alternate;
+    line-height: $line-height-small;
+    padding: ($spacing-base * 20.3125) $spacing-16 $spacing-16; // 32.5rem
+    text-align: center;
+
+    @media (max-width: $breakpoint-sm-max) {
+        background-image: url('https://www.nrj.fr/uploads/assets/nrj/404/header-404-xs.jpg');
+    }
+
+    @media (min-width: $breakpoint-md) and (max-width: $breakpoint-md-max) {
+        background-image: url('https://www.nrj.fr/uploads/assets/nrj/404/header-404-s.jpg');
+    }
+
+    @media (min-width: $breakpoint-md) {
+        padding: ($spacing-base * 19.0625) $spacing-64 $spacing-64; // 30.5rem
+    }
+
+    @media (min-width: $breakpoint-lg) {
+        background-image: url('https://www.nrj.fr/uploads/assets/nrj/404/header-404-m.jpg');
+    }
+
+    &-heading {
+        font-size: $font-size-2;
+        text-transform: uppercase;
+
+        @media (min-width: $breakpoint-md) {
+            font-size: $font-size-8;
+        }
+
+        &Highlight {
+            display: block;
+            font-size: ($font-size-base * 4.5); // 7.2rem
+            font-weight: $font-weight-bold;
+            margin-bottom: $spacing-4;
+
+            @media (min-width: $breakpoint-md) {
+                font-size: ($font-size-base * 7.75); // 12.4rem
+            }
+        }
+    }
+}

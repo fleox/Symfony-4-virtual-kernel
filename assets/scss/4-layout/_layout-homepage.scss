@@ -1,0 +1,11 @@
+.page {
+    &--home {
+        .container {
+            &-mea {
+                @media (min-width: $breakpoint-md) {
+                    padding-bottom: $spacing-16;
+                }
+            }
+        }
+    }
+}

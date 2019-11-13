@@ -1,0 +1,934 @@
+/*
+ * @filename    : common/_mixins.scss
+ * @description : Fichier listant l'ensemble des MIXINS SASS communes à tout le site
+ * @projet      : NRJ 2017 (nouveau site NRJ)
+ * @date        : AVRIL 2017
+ * @author      : Trésor ILOYI
+ * -------------------------------------------- */
+
+
+// **
+// * FONTS
+// **
+
+    // ** Font Families
+
+// HIND
+@mixin hind {
+    font-family: $hind;
+}
+
+@mixin hind-regular {
+    font-weight: 400;
+}
+
+@mixin hind-medium {
+    font-weight: 500;
+}
+
+@mixin hind-semibold {
+    font-weight: 600;
+}
+
+@mixin hind-bold {
+    font-weight: 700;
+}
+
+// LATO
+@mixin lato {
+    font-family: $lato;
+}
+
+@mixin lato-light {
+    font-weight: 300;
+}
+
+@mixin lato-regular {
+    font-weight: 400;
+}
+
+@mixin lato-semibold {
+    font-weight: 600;
+}
+
+@mixin lato-bold {
+    font-weight: 700;
+}
+
+@mixin lato-black {
+    font-weight: 900;
+}
+
+// OSWALD
+@mixin oswald {
+    font-family: $oswald;
+}
+
+@mixin oswald-light {
+    font-weight: 300;
+}
+
+@mixin oswald-regular {
+    font-weight: 400;
+}
+
+@mixin oswald-medium {
+    font-weight: 500;
+}
+
+// ROBOTO CONDENSED
+@mixin robotoCondensed {
+    font-family: $robotoCondensed;
+}
+
+@mixin robotoCondensed-light {
+    font-weight: 300;
+}
+
+@mixin robotoCondensed-regular {
+    font-weight: 400;
+}
+
+@mixin robotoCondensed-bold {
+    font-weight: 700;
+}
+
+// MONTSERRAT
+@mixin montserrat {
+    font-family: $montserrat;
+}
+
+@mixin montserrat-light {
+    font-weight: 300;
+}
+
+@mixin montserrat-regular {
+    font-weight: 400;
+}
+
+@mixin montserrat-medium {
+    font-weight: 500;
+}
+
+@mixin montserrat-semibold {
+    font-weight: 600;
+}
+
+@mixin montserrat-bold {
+    font-weight: 700;
+}
+
+@mixin montserrat-extrabold {
+    font-weight: 800;
+}
+
+// EAGLE BOOK
+@mixin eaglebook {
+    font-family: $eaglebook;
+}
+
+@mixin eaglebook-light {
+    font-weight: 300;
+}
+
+@mixin eaglebook-regular {
+    font-weight: 400;
+}
+
+    // ** Font sizing
+@mixin font-size( $size: 1.6, $pixel: $pixelOnly ) {
+
+    @if $pixel == false {
+        font-size: $size + rem;
+    }
+    @else {
+        font-size: ($size * 10) + px;
+    }
+}
+
+    // ** Titles
+@mixin title-1 {
+    @include oswald;
+    @include oswald-medium;
+    @include font-size(2.6);    // =26px
+    line-height: 1.077;         // =28px
+
+    @media (min-width: $large) {
+        @include font-size(2.8);    // =28px
+        line-height: 1.071;         // =30px
+    }
+}
+
+@mixin title-2 {
+    @include lato;
+    @include lato-bold;
+    @include font-size(2.0);    // =20px
+    line-height: 1.100;         // =22px
+
+    @media (min-width: $tablet) {
+        @include font-size(2.2);    // =22px
+        line-height: 1.364;         // =30px
+    }
+}
+
+@mixin title-3 {
+    @include lato;
+    @include lato-bold;
+    @include font-size(1.6);    // =16px
+    line-height: 1.250;         // =20px
+
+    @media (min-width: $tablet) {
+        @include font-size(1.7);    // =17px
+        line-height: 1.294;         // =22px
+    }
+}
+
+@mixin title-4 {
+    @include lato;
+    @include lato-bold;
+    @include font-size(1.4);    // =14px
+    line-height: 1.286;         // =18px
+}
+
+
+// **
+// * POSITIONNING
+// **
+
+    // ** Inline block
+@mixin inline-block( $valign: top ) {
+    display: inline-block;
+    vertical-align: $valign;
+}
+
+    // ** Inline-block Grid
+    // Extend Bootstrap's grid
+@mixin inline-block-row() {
+    font-size: 0; // Necessary to remove right extra-space
+}
+
+@mixin inline-block-col($fontSize: 1.6) {
+    @include inline-block;
+    float: none;
+    @include font-size($size: $fontSize); // Restore the font-size value after remove it
+}
+
+    // ** Margin Auto
+@mixin margin-auto( $max-width: 960px ) {
+    margin: 0 auto;
+    max-width: $max-width;
+    width: 100%;
+}
+
+
+// **
+// * EMBED RESPONSIVE
+// **
+
+@mixin embed-responsive($ratio: 56.25%) {
+    position: relative;
+    display: block;
+    height: 0;
+    padding: 0 0 $ratio;
+    overflow: hidden;
+}
+
+@mixin embed-responsive-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    border: 0;
+}
+
+
+// **
+// * FLEXBOX
+// **
+
+@mixin display-flex {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flexbox;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+}
+
+@mixin display-inline-flex {
+    display: -ms-inline-flexbox;
+    display: -webkit-inline-flex;
+    display: inline-flex;
+}
+
+    // ** FLEX DIRECTION
+@mixin flex-direction-row {
+    -webkit-box-orient: horizontal;
+    -moz-box-orient: horizontal;
+    -webkit-flex-direction: row;
+    -moz-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+}
+
+@mixin flex-direction-row-reverse {
+    -webkit-box-orient: horizontal;
+    -moz-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+    -moz-box-direction: reverse;
+    -webkit-flex-direction: row-reverse;
+    -moz-flex-direction: row-reverse;
+    -ms-flex-direction: row-reverse;
+    flex-direction: row-reverse;
+}
+
+@mixin flex-direction-column {
+    -webkit-box-orient: vertical;
+    -moz-box-orient: vertical;
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+
+@mixin flex-direction-column-reverse {
+    -webkit-box-orient: vertical;
+    -moz-box-orient: vertical;
+    -webkit-box-direction: reverse;
+    -moz-box-direction: reverse;
+    -webkit-flex-direction: column-reverse;
+    -moz-flex-direction: column-reverse;
+    -ms-flex-direction: column-reverse;
+    flex-direction: column-reverse;
+}
+
+@mixin flex-direction-inherit {
+    -webkit-box-orient: inherit;
+    -moz-box-orient: inherit;
+    -webkit-flex-direction: inherit;
+    -moz-flex-direction: inherit;
+    -ms-flex-direction: inherit;
+    flex-direction: inherit;
+}
+
+    // ** FLEX WRAP
+@mixin flex-wrap-nowrap {
+    -webkit-flex-wrap: nowrap;
+    -moz-flex-wrap: nowrap;
+    -ms-flex-wrap: none;
+    flex-wrap: nowrap;
+}
+
+@mixin flex-wrap-wrap {
+    -webkit-flex-wrap: wrap;
+    -moz-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+@mixin flex-wrap-wrap-reverse {
+    -webkit-flex-wrap: wrap-reverse;
+    -moz-flex-wrap: wrap-reverse;
+    -ms-flex-wrap: wrap-reverse;
+    flex-wrap: wrap-reverse;
+}
+
+@mixin flex-wrap-inherit {
+    -webkit-flex-wrap: inherit;
+    -moz-flex-wrap: inherit;
+    -ms-flex-wrap: inherit;
+    flex-wrap: inherit;
+}
+
+    // ** ORDER
+@mixin order($order: 0) {
+    -webkit-box-ordinal-group: ($order + 1);
+    -moz-box-ordinal-group: $order;
+    -ms-flex-order: $order;
+    -webkit-order: $order;
+    -moz-order: $order;
+    order: $order;
+}
+
+    // ** FLEX GROW
+@mixin flex-grow($grow: 0) {
+    -webkit-flex-grow: $grow;
+    -webkit-box-flex: $grow;
+    -moz-flex-grow: $grow;
+    -ms-flex-positive: $grow;
+    flex-grow: $grow;
+}
+
+    // ** FLEX SHRINK
+@mixin flex-shrink($shrink: 1) {
+    -webkit-flex-shrink: $shrink;
+    -webkit-box-flex: $shrink;
+    -moz-flex-shrink: $shrink;
+    -ms-flex-negative: $shrink;
+    flex-shrink: $shrink;
+}
+
+    // ** FLEX BASIS
+@mixin flex-basis($basis: auto) {
+    -webkit-flex-basis: $basis;
+    -moz-flex-basis: $basis;
+    -ms-flex-preferred-size: $basis;
+    flex-basis: $basis;
+}
+
+    // ** FLEX
+@mixin flex($value: 0 1 auto) {
+    -webkit-box-flex: $value;
+    -ms-flex: $value;
+    flex: $value;
+}
+
+    // ** JUSTIFY CONTENT
+@mixin justify-content-flex-start {
+    -webkit-box-pack: start;
+    -moz-box-pack: start;
+    -webkit-flex-pack: start;
+    -ms-flex-pack: start;
+    -moz-justify-content: flex-start;
+    -webkit-justify-content: flex-start;
+    justify-content: flex-start;
+}
+
+@mixin justify-content-flex-end {
+    -webkit-box-pack: end;
+    -moz-box-pack: end;
+    -webkit-flex-pack: end;
+    -ms-flex-pack: end;
+    -moz-justify-content: flex-end;
+    -webkit-justify-content: flex-end;
+    justify-content: flex-end;
+}
+
+@mixin justify-content-center {
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -webkit-flex-pack: center;
+    -ms-flex-pack: center;
+    -moz-justify-content: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+}
+
+@mixin justify-content-space-between {
+    -webkit-box-pack: justify;
+    -moz-box-pack: justify;
+    -webkit-flex-pack: justify;
+    -ms-flex-pack: justify;
+    -moz-justify-content: space-between;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+}
+
+@mixin justify-content-space-around {
+    -moz-justify-content: space-around;
+    -webkit-justify-content: space-around;
+    justify-content: space-around;
+}
+
+@mixin justify-content-inherit {
+    -webkit-box-pack: inherit;
+    -moz-box-pack: inherit;
+    -webkit-flex-pack: inherit;
+    -ms-flex-pack: inherit;
+    -moz-justify-content: inherit;
+    -webkit-justify-content: inherit;
+    justify-content: inherit;
+}
+
+    // ** Align items
+
+@mixin align-items-flex-start {
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    -webkit-align-items: flex-start;
+    -moz-align-items: flex-start;
+    align-items: flex-start;
+}
+
+@mixin align-items-flex-end {
+    -webkit-box-align: end;
+    -ms-flex-align: end;
+    -webkit-align-items: flex-end;
+    -moz-align-items: flex-end;
+    align-items: flex-end;
+}
+
+@mixin align-items-center {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    align-items: center;
+}
+
+@mixin align-items-baseline {
+    -webkit-box-align: baseline;
+    -ms-flex-align: baseline;
+    -webkit-align-items: baseline;
+    -moz-align-items: baseline;
+    align-items: baseline;
+}
+
+@mixin align-items-stretch {
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
+    -webkit-align-items: stretch;
+    -moz-align-items: stretch;
+    align-items: stretch;
+}
+
+@mixin align-items-inherit {
+    -webkit-box-align: inherit;
+    -ms-flex-align: inherit;
+    -webkit-align-items: inherit;
+    -moz-align-items: inherit;
+    align-items: inherit;
+}
+
+    // ** Align Self
+@mixin align-self-baseline {
+    -webkit-align-self: baseline;
+    -ms-flex-item-align: baseline;
+    align-self: baseline;
+}
+
+@mixin align-self-center {
+    -webkit-align-self: center;
+    -ms-flex-item-align: center;
+    align-self: center;
+}
+
+@mixin align-self-start {
+    -webkit-align-self: start;
+    -ms-flex-item-align: start;
+    align-self: start;
+}
+
+@mixin align-self-end {
+    -webkit-align-self: end;
+    -ms-flex-item-align: end;
+    align-self: end;
+}
+
+@mixin align-self-self-start {
+    -webkit-align-self: self-start;
+    -ms-flex-item-align: self-start;
+    align-self: self-start;
+}
+
+@mixin align-self-self-end {
+    -webkit-align-self: self-end;
+    -ms-flex-item-align: self-end;
+    align-self: self-end;
+}
+
+@mixin align-self-flex-start {
+    -webkit-align-self: flex-start;
+    -ms-flex-item-align: flex-start;
+    align-self: flex-start;
+}
+
+@mixin align-self-flex-end {
+    -webkit-align-self: flex-end;
+    -ms-flex-item-align: flex-end;
+    align-self: flex-end;
+}
+
+@mixin align-self-left {
+    -webkit-align-self: left;
+    -ms-flex-item-align: left;
+    align-self: left;
+}
+
+@mixin align-self-right {
+    -webkit-align-self: right;
+    -ms-flex-item-align: right;
+    align-self: right;
+}
+
+@mixin align-self-stretch {
+    -webkit-align-self: stretch;
+    -ms-flex-item-align: stretch;
+    align-self: stretch;
+}
+
+
+// **
+// * GRID LAYOUT
+// **
+
+@mixin display-grid {
+    display: -ms-grid;
+    display: grid;
+}
+
+@mixin grid-template-columns($values) {
+    -ms-grid-template-columns: $values;
+    grid-template-columns: $values;
+}
+
+@mixin grid-template-rows($values) {
+    -ms-grid-rows: $values;
+    grid-template-rows: $values;
+}
+
+
+// **
+// * LISTS
+// **
+
+@mixin reset-list( $margin: 0, $padding: 0 ) {
+    list-style-type: none;
+    margin: $margin;
+    padding: $padding;
+}
+
+
+// **
+// * EFFECTS
+// **
+
+
+// **
+// * TRANSFORM
+// **
+
+// ** Rotate
+    // NOTE : la mixin "rotate" existe dans les fichiers de mixins Bootstrap
+    // @mixin rotate($degrees)
+
+
+// ** Translate
+    // NOTE : la mixin "translate" existe dans les fichiers de mixins Bootstrap
+    // @mixin translate($x, $y)
+
+
+// ** Translate 3D
+    // NOTE : la mixin "translate3d" existe dans les fichiers de mixins Bootstrap
+    // @mixin translate3d($x, $y, $z)
+
+// ** Transform Origin
+    // NOTE : la mixin "transform-origin" existe dans les fichiers de mixins Bootstrap
+    // @mixin transform-origin($origin)
+
+// ** TransformX
+@mixin transformX( $args ) {
+    -webkit-transform:  translateX( $args );
+    -ms-transform:      translateX( $args );
+    transform:          translateX( $args );
+}
+
+// ** TransformY
+@mixin transformY( $args ) {
+    -webkit-transform:  translateY( $args );
+    -ms-transform:      translateY( $args );
+    transform:          translateY( $args );
+}
+
+
+// **
+// * TRANSITION
+// **
+
+// ** transition
+    // NOTE : la mixin "transition" existe dans les fichiers de mixins Bootstrap
+    // @mixin transition($transition...)
+
+// ** transition-property
+    // NOTE : la mixin "transition-property" existe dans les fichiers de mixins Bootstrap
+    // @mixin transition-property($transition-property...)
+
+// ** transition-duration
+    // NOTE : la mixin "transition-duration" existe dans les fichiers de mixins Bootstrap
+    // @mixin transition-duration($transition-duration...)
+
+// ** transition-timing-function
+    // NOTE : la mixin "transition-timing-function" existe dans les fichiers de mixins Bootstrap
+    // @mixin transition-timing-function($timing-function)
+
+
+// ** transition-delay
+    // NOTE : la mixin "transition-delay" existe dans les fichiers de mixins Bootstrap
+    // @mixin transition-delay($transition-delay)
+
+
+// **
+// * FILTERS
+// **
+
+    // ** Filter Glow
+@mixin filter-glow($value: 5) {
+    filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feGaussianBlur stdDeviation="#{$value}" /></filter></svg>#filter');
+    -webkit-filter: blur(#{$value}px);
+    filter: blur(#{$value}px);
+}
+
+// ** Filter Drop Shadow
+@mixin filter-drop-shadow($offsetX: 0, $offsetY: 0, $blurRadius: 5, $color: $black) {
+    -webkit-filter: drop-shadow(#{$offsetX}px #{$offsetY}px #{$blurRadius}px $color);
+    filter: drop-shadow(#{$offsetX}px #{$offsetY}px #{$blurRadius}px $color);
+}
+
+
+// **
+// * OTHER
+// **
+
+    // ** Hide
+@mixin hide {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+    // ** Invisible
+@mixin invisible {
+    position: absolute;
+    left: -99999%;
+}
+
+    // ** Visible
+@mixin visible {
+    position: static;
+    left: auto;
+}
+
+    // ** Ellipsis
+@mixin ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+// ** Hyphens
+    // NOTE : la mixin "hyphens" existe dans les fichiers de mixins Bootstrap
+    // @mixin hyphens($mode: auto)
+
+
+    // ** Troncature
+@mixin truncate-multilines (
+    // ** Parameters (default values)
+    $background-color: $white, // Block background-color, default value
+    $font-size: 1.4, // Font-size for text, must be in REM units
+    $line-height: 1.4, // Default line-height
+    $lines-to-show: 3, // Number of lines to show, default 3
+    $gradient-width: 6rem, // Gradient width (6rem = 60px)
+    $with-ellipsis: false, // If true, generate ellipsis "..."
+    $with-gradient: true, // Gradient on/off (default true!)
+    $ellipsis-color: inherit, // Ellipsis color
+    $mode-override: false, // In case of override, set it to true
+    $height-padding-correction: 0 // In case of padding top and/or bottom applied on the item (in REM, total of padding)
+) {
+
+    // ** Variables
+    $background-color-start: rgba($background-color, 0%); // Background-color start is set to RGBA with alpha 0 (Safari bug with 'transparent' value)
+    $height-padding-correction-output: ($height-padding-correction / $font-size);
+    $height: ($line-height * $lines-to-show + $height-padding-correction-output) * 1em; // Compute max-height
+    $ellipsis-height: ($font-size * $line-height) + rem;
+    $ellipsis-top: ($height - $line-height); // Compute gradient top position
+    $end-percent-value: if( $with-ellipsis, 82%, 100%);
+
+    // ** Start Mixin
+    max-height: $height;
+    line-height: $line-height;
+
+    @if $mode-override == false {
+        position: relative;
+        overflow: hidden;
+
+        @if $with-ellipsis == true {
+            word-wrap: break-word;
+            @include hyphens();
+        }
+    }
+
+    &::before {
+        height: $ellipsis-height;
+        margin-left: -#{$gradient-width};
+        top: $ellipsis-top;
+        width: $gradient-width;
+
+        @if $mode-override == false {
+            position: absolute;
+            right: 0;
+
+            @if $with-gradient == true {
+                @include gradient-horizontal($background-color-start, $background-color, $end-percent: $end-percent-value ); // Bootstrap's Mixin
+                text-align: right;
+            }
+            @else {
+                background: $background-color;
+                text-align: left;
+            }
+
+            @if $with-ellipsis == true {
+                color: $ellipsis-color;
+                content: "\2026"; // CSS code for "..."
+            }
+            @else {
+                content: " ";
+            }
+        }
+    }
+
+    @if $with-ellipsis == true {
+        @if $mode-override == false {
+            &::after {
+                content: " ";
+                background: $background-color;
+                position: absolute;
+                height: $ellipsis-height;
+                width: 100%;
+                z-index: 1;
+            }
+        }
+    }
+}
+
+@mixin center-img {
+    @include transformY(-50%);
+    display: inline-block;
+    height: auto;
+    max-height: 100%;
+    max-width: 100%;
+    position: relative;
+    top: 50%;
+    width: auto;
+}
+
+@mixin clear-before {
+    &:before {
+        clear: both;
+        content: "";
+        display: table;
+    }
+}
+
+@mixin clear-after {
+    &:after {
+        clear: both;
+        content: "";
+        display: table;
+    }
+}
+
+
+// **
+// * ARTICLE
+// **
+
+@mixin article-link {
+    @include lato-bold;
+
+    &,
+    &:active,
+    &:focus,
+    &:hover {
+        color: $red-nrj;
+        text-decoration: underline;
+    }
+
+    &:active,
+    &:focus,
+    &:hover {
+        color: $red-2;
+    }
+}
+
+@mixin triangle(
+    $direction, // Triangle Direction (default: top)
+    $color: $black, // Triangle Color
+    $size: 2, // Triangle Size (default unit: REM)
+    $unit: rem, // Unit (default: REM)
+    $mode-override: false // Override option
+) {
+    @if ($mode-override == false) {
+        width: 0;
+        height: 0;
+        border-style: solid;
+        line-height: 0;
+    }
+    @if($direction == "bottom") {
+        border-color: $color transparent transparent transparent;
+        border-width: ($size + $unit) ($size / 2 + $unit) 0 ($size / 2 + $unit);
+    }
+    @else if($direction == "left") {
+        border-color: transparent $color transparent transparent;
+        border-width: ($size / 2 + $unit) ($size + $unit) ($size / 2 + $unit) 0;
+    }
+    @else if($direction == "right") {
+        border-color: transparent transparent transparent $color;
+        border-width: ($size / 2 + $unit) 0 ($size / 2 + $unit) ($size + $unit);
+    }
+    @else if($direction == "top-left") {
+        border-color: $color transparent transparent transparent;
+        border-width: ($size + $unit) ($size + $unit) 0 0;
+    }
+    @else if($direction == "top-right") {
+        border-color: transparent $color transparent transparent;
+        border-width: 0 ($size + $unit) ($size + $unit) 0;
+    }
+    @else if($direction == "bottom-left") {
+        border-color: transparent transparent transparent $color;
+        border-width: ($size + $unit) 0 0 ($size + $unit);
+    }
+    @else if($direction == "bottom-right") {
+        border-color: transparent transparent $color transparent;
+        border-width: 0 0 ($size + $unit) ($size + $unit);
+    }
+    @else {
+        border-color: transparent transparent $color transparent;
+        border-width: 0 ($size / 2 + $unit) ($size + $unit) ($size / 2 + $unit);
+    }
+}
+
+@mixin chips {
+    @include lato-bold;
+    @include font-size(1.2); // =12px;
+    background: $black;
+    border-radius: 0.2rem; // =2px
+    display: inline-block;
+    height: 2rem; // =20px
+    line-height: 1.9rem; // =19px
+    padding: 0 1rem; // =0 10px
+    text-align: center;
+    text-transform: uppercase;
+
+    &,
+    &:active,
+    &:focus,
+    &:hover {
+        color: $white;
+        text-decoration: none;
+    }
+
+    &:active,
+    &:focus,
+    &:hover,
+    input:checked + & {
+        background: $gray-12;
+    }
+}
+
+
+// **
+// * Appearance
+// **
+
+@mixin appearance($value) {
+    -webkit-appearance: $value;
+    -moz-appearance:    $value;
+    appearance:         $value;
+}

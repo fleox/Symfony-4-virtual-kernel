@@ -1,0 +1,16 @@
+.searchResults {
+    &-header {
+        margin-bottom: $spacing-32;
+    }
+
+    .search:not(:only-child) {
+        margin-bottom: $spacing-40;
+    }
+
+    &-content {
+        //@todo a refacto
+        .description--grey {
+            color: $color-gray-80;
+        }
+    }
+}

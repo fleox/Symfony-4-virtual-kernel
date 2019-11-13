@@ -1,0 +1,49 @@
+/* 
+ * @filename    : amp/organisms/_push-readtoo.scss
+ * @description : Contient les styles du push "A LIRE AUSSI" dans les pages de type "ARTICLE" du site
+ * @projet      : NRJ 2017 (nouveau site NRJ)
+ * @date        : NOVEMBRE 2017
+ * @author      : Trésor ILOYI
+ * -------------------------------------------- */
+
+.pushReadToo {
+    background: $gray-2;
+    overflow: hidden;
+    
+    &-caption {
+        padding: 0.9rem 1.5rem; // =9px 15px
+        overflow: hidden;
+    }
+    
+    &-title {
+        @include font-size(1.6); // =16px
+        margin-bottom: 0.3rem; // =3px
+        text-transform: uppercase;
+    }
+    
+    &-desc {
+        @include lato-bold;
+        margin: 0 auto;
+        
+        &:before {
+            content: "> ";
+        }
+        
+        &:hover {
+            &:before {
+                color: $red-nrj;
+            }
+        }
+    }
+    
+    &-link {
+        color: $black;
+        text-decoration: underline;
+        
+        &:active,
+        &:focus,
+        &:hover {
+            color: $red-nrj;
+        }
+    }
+}

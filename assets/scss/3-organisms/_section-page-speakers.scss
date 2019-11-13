@@ -1,0 +1,73 @@
+// **
+// * Section Page Speakers
+// * @Comment: Section Page Speakers Modifier for "sectionPage"
+// **
+
+.sectionPage--speakers {
+    //background: $color-primary-100 url("//www.nrj.fr/uploads/assets/nrj/nrj-logo-red.svg") no-repeat 50% 50% / auto 175rem;
+    background-color: $color-primary-100;
+    background-position: 50% 50%;
+    background-size: auto 175rem;
+    background-repeat: no-repeat;
+    position: relative;
+    margin: auto;
+
+    @media (min-width: $breakpoint-md) {
+        background-size: auto 223rem;
+    }
+
+    @media (min-width: $breakpoint-lg) {
+        background-size: auto 174.93rem;
+        overflow: hidden;
+    }
+
+    @media (min-width: $breakpoint-xl) {
+        background-size: auto 207.06rem;
+    }
+
+    &::before {
+        background: linear-gradient(rgba($color-black, 0), rgba($color-black, 0.4));
+        bottom: 0;
+        content: "";
+        height: 18.5rem;
+        left: 0;
+        pointer-events: none;
+        position: absolute;
+        right: 0;
+    }
+
+    .sectionPage-container {
+        background-color: transparent;
+        padding-bottom: 0;
+        padding-right: 0;
+        padding-left: 0;
+
+        @media (min-width: $breakpoint-md) {
+            padding-bottom: 0;
+        }
+
+        @media (min-width: $breakpoint-lg) {
+            margin: 0 auto;
+        }
+    }
+}
+
+.sectionPage--speakersProgram {
+    z-index: 5;
+
+    @media (min-width: $breakpoint-lg) {
+        overflow: hidden;
+    }
+
+    @media (min-width: $breakpoint-xl) {
+        background-size: auto 230rem;
+    }
+
+    .sectionPage-container {
+        padding-top: 0;
+
+        @media (min-width: $breakpoint-lg) {
+            max-width: 116rem;
+        }
+    }
+}

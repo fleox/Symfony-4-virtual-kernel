@@ -1,0 +1,310 @@
+/*
+Styleguide Types
+*/
+
+/*
+0 - Les Typographies
+
+Styleguide Types - Types
+*/
+
+/*
+01 - Titre de premier niveau en coeur de page (article, recherche...)
+
+Markup: /style_guide/1_atoms/_heading1.html.twig
+
+.heading1 - Etat par défaut
+
+Styleguide Types - heading1
+*/
+
+.heading1 {
+    font-family: $font-family-alternate;
+    font-size: $font-size-7;
+    font-weight: $font-weight-bold;
+    line-height: $line-height-small;
+
+    @media (min-width: $breakpoint-md) {
+        font-size: $font-size-11;
+    }
+}
+
+/*
+02 - Titre secondaire, utilisé en entête des différentes sections du site.
+
+Markup: /style_guide/1_atoms/_heading2.html.twig
+
+.heading2 - Etat par défaut
+
+Styleguide Types - heading2
+*/
+
+.heading2 {
+    font-family: $font-family-base;
+    font-size: $font-size-6;
+    font-weight: $font-weight-bold;
+    line-height: $line-height-small;
+
+    &--caps {
+        text-transform: uppercase;
+    }
+
+    &--alternate {
+        font-family: $font-family-alternate;
+    }
+}
+
+/*
+03 - Titre secondaire, utilisé en titre de différents blocs.
+
+Markup: /style_guide/1_atoms/_heading3.html.twig
+
+.heading3 - Code de base
+
+Styleguide Types - heading3
+*/
+
+.heading3 {
+    font-family: $font-family-base;
+    font-size: $font-size-5;
+    font-weight: $font-weight-bold;
+    line-height: $line-height-small;
+}
+
+/*
+04 - Titre tertiaire, utilisé en titre de différents blocs.
+
+Markup: /style_guide/1_atoms/_heading4.html.twig
+
+.heading4 - Code de base
+
+Styleguide Types - heading4
+*/
+
+.heading4 {
+    font-family: $font-family-base;
+    font-size: $font-size-4;
+    font-weight: $font-weight-bold;
+    line-height: $line-height-small;
+
+    &--uppercase {
+        text-transform: uppercase;
+    }
+
+    &--alternate {
+        font-family: $font-family-alternate;
+    }
+
+    &--caps {
+        text-transform: uppercase;
+    }
+
+    @media (min-width: $breakpoint-md) {
+        &--alternateXs {
+            font-family: $font-family-alternate;
+        }
+
+        &--capsXs {
+            text-transform: uppercase;
+        }
+    }
+}
+
+.heading--lined {
+    position: relative;
+    text-transform: uppercase;
+    letter-spacing: 0.01rem;
+
+    &::before {
+        content: '';
+        width: 6rem;
+        position: absolute;
+        height: 0.2rem;
+        background-color: $color-black;
+        left: -0.8rem;
+        bottom: -0.8rem;
+        transition: all 0.15s linear;
+    }
+
+    &:hover {
+        &::before {
+            transition: all 0.15s linear;
+            width: calc(100% + 1.8rem);
+        }
+    }
+
+    &White {
+        color: $color-white;
+
+        &::before {
+            background-color: $color-white;
+        }
+    }
+}
+
+// stylelint-disable no-descending-specificity
+.heading--background {
+    .headingLink {
+        color: $color-white;
+        background-color: $color-black;
+        padding: $spacing-2 $spacing-8;
+
+        &:hover {
+            background-color: $color-gray-90;
+        }
+    }
+
+    &Red {
+        color: $color-white;
+
+        .headingLink {
+            background-color: $color-primary;
+
+            &:hover {
+                background-color: $color-primary-120;
+            }
+        }
+    }
+}
+// stylelint-enable
+
+/*
+05 - Texte positionné en entête de bloc, contenant date ou autre information du même type
+
+Markup: /style_guide/1_atoms/_suptitle.html.twig
+
+.supTitle - Code de base
+
+Styleguide Types - suptitle
+*/
+
+.supTitle {
+    color: $color-gray-50;
+    font-family: $font-family-base;
+    font-size: $font-size-2;
+    letter-spacing: 0.05em;
+    line-height: $line-height-small;
+    text-transform: uppercase;
+
+    &--light {
+        color: $color-white;
+    }
+
+    &--primary {
+        color: $color-primary;
+    }
+
+    &--lineThrough {
+        display: table;
+        text-align: center;
+        white-space: nowrap;
+
+        &::before,
+        &::after {
+            background: linear-gradient($color-gray-50, $color-gray-50) repeat-x 0 50% / 0.1rem 0.1rem;
+            // background-size: 0.1rem 0.1rem;
+            content: "";
+            display: table-cell;
+            width: 50%;
+        }
+    }
+}
+
+/*
+06 - Texte positionné en bas de bloc, et contenant des informations complémentaires
+
+Markup: /style_guide/1_atoms/_subtitle.html.twig
+
+.subTitle - Code de base
+
+Styleguide Types - subtitle
+*/
+
+.subTitle {
+    color: $color-gray-70;
+    font-family: $font-family-base;
+    font-size: $font-size-1;
+    line-height: $line-height-small;
+
+    .sectionPage--dark & {
+        color: $color-gray-30;
+    }
+}
+
+/*
+07 - Texte descriptif utilisé dans certains blocs.
+
+Markup: /style_guide/1_atoms/_description.html.twig
+
+.description - Code de base
+
+Styleguide Types - description
+*/
+
+.description {
+    font-family: $font-family-base;
+    font-size: $font-size-2;
+    line-height: $line-height-small;
+
+    @media (min-width: $breakpoint-md) {
+        font-size: $font-size-3;
+    }
+
+    &--grey {
+        color: $color-gray-80;
+    }
+}
+
+/*
+08 - Texte en entête.
+
+Markup: /style_guide/1_atoms/_headline.html.twig
+
+.headline - Code de base
+
+Styleguide Types - headline
+*/
+
+.headline {
+    color: $color-gray-90;
+    font-size: $font-size-4;
+    font-weight: $font-weight-bold;
+
+    @media (min-width: $breakpoint-md) {
+        font-size: $font-size-6;
+    }
+}
+
+/*
+09 - Morceaux de texte en ligne.
+
+Markup: /style_guide/1_atoms/_spanned-text.html.twig
+
+.spannedText - Code de base
+.spannedText--strong - Texte en gras
+.spannedText--emphasize - Texte en oblique
+.spannedText--uppercase - Texte en capitales
+.spannedText--primary - Texte en couleur primaire du site
+
+Styleguide Types - spanned text
+*/
+
+.spannedText {
+    display: inline;
+
+    &--strong {
+        font-weight: $font-weight-bold;
+    }
+
+    &--emphasize {
+        font-style: oblique;
+    }
+
+    &--uppercase {
+        text-transform: uppercase;
+    }
+
+    &--primary {
+        color: $color-primary-100;
+    }
+}

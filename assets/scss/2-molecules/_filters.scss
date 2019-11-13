@@ -1,0 +1,377 @@
+/*
+Styleguide List Filters
+*/
+
+/*
+0 - List Filters
+
+Styleguide List Filters - List Filters
+*/
+
+/*
+1 - List Filters - Paramètres : listFiltersData, filtersButtonModifier (pour l'apparence des boutons)
+
+Markup: /style_guide/2_molecules/_list-filters.html.twig
+
+.filters - Classe par défaut
+.filters--backgroundDark - Modificateur pour affichage sur une page avec fond noir
+
+Styleguide List Filters - List Filters par défault
+*/
+
+$filtersPrefix: 'filters';
+
+.#{$filtersPrefix} {
+    overflow-x: auto;
+    min-height: 2.8rem;
+    margin: 0;
+
+    @media (min-width: $breakpoint-md) {
+        &:hover {
+            .#{$filtersPrefix}-list {
+                max-height: 10rem;
+            }
+        }
+    }
+
+    &--dark {
+        .filters-label {
+            background-color: transparent;
+            color: $color-white;
+        }
+    }
+
+    &-inner {
+        position: static;
+        transition: transform 0.35s cubic-bezier(0.25, 0.05, 0.2, 1);
+
+        @media (max-width: $breakpoint-sm-max) {
+            .#{$filtersPrefix}--sticky &,
+            .#{$filtersPrefix}--filtered & {
+                display: flex;
+                align-items: flex-start;
+
+                &::before {
+                    background: linear-gradient(to right, rgba($color-gray-90, 1) 0%, rgba($color-gray-90, 1) 80%, rgba($color-gray-90, 0) 100%);
+                    content: "";
+                    height: 3.4rem;
+                    padding-left: $spacing-16 - 0.1rem;
+                    position: absolute;
+                    z-index: 1;
+                }
+            }
+
+            .#{$filtersPrefix}--backgroundDark & {
+                &::before {
+                    background: linear-gradient(to right, rgba($color-black, 1) 0%, rgba($color-black, 1) 80%, rgba($color-black, 0) 100%);
+                }
+            }
+
+            .#{$filtersPrefix}--sticky .#{$filtersPrefix}--backgroundDark & {
+                &::before {
+                    background: linear-gradient(to right, rgba($color-white, 1) 0%, rgba($color-white, 1) 80%, rgba($color-white, 0) 100%);
+                }
+            }
+
+            .#{$filtersPrefix}--sticky & {
+                &::before {
+                    width: $spacing-48 + $spacing-12;
+                }
+            }
+
+            .#{$filtersPrefix}--filtered & {
+                &::before {
+                    width: 9.2rem;
+                }
+            }
+        }
+
+        @media (min-width: $breakpoint-md) {
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .#{$filtersPrefix}--center & {
+            @media (min-width: $breakpoint-md) {
+                justify-content: center;
+            }
+        }
+
+        .#{$filtersPrefix}--sticky & {
+            position: fixed;
+            z-index: 2;
+            top: 0;
+            left: 0;
+            right: 0;
+            padding: $spacing-16;
+            color: $color-black;
+            background: $color-white;
+            transform: translateY(0);
+            animation: filtersSlideDown 0.3s ease-in-out;
+
+            @media (min-width: $breakpoint-lg) {
+                max-width: 99.6rem;
+                margin: auto;
+                padding: $spacing-16 0;
+            }
+
+            @media (min-width: $breakpoint-xl) {
+                max-width: 120rem;
+            }
+
+            .button--revert {
+                --button-backgroundColor: transparent;
+                --button-borderColor: #{$color-black};
+                --button-textColor: #{$color-black};
+
+                &:not([disabled]):hover,
+                &:not([disabled]):focus {
+                    --button-backgroundColor: #{$color-black};
+                    --button-textColor: #{$color-white};
+                }
+            }
+
+            .button--primary {
+                --button-backgroundColor: #{$color-primary};
+                --button-borderColor: #{$color-primary};
+                --button-textColor: #{$color-white};
+
+                &:not([disabled]):hover,
+                &:not([disabled]):focus {
+                    --button-backgroundColor: #{$color-primary-80};
+                    --button-borderColor: #{$color-primary-80};
+                }
+            }
+
+            .button--transparent {
+                --button-textColor: #{$color-black};
+            }
+        }
+
+        .page--webradio.#{$filtersPrefix}--sticky & {
+            @media (min-width: $breakpoint-md) {
+                max-width: 100%;
+                padding: 1.5rem $spacing-64;
+            }
+        }
+
+        .button--primary {
+            &:not(span):hover,
+            &:not(span):focus {
+                --button-textColor: #{$color-white};
+            }
+        }
+    }
+
+    &-list {
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
+        max-height: $spacing-48;
+        margin-top: -$spacing-8;
+
+        @media (max-width: $breakpoint-sm-max) {
+            overflow-x: scroll;
+            overflow-y: hidden;
+            padding-bottom: $spacing-4;
+
+            .#{$filtersPrefix}--sticky & {
+                padding-left: $spacing-48;
+            }
+
+            .#{$filtersPrefix}--filtered & {
+                padding-left: 7.6rem;
+            }
+        }
+        @media (min-width: $breakpoint-md) {
+            flex-wrap: wrap;
+            overflow: hidden;
+            transition: max-height 0.3s ease-in-out;
+        }
+    }
+
+    &-label {
+        --button-borderColor: transparent;
+
+        display: flex;
+        align-items: center;
+        text-transform: uppercase;
+        cursor: pointer;
+
+        @media (max-width: $breakpoint-sm-max) {
+            .#{$filtersPrefix}--sticky &,
+            .#{$filtersPrefix}--filtered & {
+                justify-content: space-between;
+                position: absolute;
+                z-index: 1;
+            }
+        }
+
+        @media (min-width: $breakpoint-md) {
+            justify-content: space-between;
+            position: relative;
+        }
+
+        .filters--sticky & {
+            --button-textColor: #{$color-black};
+        }
+
+        .#{$filtersPrefix}--filtered & {
+            --button-backgroundColor: #{$color-gray-10};
+            --button-textColor: #{$color-black};
+
+            padding: $spacing-8 $spacing-32 $spacing-8 $spacing-16;
+
+            &:hover,
+            &:focus {
+                span:last-child {
+                    background: $color-primary;
+                }
+            }
+        }
+
+        .button-icon {
+            line-height: 2.1rem;
+
+            &:last-child {
+                display: none;
+
+                .#{$filtersPrefix}--filtered & {
+                    background-color: $color-black;
+                    border-radius: 50%;
+                    color: $color-white;
+                    display: inline-block;
+                    height: 2.3rem;
+                    line-height: 2.3rem;
+                    //position: absolute;
+                    right: $spacing-8;
+                    text-align: center;
+                    width: 2.3rem;
+                }
+            }
+        }
+
+        .button-text {
+            @media (max-width: $breakpoint-sm-max) {
+                .#{$filtersPrefix}--sticky &,
+                .#{$filtersPrefix}--filtered & {
+                    @include visuallyHidden;
+                }
+            }
+            @media (min-width: $breakpoint-md) {
+                display: inline-block;
+                font-size: $font-size-2;
+                margin-left: $spacing-4;
+
+                .#{$filtersPrefix}--filtered & {
+                    @include visuallyHidden;
+                }
+            }
+
+            .filters--sticky & {
+                @include visuallyHidden;
+            }
+        }
+    }
+
+    &-resume {
+        margin: 0 $spacing-8;
+    }
+
+    &-resumeNumber {
+        display: none;
+
+        .#{$filtersPrefix}--filtered & {
+            display: inline-block;
+            margin: 0 $spacing-4 0 $spacing-4;
+        }
+    }
+
+    &-reset {
+        white-space: nowrap;
+    }
+
+    .button {
+        font-size: $font-size-2;
+        font-weight: normal;
+        padding-top: $spacing-8;
+        padding-bottom: $spacing-8;
+        padding-left: $spacing-12;
+        padding-right: $spacing-12;
+
+        &--filtersReset {
+            background-color: transparent;
+            color: $color-white;
+            padding-top: 0.4rem;
+            padding-bottom: 0.4rem;
+            margin-right: 0.8rem;
+            padding-right: 0.4rem;
+        }
+    }
+
+    &--filtered {
+        .button {
+            &--filtersReset {
+                background-color: $color-white;
+                color: $color-black;
+            }
+        }
+    }
+
+    &-item {
+        position: relative;
+        margin: $spacing-8 $spacing-4 0;
+        white-space: nowrap;
+
+        ::selection {
+            background-color: transparent;
+        }
+
+        .button {
+            border-color: $color-gray-60;
+        }
+
+        .button-icon {
+            position: absolute;
+            right: 1rem;
+            top: -99rem;
+            color: $color-white;
+            font-size: $font-size-1;
+        }
+
+        .button--primary {
+            font-weight: bold;
+            padding-right: $spacing-24;
+            border-color: inherit;
+
+            .button-icon {
+                top: 1.2rem;
+            }
+        }
+    }
+
+    &-item:first-child {
+        margin-left: 0;
+    }
+
+    &--simple {
+        .button--primary {
+            padding-right: $spacing-12;
+            pointer-events: none;
+        }
+
+        .button-icon {
+            display: none;
+        }
+    }
+}
+
+@keyframes filtersSlideDown {
+    0% {
+        transform: translateY(-6rem);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}

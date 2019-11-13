@@ -1,0 +1,77 @@
+/*
+Styleguide Progress
+*/
+
+/*
+0 - Progress
+
+Styleguide Progress - Progress
+*/
+
+/*
+1 - Progress classique
+
+Markup: /style_guide/1_atoms/_progress.html.twig
+
+.progress - Progress par défaut
+.progress--small - Progress de taille réduite
+
+Styleguide Progress - Progress
+*/
+
+.progress {
+    --progress-backgroundColor: #{$color-gray-20};
+    --progress-borderRadius: #{$spacing-4};
+    --progress-valueBackgroundColor: #{$color-primary};
+    --progress-height: #{$spacing-8};
+    --progress-labelTextSize: #{$font-size-3};
+
+    align-items: center;
+    display: flex;
+
+    &-label {
+        font-size: var(--progress-labelTextSize);
+        margin-right: $spacing-12;
+        white-space: nowrap;
+    }
+
+    &-stage {
+        background-color: var(--progress-backgroundColor);
+        border-radius: var(--progress-borderRadius);
+        display: inline-flex;
+        height: var(--progress-height);
+    }
+
+    &-indicator {
+        appearance: none;
+        background: none;
+        border: none;
+        display: inline-block;
+        height: var(--progress-height);
+        max-width: 100%;
+
+        &[value] {
+            color: var(--progress-valueBackgroundColor); // IE 10+
+
+            &::-webkit-progress-bar {
+                background-color: transparent;
+            }
+
+            &::-webkit-progress-value {
+                background-color: var(--progress-valueBackgroundColor);
+                border-radius: var(--progress-borderRadius);
+            }
+
+            &::-moz-progress-bar {
+                background-color: var(--progress-valueBackgroundColor);
+                border-radius: var(--progress-borderRadius);
+            }
+        }
+    }
+
+    &--small {
+        --progress-borderRadius: #{$spacing-2};
+        --progress-height: #{$spacing-4};
+        --progress-labelTextSize: #{$font-size-2};
+    }
+}

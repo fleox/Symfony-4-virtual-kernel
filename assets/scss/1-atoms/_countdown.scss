@@ -1,0 +1,176 @@
+/*
+Styleguide Countdown
+*/
+
+/*
+0 - Compte à rebours
+
+Styleguide Countdown - Countdown
+*/
+
+/*
+1 - Loader classique
+
+Markup: /style_guide/1_atoms/_countdown.html.twig
+
+.countdown - Code de base du countdown
+
+Styleguide Countdown - Countdown
+*/
+
+.countdown {
+    --countdown-gutter: #{$spacing-8};
+    --countdown-lineHeight: 2.8em;
+    --countdown-textFamily: #{$font-family-base};
+    --countdown-textSize: #{$font-size-8};
+    --countdown-sizeHeight: #{$spacing-base * 5}; // 8rem
+    --countdown-sizeWidth: #{$spacing-base * 3.5}; // 5.6rem
+    --countdownLabel-marginTop: #{$spacing-12};
+    --countdownLabel-textSize: #{$font-size-1};
+    --countdown-background: #{$color-gray-90};
+    --countdown-color: #{$color-gray-10};
+
+    display: flex;
+    justify-content: center;
+
+    @media (min-width: $breakpoint-md) {
+        --countdown-lineHeight: 2.6em;
+        --countdown-textSize: #{$font-size-10};
+        --countdown-sizeHeight: #{$spacing-base * 6.25};
+        --countdown-sizeWidth: #{$spacing-base * 5};
+    }
+}
+
+.countdown-item {
+    border-radius: $spacing-4;
+    box-shadow: 0 0 ($spacing-base * 0.625) rgba($color-base, 0.5); // 1rem
+    flex: 0 0 var(--countdown-sizeWidth);
+    height: var(--countdown-sizeHeight); // 10rem
+    margin-left: calc(var(--countdown-gutter) / 2);
+    margin-right: calc(var(--countdown-gutter) / 2);
+    position: relative;
+    text-align: center;
+    width: var(--countdown-sizeWidth); // 8rem
+    perspective: ($spacing-base * 29.9375); // 47.9rem
+    backface-visibility: hidden;
+    transform: translateZ(0);
+    transform: translate3d(0, 0, 0);
+    font-weight: bold;
+
+    &:first-child {
+        margin-left: 0;
+    }
+
+    &:last-child {
+        margin-right: 0;
+    }
+}
+
+.countdown-count {
+    background: var(--countdown-background);
+    color: var(--countdown-color);
+    display: block;
+    font-family: var(--countdown-textFamily);
+    font-size: var(--countdown-textSize);
+    line-height: var(--countdown-lineHeight); // 2.4em
+    overflow: hidden;
+    position: absolute;
+    text-align: center;
+    text-shadow: 0 0 ($spacing-base * 0.625) rgba($color-black, $opacity-7);
+    top: 0;
+    width: 100%;
+    transform: translateZ(0);
+    transform-style: flat;
+}
+
+.countdown-count--top {
+    border-top: ($spacing-base * 0.0625) solid rgba($color-white, 0.2); // 1px
+    border-bottom: ($spacing-base * 0.0625) solid rgba($color-white, 0.1);
+    border-radius: ($spacing-base * 0.3125) ($spacing-base * 0.3125) 0 0; // 5px
+    height: 50%;
+    transform-origin: 50% 100%;
+}
+
+.countdown-count--bottom {
+    background-image: linear-gradient(rgba($color-white, 0.1), transparent);
+    border-top: ($spacing-base * 0.0625) solid $color-black;
+    border-bottom: ($spacing-base * 0.0625) solid $color-black;
+    border-radius: 0 0 ($spacing-base * 0.3125) ($spacing-base * 0.3125);
+    line-height: 0;
+    height: 50%;
+    top: 50%;
+    transform-origin: 50% 0;
+}
+
+.countdown-label {
+    font-size: var(--countdownLabel-textSize);
+    margin-top: $spacing-8;
+    display: block;
+    position: absolute;
+    top: calc(var(--countdown-sizeHeight));
+    width: 100%;
+}
+
+.countdown--small {
+    --countdown-sizeHeight: 6.4rem;
+    --countdown-sizeWidth: 5.2rem;
+    --countdown-textSize: 3rem;
+    --countdown-gutter: 0.6rem;
+    --countdown-lineHeight: 2.1em;
+
+    @media (min-width: $breakpoint-md) {
+        --countdown-textSize: 6rem;
+        --countdown-sizeHeight: 10rem;
+        --countdown-sizeWidth: 8rem;
+        --countdown-lineHeight: 1.65em;
+        --countdown-gutter: 1.4rem;
+    }
+
+    .countdown-label {
+        margin-top: $spacing-2;
+    }
+}
+
+.countdown--invert {
+    --countdown-background: #{$color-white};
+    --countdown-color: #{$color-gray-90};
+
+    .countdown-count {
+        text-shadow: none;
+    }
+
+    .countdown-count--top {
+        border-bottom: ($spacing-base * 0.0625) solid rgba($color-white, 0.1); // 1px
+        border-top: ($spacing-base * 0.0625) solid rgba($color-white, 0.1);
+    }
+
+    .countdown-count--bottom {
+        border-bottom: ($spacing-base * 0.0625) solid rgba($color-black, 0.2);
+        border-top: ($spacing-base * 0.0625) solid rgba($color-black, 0.3);
+    }
+}
+
+// Animation start
+.countdown-count--current.countdown-count--top {
+    transform: rotateX(0deg);
+    z-index: 3;
+}
+
+.countdown-count--next.countdown-count--bottom {
+    transform: rotateX(90deg);
+    z-index: 2;
+}
+
+// Animation end
+
+// stylelint-disable selector-max-specificity
+.countdown-item--flip .countdown-count--current.countdown-count--top {
+    transition: all 250ms ease-in-out;
+    transform: rotateX(-90deg);
+}
+
+.countdown-item--flip .countdown-count--next.countdown-count--bottom {
+    transition: all 250ms ease-in-out 250ms;
+    transform: rotateX(0deg);
+}
+// styline-enable

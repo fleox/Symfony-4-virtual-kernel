@@ -1,0 +1,36 @@
+/*
+Styleguide Social Network Account
+*/
+
+/*
+0 - Social Network Account
+
+Styleguide Social Network Account - Social Network Account
+*/
+
+/*
+Social Network Account
+
+Markup: /style_guide/2_molecules/_social-network-account.html.twig
+
+.socialNetworkAccount - Social Network Account
+
+Styleguide Social Network Account - Social Network Account par défaut
+*/
+
+.socialNetworkAccount {
+    display: flex;
+    justify-content: space-around;
+
+    &-item {
+        padding: 0 $spacing-12;
+
+        &:first-child {
+            padding-left: 0;
+        }
+
+        &:last-child {
+            padding-right: 0;
+        }
+    }
+}

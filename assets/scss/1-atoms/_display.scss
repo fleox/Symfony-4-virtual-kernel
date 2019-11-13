@@ -1,0 +1,131 @@
+/*
+Styleguide Display
+*/
+
+/*
+0 - Display
+
+Styleguide Display - Display
+*/
+
+/*
+1 - Display Banner
+
+Markup: /style_guide/1_atoms/displays/_display-banner.html.twig
+
+.blockDisplay .blockDisplay--banner - Code de base
+
+Styleguide Display - Display Banner
+*/
+
+/*
+2 - Display Banner Bottom
+
+Markup: /style_guide/1_atoms/displays/_display-banner-bottom.html.twig
+
+.blockDisplay .blockDisplay--bannerBottom - Code de base
+
+Styleguide Display - Display Banner Bottom
+*/
+
+/*
+3 - Display Rectangle
+
+Markup: /style_guide/1_atoms/displays/_display-rectangle.html.twig
+
+.blockDisplay .blockDisplay--rectangle - Code de base
+
+Styleguide Display - Display Rectangle
+*/
+
+$blockDisplayPrefix: 'blockDisplay';
+
+.#{$blockDisplayPrefix} {
+    display: flex;
+    width: 100%;
+    position: relative;
+
+    &--rectangle {
+        .blockDisplay-inner {
+            min-height: 25rem;
+        }
+    }
+
+    &--covering {
+        min-height: 10.5rem;
+
+        @media (min-width: $breakpoint-lg) {
+            min-height: 22rem;
+        }
+    }
+
+    &-inner {
+        margin: auto;
+
+        .adSkin-image {
+            display: block;
+        }
+
+        iframe {
+            display: block;
+        }
+
+        & * {
+            max-width: 100%;
+        }
+    }
+
+    &--banner,
+    &--bannerBottom {
+        .#{$blockDisplayPrefix}-inner {
+            &[data-adunit="banniere_haute"],
+            &[data-adunit="skin_banner"] {
+                min-height: 5rem;
+                margin: $spacing-8 auto;
+
+                @media (min-width: $breakpoint-lg) {
+                    min-width: 72.8rem;
+                    min-height: 9rem;
+                    margin: $spacing-16 auto;
+                }
+            }
+
+            &[data-adunit="skin_banner"] {
+                margin: 0 auto;
+
+                iframe[name*="banniere_haute"] {
+                    margin: $spacing-16 0 auto;
+                }
+            }
+
+            &[data-adunit="banniere_basse"] {
+                min-height: 6rem;
+
+                @media (min-width: $breakpoint-lg) {
+                    min-width: 46.8rem;
+                    min-height: 9rem;
+                }
+            }
+        }
+
+        #displayBanner {
+            background-color: $color-gray-10;
+        }
+    }
+
+    &--bannerBottom {
+        background-color: $color-white;
+        padding: $spacing-16 0;
+    }
+}
+
+.display-interstitiel {
+    height: 0;
+}
+
+.aside-wibbitz {
+    margin-bottom: $spacing-16;
+    margin-top: $spacing-40;
+    position: relative;
+    z-index: 0;
+}

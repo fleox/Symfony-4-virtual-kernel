@@ -1,0 +1,108 @@
+/*
+Styleguide Breadcrumb
+*/
+
+/*
+0 - Fil d'ariane
+
+Styleguide Breadcrumb - Breadcrumbs
+*/
+
+/*
+1 - Le fil d'ariane
+
+Le fil d'ariane avec les microdonnées
+
+Markup: /style_guide/2_molecules/_breadcrumb.html.twig
+
+.breadcrumb         - Code de base
+.breadcrumb--small  - breadcrumb petit
+
+Styleguide Breadcrumb - Breadcrumbs
+*/
+
+.page--article {
+    .breadcrumb-item {
+        &:last-child {
+            display: none;
+        }
+    }
+}
+
+$breadcrumbPrefix: 'breadcrumb';
+
+.#{$breadcrumbPrefix} {
+    align-items: flex-start;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: $spacing-8;
+
+    @media (min-width: $breakpoint-md) {
+        justify-content: center;
+        margin-bottom: 0;
+    }
+
+    &-item {
+        align-items: center;
+        display: flex;
+
+        &::before {
+            content: ">";
+            font-size: $font-size-2;
+        }
+
+        &:first-child {
+            &::before {
+                content: "";
+            }
+        }
+
+        &:last-child {
+            font-weight: $font-weight-bold;
+
+            &:hover {
+                .breadcrumb-link {
+                    text-decoration: none;
+                }
+            }
+
+            &::before {
+                font-weight: normal;
+            }
+        }
+    }
+
+    &-link {
+        text-decoration: none;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        padding: 0 $spacing-4;
+        color: $color-gray-70;
+        font-size: $font-size-2;
+
+        @at-root a#{&} {
+            &:hover,
+            &:focus {
+                text-decoration: underline;
+            }
+        }
+
+        @media (min-width: $breakpoint-md) {
+            font-size: $font-size-2;
+            padding: 0 $spacing-8;
+        }
+    }
+
+    &--small {
+        .breadcrumb-link {
+            font-size: $font-size-2;
+        }
+    }
+
+    &--light {
+        .#{$breadcrumbPrefix}-link {
+            color: $color-white;
+        }
+    }
+}

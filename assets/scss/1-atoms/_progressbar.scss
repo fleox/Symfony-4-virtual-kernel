@@ -1,0 +1,44 @@
+/*
+Styleguide Progress Bar
+*/
+
+/*
+0 - Progress Bar
+
+Styleguide Progress Bar - Progress Bar
+*/
+
+/*
+1 - Progress Bar : barre de progression avec indication du pourcentage
+
+Markup: /style_guide/1_atoms/_progress-bar.html.twig
+
+.progressBar - Barre de progression
+
+Styleguide Progress Bar - Progress Bar
+*/
+
+.progressBar {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    &-heading {
+        margin-bottom: $spacing-4;
+    }
+
+    &-inner {
+        background-color: $color-gray-40;
+        width: $size-250;
+    }
+
+    &-indicator {
+        background-color: $color-primary;
+        height: $size-10;
+    }
+
+    &-value {
+        text-align: center;
+    }
+}

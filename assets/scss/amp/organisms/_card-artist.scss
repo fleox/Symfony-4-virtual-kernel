@@ -1,0 +1,102 @@
+/*
+ * @filename    : common/molecules/_card-artist.scss
+ * @description : Contient les styles de la "CARTE ARTISTE" présente en sidebar des articles
+ * @projet      : NRJ
+ * @date        : AVRIL 2017
+ * @author      : Trésor ILOYI
+ * -------------------------------------------- */
+
+.cardArtist {
+    left: 0;
+    padding: 0;
+    margin: 0;
+    position: fixed;
+    top: 5.4rem; // =54px
+    width: 100%;
+    z-index: ($zindex-header - 1);
+
+    a {
+        &,
+        &:active,
+        &:focus,
+        &:hover {
+            color: $white
+        }
+    }
+}
+
+.cardArtist-container {
+    background: $black;
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+}
+
+.cardArtist-title {
+    @include font-size(1.2);
+    @include lato-regular;
+    color: $white;
+    margin: 0;
+    left: 7.5rem; // =75px
+    position: absolute;
+    left: 8.2rem; // =82px
+    margin: 0 auto;
+    text-transform: uppercase;
+    top: 0.4rem; // =4px
+}
+
+.cardArtist-visual {
+    display: table-cell;
+    position: relative;
+    vertical-align: middle;
+}
+
+.cardArtist-visual-wrapper {
+    height: auto;
+    padding: 0;
+
+    .embed-responsive-item {
+        position: static;
+    }
+}
+
+.cardArtist-img {
+    @include transformY(0);
+    max-width: 6.4rem; // =64px
+}
+
+.cardArtist-caption,
+.cardArtist-caption-title,
+.cardArtist-caption-link {
+    height: 100%;
+    display: block;
+    width: 100%;
+}
+
+.cardArtist-caption {
+    position: absolute;
+    z-index: 2;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+}
+
+.cardArtist-caption-title {
+    @include font-size(1.5); // =15px
+    margin: 0 auto;
+}
+
+.cardArtist-caption-link {
+    span {
+        bottom: 0.6rem; // =6px
+        left: 8.2rem; // =82px
+        position: absolute;
+    }
+
+    &:hover {
+        span {
+            text-decoration: underline;
+        }
+    }
+}

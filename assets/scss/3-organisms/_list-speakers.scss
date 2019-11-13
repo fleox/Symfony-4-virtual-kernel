@@ -1,0 +1,292 @@
+/*
+Styleguide List Speakers
+*/
+
+/*
+0 - List Speakers
+
+Styleguide List Speakers - List Speakers
+*/
+
+/*
+1 List Speakers Default
+
+Markup: /style_guide/3_organisms/_list-speakers.html.twig
+
+.listSpeakers - Classe par défaut
+
+Styleguide List Speakers - List Speakers par défault
+*/
+
+.listSpeakers {
+    @media (min-width: $breakpoint-lg) {
+        align-items: flex-end;
+        display: flex;
+        justify-content: space-evenly;
+        position: relative;
+
+        &::before {
+            background-color: rgba($color-black, 0.8);
+            bottom: 0;
+            content: "";
+            height: 10rem;
+            left: -999rem;
+            position: absolute;
+            right: -999rem;
+            z-index: 3;
+        }
+    }
+
+    // stylelint-disable selector-max-specificity
+    &:not(.tns-slider) {
+        @media (max-width: $breakpoint-md-max) {
+            flex-wrap: nowrap;
+            overflow-x: auto;
+            display: flex;
+        }
+    }
+    // stylelint-enable
+
+    // * .tns-slider: Tiny Slider Container
+    &.tns-slider {
+        @media (min-width: $breakpoint-md) and (max-width: $breakpoint-md-max) {
+            align-items: flex-end;
+            display: flex;
+            min-height: ($spacing-32 * 13);
+        }
+    }
+
+    // **
+    // * List Speakers Item
+    // **
+
+    &-item {
+        flex: 0 0 27.2rem; // Size on 320 width screens
+
+        @media (min-width: $breakpoint-md) {
+            flex: 0 0 (100 / 3 + vw); // Necessary to display all informations when the "Live" mode is enabled
+        }
+
+        @media (min-width: $breakpoint-lg) {
+            flex: 0 0 25%;
+
+            &:first-child {
+                .card-content::before {
+                    left: -999rem;
+                }
+            }
+
+            &:last-child {
+                .card-content::before {
+                    right: -999rem;
+                }
+            }
+
+            &:not(.listSpeakers-item--active) {
+                // stylelint-disable selector-max-specificity
+                [class*="heading"],
+                .nav {
+                    @include visuallyHidden;
+                }
+
+                .description + .description {
+                    margin-bottom: 0;
+                }
+                // stylelint-enable
+            }
+        }
+    }
+
+    @at-root {
+        // ** /!\ Stylelint is disable for selector-max-specificity only in this particular case of component with rich layout: don't abuse of stylelint-disable!
+        // .card-content--speaker modifier only to avoir regressions due of the generic classes
+        // stylelint-disable selector-max-specificity
+        @media (min-width: $breakpoint-md) and (max-width: $breakpoint-lg) {
+            .tns-item:not(.center) {
+                .card-content--speaker {
+                    @include visuallyHidden;
+                }
+            }
+
+            .tns-item.center {
+                .card-content--speaker {
+                    bottom: 0;
+                    clip: auto;
+                    height: auto;
+                    margin: auto;
+                    left: -($spacing-16 * 10);
+                    overflow: visible;
+                    padding: $spacing-8;
+                    right: -($spacing-16 * 10);
+                    width: auto;
+
+                    &::before {
+                        left: -999rem;
+                        right: -999rem;
+                    }
+                }
+
+                .card--speaker {
+                    .thumbnail-visual {
+                        height: ($spacing-44 * 9);
+                    }
+                }
+            }
+        }
+        // stylelint-enable
+    }
+
+    // **
+    // * List Speakers Program
+    // **
+
+    &--program {
+        .card-header {
+            min-height: auto;
+        }
+
+        .card-content {
+            &::before {
+                background-color: rgba($color-black, $opacity-7);
+            }
+        }
+
+        .card--speaker {
+            overflow: visible;
+        }
+
+        // ** Disable text-decoration effect on heading
+        .listSpeakers-item {
+            @media (min-width: $breakpoint-lg) {
+                flex: auto;
+                margin-left: -$spacing-48;
+                position: relative;
+                max-width: 22%;
+
+                &:focus {
+                    outline: none;
+                }
+            }
+
+            &::before {
+                @media (min-width: $breakpoint-lg) {
+                    display: none;
+                }
+            }
+        }
+
+        // ** Program Speaker List Item Active
+        .listSpeakers-item--active {
+            max-width: none;
+
+            // ** On low resolutions, if case of the list is not a slider (and using flexbox), the active element is in the first position
+            @media (max-width: $breakpoint-sm-max) {
+                order: -1;
+            }
+
+            @media (min-width: $breakpoint-lg) {
+                flex: 0 0 47%;
+                margin-left: 0;
+                margin-right: $spacing-32;
+                order: -1;
+                z-index: 3;
+            }
+
+            // ** /!\ Stylelint is disable for selector-max-specificity only in this particular case of component with rich layout: don't abuse of stylelint-disable!
+            // stylelint-disable selector-max-specificity
+            // ** Thumbnail
+            .thumbnail {
+                &-visual {
+                    @media (min-width: $breakpoint-lg) {
+                        margin-bottom: -$spacing-64;
+                        position: relative;
+                    }
+                    @media (min-width: $breakpoint-xl) {
+                        margin-bottom: -$spacing-8;
+                    }
+                }
+            }
+
+            // ** Speaker Branding
+            .speakerBranding {
+                @media (min-width: $breakpoint-lg) {
+                    bottom: $spacing-48;
+                    right: 0;
+                    width: ($spacing-24 * 10);
+                }
+
+                &-visual {
+                    @media (min-width: $breakpoint-lg) {
+                        height: $size-90;
+                        transform: scale(1);
+                        transition: transform 0.125s ease-in;
+                    }
+
+                    &:hover {
+                        @media (min-width: $breakpoint-lg) {
+                            transform: scale(1.05);
+                        }
+                    }
+                }
+            }
+
+            .card {
+                &-wrapper {
+                    @media (min-width: $breakpoint-lg) {
+                        align-items: flex-start;
+                        display: flex;
+                        flex-direction: row;
+
+                        &:hover,
+                        &:focus {
+                            .thumbnail {
+                                transform: scale(1);
+                            }
+
+                            [class^="heading"] {
+                                text-decoration: none;
+                            }
+                        }
+                    }
+                }
+
+                &-header {
+                    @media (min-width: $breakpoint-lg) {
+                        flex: 1;
+                        position: static;
+
+                        &:hover,
+                        &:focus {
+                            .thumbnail {
+                                transform: scale(1);
+                            }
+                        }
+                    }
+                }
+
+                &-content {
+                    @media (min-width: $breakpoint-lg) {
+                        clip: auto;
+                        flex: 0 0 25rem;
+                        height: auto;
+                        margin: 0;
+                        overflow: visible;
+                        padding-top: $spacing-40;
+                        position: relative;
+                        width: auto;
+                    }
+                    @media (min-width: $breakpoint-xl) {
+                        padding-top: $spacing-32;
+                    }
+
+                    &::before {
+                        @media (min-width: $breakpoint-lg) {
+                            display: none;
+                        }
+                    }
+                }
+            }
+            // stylelint-enable
+        }
+    }
+}

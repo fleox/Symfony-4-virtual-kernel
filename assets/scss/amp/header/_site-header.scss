@@ -1,0 +1,58 @@
+.hamburger {
+    padding-left: 1em;
+    font-size: 2em;
+}
+.sidebar {
+    padding: 10px;
+    margin: 0;
+}
+.sidebar > li {
+    list-style: none;
+    margin-bottom:1em;
+}
+.sidebar a {
+    text-decoration: none;
+}
+.close-sidebar {
+    font-size: 1.5em;
+    padding-left: 0.5em;
+}
+
+.headerbar {
+    height: 60px;
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background-color: $color-primary;
+    color: $color-white;
+}
+.siteLogo {
+    margin-left: 0.5em;
+    background-color: $color-white;
+    padding:0.2em;
+}
+
+.i-amphtml-scroll-disabled {
+    .i-amphtml-overlay {
+        width: 100%;
+
+        .headerSite-panel {
+            width: 100%;
+        }
+    }
+
+    #sidebar {
+        top: 64px;
+    }
+
+    .headerSite-panel {
+        top: 0;
+    }
+
+    .i-amphtml-sidebar-mask {
+        margin-top: 64px;
+    }
+}

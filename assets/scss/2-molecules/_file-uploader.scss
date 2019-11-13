@@ -1,0 +1,80 @@
+/*
+Styleguide File Uploader
+*/
+
+/*
+0 - File Uploader
+
+Styleguide File Uploader - File Uploader
+*/
+
+/*
+1 File Uploader
+
+Markup: /style_guide/2_molecules/_file-uploader.html.twig
+
+.fileUploader - File Uploader
+
+Styleguide File Uploader - File Uploader
+*/
+
+.fileUploader {
+    &-heading {
+        font-size: $font-size-3;
+        margin-bottom: $spacing-4;
+    }
+
+    &-content {
+        align-items: center;
+        background-color: $color-gray-20;
+        border: 0.2rem solid $color-gray-80;
+        display: flex;
+        height: $size-150;
+        justify-content: center;
+        position: relative;
+    }
+
+    &-progress {
+        align-items: center;
+        background-color: $color-gray-20;
+        bottom: 0;
+        display: flex;
+        justify-content: center;
+        left: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+
+        &--hidden {
+            display: none;
+        }
+    }
+
+    .formField {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+
+        &::before {
+            color: $color-primary;
+            content: $enrj-download;
+            display: block;
+            font-family: $icomoon-font-family;
+            font-size: $font-size-12;
+            margin-bottom: $spacing-4;
+            speak: none;
+        }
+    }
+
+    .formControl[type="file"] {
+        @include visuallyHidden;
+    }
+
+    .formLabel {
+        background-color: $color-primary;
+        color: $color-white;
+        cursor: pointer;
+        display: inline-block;
+        padding: $spacing-12;
+    }
+}

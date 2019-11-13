@@ -1,0 +1,61 @@
+/*
+Styleguide Banner Message
+*/
+
+/*
+0 - Banner Message
+
+Styleguide Banner Message - Banner Message
+*/
+
+/*
+Bannière affichant un message
+
+Markup: /style_guide/2_molecules/_banner-message.html.twig
+
+.bannerMessage - Classe de base
+
+Styleguide Banner Message - Banner Message
+*/
+
+.bannerMessage {
+    background: $color-primary no-repeat 50% 0;
+    align-items: flex-start;
+    color: $color-white;
+    display: flex;
+    height: 32.7rem;
+    justify-content: center;
+    padding: $spacing-22;
+    position: relative;
+    text-align: center;
+    text-transform: uppercase;
+
+    @media (max-width: $breakpoint-md-max) {
+        background-image: url('https://www.nrj.fr/uploads/assets/nrj/banner-message-xs.jpg');
+    }
+
+    @media (min-width: $breakpoint-lg) {
+        background-image: url('https://www.nrj.fr/uploads/assets/nrj/banner-message-l.jpg');
+    }
+
+    @media (min-width: $breakpoint-lg) {
+        align-items: center;
+    }
+
+    [class*="heading"] {
+        @media (min-width: $breakpoint-md) and (max-width: $breakpoint-md-max) {
+            font-size: $spacing-32;
+        }
+    }
+
+    &-branding {
+        background-color: $color-white;
+        display: block;
+        margin: $spacing-12 auto;
+        padding: 0.2em;
+        width: ($spacing-base * 6);
+        @media (min-width: $breakpoint-lg) {
+            width: ($spacing-base * 10);
+        }
+    }
+}

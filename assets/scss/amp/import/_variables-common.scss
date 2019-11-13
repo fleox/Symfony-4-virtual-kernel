@@ -1,0 +1,140 @@
+// **
+// * @filename    : common/_variables-common.scss
+// * @description : Fichier listant l'ensemble des VARIABLES SASS communes à tout le site
+// * @projet      : NRJ 2017 (nouveau site NRJ)
+// * @date        : AVRIL 2017
+// * @author      : Trésor ILOYI
+// * -------------------------------------------- */
+
+
+/***
+ * BOOTSTRAP
+ * Définition des variables "custom" inspirées par la logique BOOTSTRAP
+ */
+
+$grid-gutter-mobile-width:  12px !default;
+
+    // ** Formulaire
+$input-padding  : 0 1rem; // =0 10px
+$input-height   : 3.5rem; // =35px
+$input-radius   : 0.3rem; // =3px
+
+
+/***
+ * DEVICES SIZES
+ * Définition des points de bascule/taille de device
+ */
+
+$mobile             : 480px;
+$mobile-landscape   : 480px;
+$mobile-only        : 767px;
+$tablet             : 768px;
+$tablet-less        : 767px;
+$tablet-landscape   : 1024px;
+$desktop            : 1170px;
+$desktop-less       : 1169px;
+$large              : 1470px;
+$large-less         : 1469px;
+
+
+/***
+ * COLORS
+ * Définition des couleurs communes à tout le site
+ */
+
+$black      : #000000;
+$black-1    : #080010;
+$black-2    : #01080e;
+$black-3    : #05000d;
+$black-4    : #30302f;
+$black-5    : #1e1e1c;
+
+$white      : #ffffff;
+
+$gray-0     : #eaeaea;
+$gray-1     : #cccccc;
+$gray-2     : #f5f5f5;
+$gray-3     : #f0f0f0;
+$gray-4     : #e1e1e1;
+$gray-5     : #333333;
+$gray-6     : #f7f7f7;
+$gray-7     : #3c3c3c;
+$gray-8     : #353535;
+$gray-9     : #424242;
+$gray-10    : #464646;
+$gray-11    : #eeeeee;
+$gray-12    : #626262; // Utilisé notamment dans les pages concerts/spectacles
+$gray-13    : #3a3a3a;
+$gray-14    : #84939f;
+
+
+$red-nrj    : #e10816;
+$red-1      : #ec1d27;
+$red-2      : #ae181b;
+
+$facebook   : #3b5998;
+$facebook-2 : #304b83; // Pour le hover Facebook
+$twitter    : #55acee;
+$twitter-2  : #518eba; // Pour le hover Twitter
+$googleplus : #ee535f;
+$googleplus-2 : #d23e2b;
+$googleplus-3 : #c4444e; // Pour le hover Google+
+$whatsapp   : #55cd63;
+$whatsapp-2 : #519f53; // Pour le hover WhatsApp
+$pinterest  : #bd081c;
+$mail       : $gray-7;
+
+$bodyBackground : $white;
+
+
+/***
+ * POLICES
+ * Définition des font-family
+ */
+
+$fontPath: '//www.nrj.fr/uploads/assets/nrj/fonts/';
+
+$hind               : "Hind", sans-serif;
+$lato               : "Lato", sans-serif;
+$montserrat         : "Montserrat", sans-serif;
+$oswald             : "Oswald", sans-serif;
+$robotoCondensed    : "Roboto Condensed", sans-serif;
+$eaglebook          : "Eagle Book NRJ", sans-serif;
+
+
+/***
+ * MISC
+ * Variables diverses et variées
+ */
+
+$pixelOnly: false;
+$sidebarSize: 330px;
+
+
+/***
+ * LOADER
+ * Variables propre au loader "wave"
+ */
+
+$loader-height  : 3.6rem;
+$loader-width   : 3.6rem;
+$loader-color   : $black;
+$loader-duration: 1.0s;
+
+
+/***
+ * SUBNAV
+ * Variables propre à la sous-nav présente sur les site de niveau 2
+ */
+
+$subnav-color-link: $white;
+$subnav-trigger-font-size: 1.7;
+$subnav-trigger-background: $black;
+$subnav-trigger-color: $subnav-color-link;
+$subnav-trigger-line-height: 2.353; // =40px
+$subnav-wrapper-backgroud-color: $black;
+$subnav-wrapper-padding-xs: 0 0 2rem;
+$subnav-wrapper-padding-desktop: 0;
+$subnav-social-padding: 2rem 0;
+$subnav-social-fontsize: 2.1; // => height~21px
+$subnav-social-link-padding: 0 0.7rem; // =0 7px

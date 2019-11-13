@@ -1,0 +1,25 @@
+/*
+Styleguide Media
+*/
+
+/*
+0 - Media
+
+Styleguide Media - Media
+*/
+
+/*
+1 Média: Visuel ou vidéo comportant une légende, utilisée dans les pages articles
+
+Markup: /style_guide/2_molecules/_media.html.twig
+
+.media - Card par défaut
+
+Styleguide Media - Media par défault
+*/
+
+.media {
+    &-caption {
+        margin-top: $spacing-8;
+    }
+}

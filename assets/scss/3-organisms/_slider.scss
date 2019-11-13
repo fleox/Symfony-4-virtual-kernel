@@ -1,0 +1,288 @@
+/*
+Styleguide Slider
+*/
+
+/*
+0 - Slider
+
+Styleguide Slider - Slider
+*/
+
+/*
+1 - Slider. Paramètres : items, slideBy, speed, nav, loop. Possibilité d'ajouter plus d'options de TNS Slider http://ganlanyuan.github.io/tiny-slider/#options à l'aide du fichier js/slider/slider.js. Les options responsives sont xs, sm, md, lg, xl, et peuvent prendre en clé une partie des options de TNS : http://ganlanyuan.github.io/tiny-slider/#responsive-options.
+
+Markup: /style_guide/3_organisms/_slider.html.twig
+
+.sliderContainer - slider par défaut.
+sliderContainer--light - Flèches de contrôle claires pour les fonds sombres.
+sliderContainer--big - Flèches de contrôle plus grosses.
+sliderContainer--outside - Flèches de contrôle en dehors de la zone du slider.
+sliderContainer--cropped - Flèches de contrôle à cheval de la zone du slider.
+
+Styleguide Slider - Slider 1
+*/
+
+$sliderContainerPrefix: 'sliderContainer';
+
+.#{$sliderContainerPrefix} {
+    position: relative;
+    padding: 0;
+
+    .slider:not(.tns-slider) {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+    }
+
+    &--outside {
+        padding: 0 $spacing-44;
+
+        &.#{$sliderContainerPrefix}--big {
+            padding: 0 $spacing-48;
+        }
+    }
+
+    &--light {
+        [aria-controls] {
+            background: $color-gray-30;
+        }
+
+        .tns-nav-active {
+            background: $color-white;
+        }
+    }
+
+    &--podcasts {
+        .slider {
+            @media (max-width: $breakpoint-md-max) {
+                padding-top: 15rem;
+                display: flex;
+                flex-wrap: nowrap;
+                overflow-x: auto;
+            }
+
+            &-item {
+                @media (max-width: $breakpoint-md-max) {
+                    margin-right: $spacing-8;
+
+                    &:first-child {
+                        margin: 0;
+                    }
+                }
+            }
+        }
+
+        .cardPodcast--highlight {
+            @media (max-width: $breakpoint-md-max) {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                margin-right: 0;
+            }
+
+            .cardPodcast-wrapper {
+                @media (max-width: $breakpoint-md-max) {
+                    width: auto;
+                }
+            }
+
+            .cardPodcast-upper {
+                @media (max-width: $breakpoint-md-max) {
+                    flex: 0 0 13rem;
+                }
+            }
+
+            .cardPodcast-inner {
+                @media (max-width: $breakpoint-md-max) {
+                    flex: 0 1 auto;
+                    padding: $spacing-8;
+                    overflow: hidden;
+                }
+            }
+
+            .cardPodcast-content {
+                @media (max-width: $breakpoint-md-max) {
+                    @include ellipsis;
+                }
+            }
+        }
+    }
+
+    &--endReached {
+        button[data-controls="next"] {
+            display: none;
+        }
+    }
+
+    &--topRadio,
+    &--hits {
+        .card-header {
+            border-radius: $spacing-8;
+        }
+
+        .description {
+            color: rgba(255, 255, 255, 0.8);
+        }
+    }
+
+    &--game,
+    &--articleFooter,
+    &--fullXs {
+        @media (max-width: $breakpoint-md-max) {
+            margin-right: -$spacing-16;
+        }
+    }
+}
+
+.tns-controls {
+    button[data-controls="prev"],
+    button[data-controls="next"] {
+        position: absolute;
+        z-index: 1;
+        font-size: $font-size-9;
+        height: $spacing-44;
+        top: 50%;
+        transform: translateY(-50%);
+        width: $spacing-44;
+        cursor: pointer;
+
+        &[disabled],
+        &[aria-disabled="true"] {
+            display: none;
+        }
+
+        &::before {
+            font-family: '#{$icomoon-font-family}';
+            position: absolute;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .#{$sliderContainerPrefix}--light & {
+            color: $color-white;
+            background: transparent;
+        }
+
+        .#{$sliderContainerPrefix}--big & {
+            font-size: $font-size-12;
+            height: $spacing-48;
+            width: $spacing-48;
+        }
+
+        .#{$sliderContainerPrefix}--cropped & {
+            background: $color-white;
+            color: $color-gray-90;
+            border-radius: 50%;
+            font-size: $font-size-7;
+            box-shadow: 0 $spacing-8 $spacing-20 rgba(0, 0, 0, 0.15), 0 $spacing-8 $spacing-8 rgba(0, 0, 0, 0.1);
+        }
+
+        .#{$sliderContainerPrefix}--topRadio & {
+            top: 38%;
+        }
+
+        .#{$sliderContainerPrefix}--radio & {
+            top: 38%;
+        }
+
+        .#{$sliderContainerPrefix}--actus & {
+            top: 31%;
+        }
+
+        .#{$sliderContainerPrefix}--hits & {
+            top: 45%;
+        }
+
+        .#{$sliderContainerPrefix}--articleFooter & {
+            top: 37%;
+        }
+    }
+
+    button[data-controls="prev"] {
+        left: 0;
+
+        &:hover,
+        &:focus {
+            color: $color-primary;
+        }
+
+        &::before {
+            left: 45%;
+            content: $enrj-chevron-left;
+        }
+
+        .#{$sliderContainerPrefix}--cropped & {
+            @media (min-width: $breakpoint-md) {
+                left: -$spacing-22;
+            }
+        }
+    }
+
+    button[data-controls="next"] {
+        right: 0;
+
+        &:hover,
+        &:focus {
+            color: $color-primary;
+        }
+
+        &::before {
+            left: 55%;
+            content: $enrj-chevron-right;
+        }
+
+        .#{$sliderContainerPrefix}--cropped & {
+            @media (min-width: $breakpoint-md) {
+                right: -$spacing-22;
+            }
+        }
+    }
+}
+
+.tns-nav {
+    text-align: center;
+
+    @media (min-width: $breakpoint-md) {
+        margin: 1rem 0;
+    }
+
+    & > [aria-controls] {
+        width: 0.9rem;
+        height: 0.9rem;
+        padding: 0;
+        margin: 0 0.5rem;
+        border-radius: 50%;
+        background: $color-gray-50;
+        border: 0;
+    }
+
+    & > .tns-nav-active {
+        background: $color-gray-70;
+    }
+}
+
+//Avoid the FOUC
+// stylelint-disable selector-max-specificity
+.slider-item--onload:not(.tns-item) .card {
+    display: flex;
+    flex-direction: column;
+    padding-right: $spacing-20;
+}
+
+.slider-item--by6:not(.tns-item) .card {
+    width: 38vw;
+
+    @media (min-width: $breakpoint-md) {
+        width: 10vw;
+    }
+}
+
+.slider-item--by4:not(.tns-item) .card, {
+    width: 70vw;
+
+    @media (min-width: $breakpoint-md) {
+        width: 13vw;
+    }
+}
+// stylelint-enable

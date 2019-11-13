@@ -1,0 +1,39 @@
+/*
+ * @filename    : amp/molecules/_block-video.scss
+ * @description : Contient les styles d'un block VIDEO de type AMP au sein d'un ARTICLE
+ * @projet      : NRJ
+ * @date        : MAI 2017
+ * @author      : Trésor ILOYI
+ * -------------------------------------------- */
+
+.articleContentBlock-link {
+    display: block;
+    position: relative;
+
+    &:after,
+    &:before {
+        content: "";
+        position: absolute;
+    }
+
+    &:after {
+        background: rgba($black, 0.3);
+        height: 100%;
+        left: 0;
+        top: 0;
+        width: 100%;
+        z-index: 1;
+    }
+
+    &:before {
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 20px 0 20px 34.6px;
+        border-color: transparent transparent transparent $white;
+        z-index: 2;
+        left: 50%;
+        top: 50%;
+        margin: -20px 0 0 -20px;
+    }
+}

@@ -1,0 +1,145 @@
+/*
+Styleguide Lists
+*/
+
+/*
+0 - Lists
+
+Styleguide Lists - Lists
+*/
+
+/*
+1 Unordered List
+
+Markup: /style_guide/2_molecules/_unordered-list.html.twig
+
+.unorderedList - Classe par défaut
+
+Styleguide Lists - Unordered List
+*/
+
+/*
+2 Ordered List
+
+Markup: /style_guide/2_molecules/_ordered-list.html.twig
+
+.orderedList - Classe par défaut
+.orderedList--primary - Puces ordonnées sur fond rouge.
+.orderedList--bigMarker - Puces grossies 1.5 fois en desktop (en cas de <li> avec font-size élevé).
+
+Styleguide Lists - Ordered List
+*/
+
+.unorderedList {
+    &-item::before {
+        content: '●';
+        margin-right: $spacing-4;
+    }
+}
+
+$orderedListPrefix: 'orderedList';
+
+.orderedList {
+    counter-reset: ordered-list;
+
+    &-item {
+        counter-increment: ordered-list;
+        vertical-align: middle;
+        display: flex;
+        align-items: baseline;
+
+        &::before {
+            font-weight: $font-weight-bold;
+            font-size: $font-size-base;
+            content: counter(ordered-list);
+            margin-right: $spacing-12;
+            color: $color-white;
+            background-color: $color-black;
+            border-radius: 50%;
+            width: $spacing-24;
+            min-width: $spacing-24;
+            line-height: $spacing-24;
+            height: $spacing-24;
+            text-align: center;
+        }
+    }
+
+    &--primary .orderedList-item::before {
+        background-color: $color-primary-100;
+    }
+
+    &--bigMarker .orderedList-item::before {
+        @media (min-width: $breakpoint-xl) {
+            font-size: $font-size-base * 1.5;
+            width: $spacing-24 * 1.5;
+            min-width: $spacing-24 * 1.5;
+            line-height: $spacing-24 * 1.5;
+            height: $spacing-24 * 1.5;
+        }
+    }
+
+    &--top {
+        .#{$orderedListPrefix}-item {
+            align-items: center;
+            border-bottom: 0.1rem solid $color-gray-60;
+
+            &::before {
+                position: absolute;
+                z-index: 1;
+                width: $spacing-40;
+                min-width: $spacing-40;
+                line-height: $spacing-40;
+                height: $spacing-40;
+                background: $color-black;
+                color: $color-white;
+                font-size: $font-size-8;
+                border-radius: 0;
+            }
+
+            &:nth-child(1) {
+                &::before {
+                    background: $color-primary-100;
+                }
+            }
+
+            &:nth-child(2) {
+                &::before {
+                    background: $color-primary-140;
+                }
+            }
+
+            &:nth-child(3) {
+                &::before {
+                    background: $color-primary-180;
+                }
+            }
+        }
+
+        .#{$orderedListPrefix}-link {
+            position: relative;
+            z-index: 2;
+            display: block;
+            padding: $spacing-24 0 $spacing-24 $spacing-48;
+            text-decoration: none;
+        }
+    }
+}
+
+.unorderedList,
+.orderedList {
+    &-item {
+        line-height: $line-height-small;
+
+        &:not(:last-child) {
+            margin-bottom: $spacing-4;
+        }
+    }
+}
+
+.list {
+    &.grid {
+        @media (min-width: $breakpoint-xl) {
+            grid-row-gap: $spacing-32;
+        }
+    }
+}

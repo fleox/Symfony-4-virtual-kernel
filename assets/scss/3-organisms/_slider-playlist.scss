@@ -1,0 +1,98 @@
+/*
+Styleguide Slider Playlist
+*/
+
+/*
+0 - Slider Playlist
+
+Styleguide Slider Playlist - Slider Playlist
+*/
+
+/*
+Slider Playlist
+
+Markup: /style_guide/3_organisms/_slider-playlist.html.twig
+
+.sliderContainer--playlist - Code de base
+
+Styleguide Slider Playlist - Slider Playlist
+*/
+
+.sliderContainer--playlist,
+.sliderContainer--playlistHighlight {
+    @media (max-width: $breakpoint-md-max) {
+        padding-left: 0;
+        padding-right: 0;
+
+        .slider {
+            display: flex;
+            flex-wrap: nowrap;
+            overflow-x: auto;
+
+            &-item {
+                margin-right: $spacing-8;
+            }
+        }
+    }
+}
+
+.sliderContainer--playlistHighlight {
+    .slider-itemThumbnail {
+        @media (max-width: $breakpoint-md-max) {
+            width: 80vw;
+        }
+    }
+
+    .thumbnail {
+        width: 100%;
+    }
+}
+
+.sliderContainer--playlist {
+    .slider {
+        @media (max-width: $breakpoint-md-max) {
+            padding-top: calc(56.25% + #{$spacing-20});
+
+            &-item:nth-child(1) {
+                @media (max-width: $breakpoint-md-max) {
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+
+    .slider-itemThumbnail {
+        &:hover {
+            transition: opacity 0.15s ease-in-out;
+            opacity: 0.85;
+        }
+
+        transition: opacity 0.15s ease-in-out;
+        opacity: 1;
+
+        @media (max-width: $breakpoint-md-max) {
+            left: 0;
+            position: absolute;
+            top: 0;
+            width: 100%;
+        }
+    }
+
+    .slider-itemCard {
+        width: ($spacing-32 * 5);
+    }
+}
+
+// stylelint-disable selector-max-specificity
+.sliderContainer--playlist:not(.sliderContainer--playlistHighlight) {
+    .slider-itemThumbnail {
+        @media (min-width: $breakpoint-lg) {
+            width: ($spacing-32 * 12);
+        }
+
+        @media (min-width: $breakpoint-xl) {
+            width: ($spacing-32 * 13);
+        }
+    }
+}
+// stylelint-enable

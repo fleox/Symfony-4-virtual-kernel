@@ -1,0 +1,63 @@
+/*
+ * @filename    : common/_layout.scss
+ * @description : Contient les styles du layout du site pour les pages AMP
+ * @projet      : NRJ 2017 (nouveau site NRJ)
+ * @date        : AVRIL 2017
+ * @author      : Trésor ILOYI
+ * -------------------------------------------- */
+
+body {
+    padding-top: 5.4rem; // =54px
+
+    &[class*="artiste"] {
+        padding-top: 9.9rem; // =99px
+    }
+}
+
+.area-container {
+    background: $white;
+    padding-bottom: 4rem; // =40px
+}
+
+.ampRedirectLink {
+    display: block;
+    margin: 0 auto;
+    width: 50%;
+}
+
+.visuallyHidden {
+    @include visuallyHidden;
+}
+
+
+/***
+ * HELPERS
+ * Classes utiles
+ */
+
+img {
+    max-width: 100%;
+}
+
+.embed-responsive-1by1 {
+    padding-bottom: 100%;
+}
+
+.embed-responsive-item {
+    text-align: center;
+}
+
+
+/***
+ * PUB - BANNER
+ * Styles des pubs du type "bannière"
+ */
+
+.pave-top-amp {
+    padding-top: ($grid-gutter-mobile-width / 2);
+
+    & > * {
+        margin: 0 auto;
+        display: block;
+    }
+}

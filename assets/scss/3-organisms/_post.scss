@@ -1,0 +1,27 @@
+/*
+Styleguide Post
+*/
+
+/*
+0 - Post
+
+Styleguide Post - Post
+*/
+
+/*
+Post
+
+Markup: /style_guide/3_organisms/_post.html.twig
+
+.post - Code de base
+
+Styleguide Post - Post
+*/
+
+.post {
+    &-item {
+        &:not(:last-child) {
+            margin-bottom: $spacing-40;
+        }
+    }
+}

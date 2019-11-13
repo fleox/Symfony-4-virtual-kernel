@@ -1,0 +1,21 @@
+/*
+Styleguide Box Shadow
+*/
+
+/*
+0 - Box shadow
+
+Styleguide Box Shadow - Box Shadow
+
+*/
+
+.box-shadow {
+    &-card {
+        box-shadow: $box-shadow-card;
+        transition: $transition-ui-box-shadow;
+
+        &:hover {
+            box-shadow: $box-shadow-card-hover;
+        }
+    }
+}

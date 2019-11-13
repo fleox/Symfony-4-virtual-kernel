@@ -1,0 +1,118 @@
+.contentMain {
+    .media {
+        margin-bottom: $spacing-24;
+        @media (max-width: $breakpoint-sm-max) {
+            margin-left: -$spacing-16;
+            margin-right: -$spacing-16;
+
+            &-caption {
+                margin-left: $spacing-16;
+            }
+        }
+        @media (min-width: $breakpoint-md) and (max-width: $breakpoint-md-max) {
+            margin-left: -$spacing-24;
+            margin-right: -$spacing-24;
+
+            &-caption {
+                margin-left: $spacing-24;
+            }
+        }
+        @media (min-width: $breakpoint-lg) {
+            margin-left: -$spacing-96;
+        }
+    }
+
+    .headline {
+        margin-bottom: $spacing-24;
+    }
+}
+
+.page--article {
+    .contentMain {
+        @media (min-width: $breakpoint-lg) {
+            padding-right: $spacing-64;
+            position: relative;
+        }
+    }
+
+    .headerPage-container {
+        border-top: 0.1rem solid $color-gray-40;
+    }
+
+    // stylelint-disable selector-max-specificity
+    .contentSite-inner {
+        &:first-child {
+            .headerPage-container {
+                border-top: none;
+            }
+        }
+    }
+    // stylelint-enable
+
+    .contentAside {
+        @media (max-width: $breakpoint-md-max) {
+            margin-top: $spacing-32;
+
+            &-item {
+                &Xs {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    .card--rebound {
+        margin-top: $spacing-16;
+
+        &-wrapper {
+            align-items: stretch;
+        }
+
+        &-header {
+            background-color: $color-white;
+            padding-top: $spacing-12;
+        }
+
+        &-content {
+            align-self: center;
+        }
+    }
+
+    .rebonds {
+        background-color: $color-gray-10;
+        padding: $spacing-4;
+    }
+}
+
+// **
+// * Header Page Media
+// * Comment: Header contains pictures, sliders, etc. for Article Template (Post)
+// **
+
+.headerPage-media {
+    @media (max-width: $breakpoint-sm-max) {
+        margin-left: -$spacing-16;
+        margin-right: -$spacing-16;
+
+        .media-caption,
+        .mediaPlayer-footer {
+            margin-left: $spacing-16;
+        }
+    }
+    @media (min-width: $breakpoint-md) and (max-width: $breakpoint-md-max) {
+        margin-left: -$spacing-24;
+        margin-right: -$spacing-24;
+
+        .media-caption,
+        .mediaPlayer-footer {
+            margin-left: $spacing-24;
+        }
+    }
+
+    &--full {
+        @media (min-width: $breakpoint-lg) {
+            margin-left: -$spacing-24;
+            margin-right: -$spacing-24;
+        }
+    }
+}

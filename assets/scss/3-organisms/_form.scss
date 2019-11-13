@@ -1,0 +1,88 @@
+$formPrefix: 'form';
+
+.#{$formPrefix} {
+    --formBackgroundColor: transparent;
+
+    background-color: var(--formBackgroundColor);
+
+    &--gray {
+        --formBackgroundColor: #{$color-gray-10};
+    }
+
+    &--dark {
+        --formBackgroundColor: #{$color-black};
+    }
+
+    &--radius {
+        border-radius: $spacing-4;
+    }
+
+    &--shadow {
+        box-shadow: 0 0 $spacing-8 $color-gray-50;
+    }
+
+    &--bordered {
+        border: 0.1rem solid $color-gray-30;
+    }
+
+    &--bar {
+        padding: 0;
+
+        &.#{$formPrefix}--radius {
+            .formControl {
+                border-radius: $spacing-4;
+            }
+        }
+    }
+
+    .description,
+    .formAction,
+    &-row,
+    .grid,
+    &-item {
+        &:not(:last-child) {
+            margin-bottom: $spacing-16;
+        }
+    }
+
+    &-row {
+        align-items: flex-end;
+        flex-wrap: wrap;
+        display: flex;
+        justify-content: flex-start;
+
+        .#{$formPrefix}-item {
+            flex: 1;
+
+            .#{$formPrefix} & {
+                margin-bottom: 0;
+
+                &:not(:first-child) {
+                    margin-left: $spacing-16;
+                }
+            }
+        }
+
+        .formAction {
+            margin-left: $spacing-16;
+        }
+    }
+
+    &-item {
+        &--w50 {
+            width: 50%;
+        }
+
+        .formText:not(:last-child),
+        .formField:not(:last-child) {
+            margin-bottom: $spacing-8;
+        }
+    }
+
+    &--underlined {
+        .formLegend {
+            display: inline-block;
+            vertical-align: top;
+        }
+    }
+}

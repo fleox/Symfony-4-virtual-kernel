@@ -1,0 +1,38 @@
+/**
+ * @filename    : article/molecules/_filter-bar-article.scss
+ * @description : Contient les styles SURCHARGEANT le comportement de la barre de filtre
+ * présente dans les pages de type "ARTICLE" du site
+ * @projet      : NRJ
+ * @date        : JUILLET 2017
+ * @author      : Trésor ILOYI
+ * -------------------------------------------- */
+
+.filterBar {
+    padding: 0.7rem 0 1.2rem; // =7px 0 12px
+    margin-bottom: 2.5rem; // =25px
+
+    p {
+        margin: 0 auto;
+    }
+
+    // FilterBar container
+    &-container {
+
+        &:nth-child(2) {
+            margin-top: 0.9rem; // =9px
+        }
+    }
+
+    // FilterBar item
+    &-item {
+        margin-right: 0.7rem; // =7px
+    }
+
+    // Dans le cas où un block de contenu figure avant la barre de filtres
+    .articleContentBlock + &,
+    .blockConcert-visual + &,
+    .blockConcert-content + &,
+    .articleVisual:not(.articleVisual--small) + & {
+        border-top: none;
+    }
+}

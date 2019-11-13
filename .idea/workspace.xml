@@ -1,7 +1,212 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="019ab9e6-9efe-4296-b273-ce971f8aeb87" name="Default Changelist" comment="" />
+    <list default="true" id="019ab9e6-9efe-4296-b273-ce971f8aeb87" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.eslintrc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.stylelintrc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/nostalgie/js/global_vars.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/nostalgie/scss/_variables.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/nostalgie/scss/app.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/nrj/js/global_vars.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/nrj/scss/_variables.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/nrj/scss/app.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/0-base/0-base.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/0-base/_animations.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/0-base/_colors.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/0-base/_gradient.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/0-base/_helpers.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/0-base/_html-base.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/0-base/_icons.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/0-base/_mixins.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/0-base/_typography.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/0-base/_variables-webradios-bootstrap.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/1-atoms/1-atoms.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/1-atoms/_box-shadow.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/1-atoms/_buttons.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/1-atoms/_countdown.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/1-atoms/_display.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/1-atoms/_equalizer.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/1-atoms/_flags.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/1-atoms/_form-base.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/1-atoms/_form-optin-box.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/1-atoms/_header-404.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/1-atoms/_infinite-scroll-btn.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/1-atoms/_list-events-sheduled.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/1-atoms/_loader.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/1-atoms/_media-info.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/1-atoms/_progress.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/1-atoms/_progressbar.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/1-atoms/_progression.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/1-atoms/_site-logo.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/1-atoms/_types.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/2-molecules/2-molecules.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/2-molecules/_account.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/2-molecules/_alert.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/2-molecules/_banner-live.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/2-molecules/_banner-message.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/2-molecules/_booking.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/2-molecules/_breadcrumb.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/2-molecules/_call-to-action.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/2-molecules/_card-playlist.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/2-molecules/_card-podcast.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/2-molecules/_card-speaker.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/2-molecules/_card-webradio.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/2-molecules/_card.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/2-molecules/_citation-badge.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/2-molecules/_file-uploader.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/2-molecules/_filters.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/2-molecules/_form-elements.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/2-molecules/_header-main.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/2-molecules/_horoscope.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/2-molecules/_landing-page.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/2-molecules/_list-entries.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/2-molecules/_list-logo.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/2-molecules/_list-tag.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/2-molecules/_lists.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/2-molecules/_location.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/2-molecules/_media.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/2-molecules/_meta-nav.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/2-molecules/_navigation.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/2-molecules/_page-anchors.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/2-molecules/_players.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/2-molecules/_post-text.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/2-molecules/_radiolive.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/2-molecules/_range.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/2-molecules/_rate-selector.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/2-molecules/_ratio.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/2-molecules/_share.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/2-molecules/_skin.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/2-molecules/_skip-links.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/2-molecules/_social-network-account.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/2-molecules/_table.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/2-molecules/_thumbnail.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/2-molecules/_tippy.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/2-molecules/_track.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/3-organisms/3-organisms.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/3-organisms/_account-steps.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/3-organisms/_area-speakers.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/3-organisms/_area.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/3-organisms/_backgrounds-effects.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/3-organisms/_block-feature.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/3-organisms/_card-group.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/3-organisms/_diaporama.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/3-organisms/_footer-site.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/3-organisms/_form-select-date.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/3-organisms/_form.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/3-organisms/_header-artist.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/3-organisms/_header-playlist.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/3-organisms/_header-site.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/3-organisms/_list-anchors.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/3-organisms/_list-bookings.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/3-organisms/_list-cards.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/3-organisms/_list-genders.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/3-organisms/_list-playlist.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/3-organisms/_list-podcasts.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/3-organisms/_list-speakers.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/3-organisms/_list-tracks.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/3-organisms/_media-player.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/3-organisms/_navbar.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/3-organisms/_paging.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/3-organisms/_player-sidebar.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/3-organisms/_player-webradio.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/3-organisms/_post.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/3-organisms/_search-results.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/3-organisms/_search.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/3-organisms/_section-page-alexa.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/3-organisms/_section-page-nma-howto.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/3-organisms/_section-page-speakers.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/3-organisms/_section-page.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/3-organisms/_slider-app.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/3-organisms/_slider-playlist.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/3-organisms/_slider-skill.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/3-organisms/_slider.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/3-organisms/_timeline-classic.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/3-organisms/_timeline-shedule.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/3-organisms/_timeline.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/3-organisms/_webradio-player.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/3-organisms/_webradios.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/4-layout/4-layout.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/4-layout/_grid-framework.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/4-layout/_grid-mixins.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/4-layout/_grid-slider.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/4-layout/_grid.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/4-layout/_layout-article.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/4-layout/_layout-hits-broadcasted.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/4-layout/_layout-home-broadcast.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/4-layout/_layout-homepage.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/4-layout/_layout-listing.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/4-layout/_layout-lists.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/4-layout/_layout-playlist-detail.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/4-layout/_layout-podcast.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/4-layout/_layout-radio-shows.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/4-layout/_layout-search.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/4-layout/_layout-seasonaltour.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/4-layout/_layout-sidebar.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/4-layout/_layout-sitemap.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/4-layout/_layout-webradio.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/4-layout/_layout.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/5-vendors/5-vendors.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/5-vendors/_simple-modal.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/5-vendors/_tab.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/_variables.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/amp/_bootstrap-amp.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/amp/_layout-amp.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/amp/_variables-amp.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/amp/bootstrap-custom/_custom-buttons.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/amp/bootstrap-custom/_custom-forms.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/amp/bootstrap-custom/_custom-grid.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/amp/bootstrap-custom/_custom-responsive-utilities.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/amp/bootstrap-custom/_custom-type.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/amp/bootstrap-custom/mixins/_custom-grid-framework.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/amp/bootstrap-custom/mixins/_custom-grid.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/amp/header/_site-header.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/amp/import/_mixins-boostrap.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/amp/import/_mixins-common.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/amp/import/_share-links-article.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/amp/import/_variables-bootstrap.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/amp/import/_variables-common.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/amp/import/_variables-header.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/amp/import/bootstrap-custom/_custom-grid-framework.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/amp/import/bootstrap-custom/_custom-grid.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/amp/import/fonts/_enrj-icons.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/amp/import/fonts/_icons-nrj.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/amp/import/fonts/_lato.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/amp/import/fonts/_oswald.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/amp/layout/_site-footer.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/amp/molecules/_block-concert-init.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/amp/molecules/_block-concert.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/amp/molecules/_contentblock-link.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/amp/molecules/_cookie-banner.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/amp/molecules/_filter-bar-article.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/amp/molecules/_filter-bar.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/amp/molecules/_share-links-article.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/amp/molecules/_slideshow-launcher.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/amp/nrj-amp.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/amp/organisms/_article-content-block.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/amp/organisms/_article-header.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/amp/organisms/_article-pursuit.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/amp/organisms/_article.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/amp/organisms/_card-artist.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/amp/organisms/_push-readtoo.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/applications.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/guideline-variables.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/guideline.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/partners.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/webradio.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/x-styleguide/2-molecules/2-molecules.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/x-styleguide/2-molecules/_nav.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/x-styleguide/2-molecules/_template-switcher.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/postcss.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webpack.config_old.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/app.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/webpack_encore.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/webpack_encore.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/DefaultController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/DefaultController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.config.js" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -12,35 +217,83 @@
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/VirtualKernel.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="47" column="5" selection-start-line="47" selection-start-column="5" selection-end-line="47" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/bundles.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="92" selection-start-line="4" selection-start-column="92" selection-end-line="4" selection-end-column="92" />
-            </state>
-          </provider>
-        </entry>
-      </file>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/config/nrj/bundles.php">
+        <entry file="file://$PROJECT_DIR$/webpack.config.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="412">
+              <caret line="122" column="49" selection-start-line="122" selection-start-column="49" selection-end-line="122" selection-end-column="49" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.stylelintrc">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="90">
-              <caret line="6" column="2" selection-start-line="6" selection-start-column="2" selection-end-line="6" selection-end-column="2" />
+              <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assets/nostalgie/scss/_variables.scss">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/webpack.config_old.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="371">
+              <caret line="34" column="59" selection-start-line="34" selection-start-column="4" selection-end-line="34" selection-end-column="59" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/packages/webpack_encore.yaml">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assets/nrj/scss/_variables.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="195">
+              <caret line="13" column="26" selection-start-line="13" selection-start-column="26" selection-end-line="13" selection-end-column="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assets/js/app.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="5" column="3" selection-start-line="5" selection-start-column="3" selection-end-line="5" selection-end-column="3" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assets/scss/guideline.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="9" column="21" selection-start-line="9" selection-start-column="9" selection-end-line="9" selection-end-column="21" />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>red;</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -49,9 +302,7 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/config/app/routes.yaml" />
-        <option value="$PROJECT_DIR$/src/Controller/DefaultController.php" />
         <option value="$PROJECT_DIR$/src/VirtualKernel.php" />
-        <option value="$PROJECT_DIR$/public/index.php" />
         <option value="$PROJECT_DIR$/src/App/Controller/DefaultController.php" />
         <option value="$PROJECT_DIR$/config/bootstrap.php" />
         <option value="$PROJECT_DIR$/config/nostalgie/routes.yaml" />
@@ -69,11 +320,21 @@
         <option value="$PROJECT_DIR$/src/Nostalgie/templates/base.html.twig" />
         <option value="$PROJECT_DIR$/config/nostalgie/packages/twig.yaml" />
         <option value="$PROJECT_DIR$/src/Nostalgie/Controller/DefaultController.php" />
-        <option value="$PROJECT_DIR$/.env.local" />
         <option value="$PROJECT_DIR$/config/bundles.php" />
         <option value="$PROJECT_DIR$/config/nostalgie/bundles.php" />
         <option value="$PROJECT_DIR$/bin/console" />
+        <option value="$PROJECT_DIR$/src/Controller/DefaultController.php" />
+        <option value="$PROJECT_DIR$/public/index.php" />
+        <option value="$PROJECT_DIR$/.env.local" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/assets/js/app.js" />
         <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/yarn.lock" />
+        <option value="$PROJECT_DIR$/assets/scss/0-base/0-base.scss" />
+        <option value="$PROJECT_DIR$/config/packages/webpack_encore.yaml" />
+        <option value="$PROJECT_DIR$/assets/nrj/scss/app.scss" />
+        <option value="$PROJECT_DIR$/assets/nrj/scss/_variables.scss" />
+        <option value="$PROJECT_DIR$/.stylelintrc" />
         <option value="$PROJECT_DIR$/webpack.config.js" />
       </list>
     </option>
@@ -132,8 +393,8 @@
     </include_path>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="29" />
-    <option name="y" value="35" />
+    <option name="x" value="35" />
+    <option name="y" value="23" />
     <option name="width" value="1598" />
     <option name="height" value="980" />
   </component>
@@ -153,13 +414,33 @@
             <path>
               <item name="symfony-skeleton-vkernel" type="b2602c69:ProjectViewProjectNode" />
               <item name="symfony-skeleton-vkernel" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="symfony-skeleton-vkernel" type="b2602c69:ProjectViewProjectNode" />
               <item name="symfony-skeleton-vkernel" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="nostalgie" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="symfony-skeleton-vkernel" type="b2602c69:ProjectViewProjectNode" />
+              <item name="symfony-skeleton-vkernel" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="nostalgie" type="462c0819:PsiDirectoryNode" />
+              <item name="scss" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="symfony-skeleton-vkernel" type="b2602c69:ProjectViewProjectNode" />
+              <item name="symfony-skeleton-vkernel" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
               <item name="nrj" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="symfony-skeleton-vkernel" type="b2602c69:ProjectViewProjectNode" />
+              <item name="symfony-skeleton-vkernel" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="nrj" type="462c0819:PsiDirectoryNode" />
+              <item name="scss" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="symfony-skeleton-vkernel" type="b2602c69:ProjectViewProjectNode" />
@@ -170,17 +451,6 @@
               <item name="symfony-skeleton-vkernel" type="b2602c69:ProjectViewProjectNode" />
               <item name="symfony-skeleton-vkernel" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="symfony-skeleton-vkernel" type="b2602c69:ProjectViewProjectNode" />
-              <item name="symfony-skeleton-vkernel" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Nrj" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="symfony-skeleton-vkernel" type="b2602c69:ProjectViewProjectNode" />
-              <item name="symfony-skeleton-vkernel" type="462c0819:PsiDirectoryNode" />
-              <item name="tests" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -200,16 +470,17 @@
     <property name="settings.editor.splitter.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/assets" />
-      <recent name="$PROJECT_DIR$/src/Nostalgie/templates" />
-      <recent name="$PROJECT_DIR$/src/Nrj/templates" />
-      <recent name="$PROJECT_DIR$/config/nrj/packages" />
-      <recent name="$PROJECT_DIR$/config/nrj" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/assets/nrj/scss" />
       <recent name="$PROJECT_DIR$/src/App" />
       <recent name="$PROJECT_DIR$/src/Nrj" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/assets/nostalgie/scss" />
+      <recent name="$PROJECT_DIR$/assets/scss" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/assets/nrj/js" />
+      <recent name="$PROJECT_DIR$/assets/nostalgie/js" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -238,17 +509,19 @@
       <workItem from="1550525545380" duration="9081000" />
       <workItem from="1551095427120" duration="6304000" />
       <workItem from="1551169685153" duration="625000" />
-      <workItem from="1551184610280" duration="902000" />
+      <workItem from="1551184610280" duration="1059000" />
+      <workItem from="1573569686033" duration="839000" />
+      <workItem from="1573654423639" duration="8338000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19968000" />
+    <option name="totallyTimeSpent" value="29302000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="29" y="35" width="1598" height="980" extended-state="0" />
+    <frame x="35" y="23" width="1598" height="980" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22686376" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23200513" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -261,7 +534,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" />
+      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.1677928" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -273,72 +546,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/config/packages/test/framework.yaml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/packages/dev/routing.yaml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/app/bundles.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/app/routes.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="52" selection-start-line="2" selection-start-column="52" selection-end-line="2" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/.gitignore">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/var/cache/nrj/dev/annotations.map">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/packages/routing.yaml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/packages/sensio_framework_extra.yaml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/nrj/packages/dev/routing.yaml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/routes/annotations.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="27" selection-start-line="1" selection-start-column="24" selection-end-line="1" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/nostalgie/routes.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="39" selection-start-line="2" selection-start-column="39" selection-end-line="2" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/nrj/routes/annotations.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="30" selection-start-line="1" selection-start-column="14" selection-end-line="1" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/symfony/framework-bundle/Controller/AbstractController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="172">
-          <caret line="36" column="15" selection-start-line="36" selection-start-column="15" selection-end-line="36" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/twig/twig/src/Environment.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="30" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/nrj/services.yaml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
@@ -356,13 +563,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
           <caret line="21" column="18" selection-start-line="21" selection-start-column="10" selection-end-line="21" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="26" selection-start-line="26" selection-end-line="26" />
         </state>
       </provider>
     </entry>
@@ -390,39 +590,11 @@
     <entry file="file://$PROJECT_DIR$/config/nrj/packages/test/framework.yaml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Nrj/templates/base.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="22" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/composer.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="28" column="10" lean-forward="true" selection-start-line="28" selection-start-column="10" selection-end-line="28" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/nostalgie/packages/assets.yaml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/config/app/services.yaml">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Nostalgie/templates/base.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/DefaultController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" selection-start-line="5" selection-end-line="5" selection-end-column="46" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/config/nrj/packages/framework.yaml">
       <provider selected="true" editor-type-id="text-editor" />
@@ -441,13 +613,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.env.local">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="18" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="18" />
         </state>
       </provider>
     </entry>
@@ -475,30 +640,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Nostalgie/Controller/DefaultController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="30" column="5" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
-          <folding>
-            <element signature="e#34#67#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webpack.config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1380">
-          <caret line="92" column="43" selection-start-line="92" selection-start-column="43" selection-end-line="92" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="645">
-          <caret line="43" column="1" selection-start-line="43" selection-start-column="1" selection-end-line="43" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/bin/console">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="498">
@@ -509,9 +650,19 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Nostalgie/templates/base.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.env">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/VirtualKernel.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
+        <state relative-caret-position="630">
           <caret line="47" column="5" selection-start-line="47" selection-start-column="5" selection-end-line="47" selection-end-column="5" />
         </state>
       </provider>
@@ -527,6 +678,179 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="6" column="2" selection-start-line="6" selection-start-column="2" selection-end-line="6" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.env.local">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="1" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="20" selection-start-line="20" selection-end-line="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/base.html.twig">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Nrj/templates/base.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="22" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/DefaultController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="36" selection-start-line="11" selection-start-column="36" selection-end-line="11" selection-end-column="36" />
+          <folding>
+            <element signature="e#34#99#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Nostalgie/Controller/DefaultController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="30" column="5" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/postcss.config.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.eslintrc">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/css/app.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/nrj/js/global_vars.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/nostalgie/js/global_vars.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/composer.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="28" column="10" selection-start-line="28" selection-start-column="10" selection-end-line="28" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="503">
+          <caret line="83" column="1" selection-start-line="83" selection-start-column="1" selection-end-line="83" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yarn.lock">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="9574" selection-start-line="9574" selection-end-line="9574" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/scss/0-base/_animations.scss">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/scss/0-base/0-base.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="3" selection-start-line="5" selection-start-column="3" selection-end-line="5" selection-end-column="3" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/scss/guideline.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="21" selection-start-line="9" selection-start-column="9" selection-end-line="9" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webpack.config_old.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="371">
+          <caret line="34" column="59" selection-start-line="34" selection-start-column="4" selection-end-line="34" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/packages/webpack_encore.yaml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/nrj/scss/app.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="20" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/scss/_variables.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-154" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/nrj/scss/_variables.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="26" selection-start-line="13" selection-start-column="26" selection-end-line="13" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="328">
+            <caret line="105" column="43" selection-start-line="105" selection-start-column="43" selection-end-line="105" selection-end-column="43" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/build/nrj/css/app.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="735" column="28" selection-start-line="735" selection-start-column="28" selection-end-line="735" selection-end-column="28" />
+          <folding>
+            <element signature="e#650#1125#2" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.stylelintrc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/nostalgie/scss/_variables.scss">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webpack.config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="412">
+          <caret line="122" column="49" selection-start-line="122" selection-start-column="49" selection-end-line="122" selection-end-column="49" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -1,0 +1,159 @@
+/*
+Styleguide Form Elements
+*/
+
+/*
+0 - Les formulaires
+
+Styleguide Form Elements - Form Elements
+*/
+
+/*
+1 - Form Field
+
+Markup: /style_guide/2_molecules/_form-field.html.twig
+
+.formField - Code d'un Form Field
+.formField--underlined - Code d'un Form Field de style souligné
+.formField--alignCenter - Code d'un Form Field avec contenu centré
+
+Styleguide Form Elements - Form Field
+*/
+
+$formfieldPrefix: 'formField';
+
+.#{$formfieldPrefix} {
+    position: relative;
+
+    .formLabel {
+        margin-bottom: $spacing-4;
+    }
+
+    &-tool {
+        bottom: $spacing-4;
+        position: absolute;
+        right: 0;
+    }
+
+    &--underlined {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        min-height: 5rem;
+
+        .formLabel {
+            left: 0;
+            pointer-events: none;
+            position: absolute;
+            bottom: $spacing-4;
+            font-size: $font-size-2;
+            transform: translateY(0);
+            transition: transform 0.25s ease, color 0.25s ease;
+        }
+
+        &.#{$formfieldPrefix}--focused {
+            .formLabel {
+                color: $color-gray-70;
+                font-size: $font-size-1;
+                transform: translateY(-$spacing-24);
+            }
+        }
+
+        .#{$formfieldPrefix}-tool {
+            .button--small {
+                margin-right: (-$spacing-12);
+            }
+        }
+
+        .formControl {
+            --formControl-borderColor: #{$color-base};
+            --formControl-padding: #{$spacing-8 $spacing-12 $spacing-8} 0;
+            --formControl-placeholderTextColor: #{$color-base};
+            --formControl-textSize: #{$font-size-2};
+
+            border-width: 0 0 0.2rem;
+
+            &:hover,
+            &:focus {
+                --formControl-borderColor: #{$color-gray-30};
+            }
+
+            & + .formLabel {
+                @include visuallyVisible;
+            }
+        }
+    }
+
+    &--alignCenter {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+/*
+2 - Form Action
+
+Markup: /style_guide/2_molecules/_form-action.html.twig
+
+.formAction - Code d'un Form Action
+.formAction--alignCenter - Form action centré
+.formAction--alignRight - Form action aligné à droite
+
+Styleguide Form Elements - Form Action
+*/
+
+.formAction {
+    &--alignCenter {
+        text-align: center;
+    }
+
+    &--alignRight {
+        text-align: right;
+    }
+}
+
+/*
+3 - Form Select
+
+Markup: <p class="formSelect"><select class="formControl formControl--revert formControl--dark formControl--small"><option>Option 01</option></select></p>
+
+.formSelect - Code d'un Form Select
+
+Styleguide Form Elements - Form Select
+*/
+
+/*
+4 - Form Fieldset
+
+Markup: /style_guide/2_molecules/_form-fieldset.html.twig
+
+.formFieldset - Code d'un Form Fieldset
+.formFieldset--inline - Code d'un Form Fieldset sur une ligne
+
+Styleguide Form Elements - Form Fieldset
+*/
+
+$formFieldsetPrefix: 'formFieldset';
+
+.#{$formFieldsetPrefix} {
+    &-legend {
+        font-weight: $font-weight-bold;
+    }
+
+    .form-item {
+        display: inline-block;
+        vertical-align: top;
+
+        &:not(:last-child) {
+            margin-right: $spacing-12;
+        }
+    }
+
+    &--inline {
+        .#{$formFieldsetPrefix}-legend {
+            float: left;
+            margin-right: $spacing-12;
+            vertical-align: middle;
+        }
+    }
+}

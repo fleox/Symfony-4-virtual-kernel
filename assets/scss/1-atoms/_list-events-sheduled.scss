@@ -1,0 +1,45 @@
+/*
+Styleguide List Events Sheduled
+*/
+
+/*
+0 - Liste des événements avec chronologie
+
+Styleguide List Events Sheduled - List Events Sheduled
+*/
+
+/*
+1 - Liste classique
+
+Markup: /style_guide/1_atoms/_list-events-sheduled.html.twig
+
+.listEventsSheduled - Code de base
+
+Styleguide List Events Sheduled - List Events Sheduled
+*/
+
+.listEventsSheduled {
+    font-size: $font-size-3;
+    font-weight: $font-weight-bold;
+    line-height: $line-height-small;
+
+    &-time {
+        font-weight: $font-weight-normal;
+
+        &::after {
+            content: ' -';
+            speak: none;
+        }
+    }
+
+    &-button {
+        display: inline-block;
+        padding: $spacing-4 $spacing-8;
+        text-decoration: none;
+
+        &:hover,
+        &:focus {
+            text-decoration: underline;
+        }
+    }
+}

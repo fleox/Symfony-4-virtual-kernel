@@ -1,0 +1,150 @@
+// stylelint-disable at-rule-no-unknown
+/// Slightly lighten a color
+/// @access public
+/// @param {Color} $color - color to tint
+/// @param {Number} $percentage - percentage of `$color` in returned color
+/// @return {Color}
+@function tint($color, $percentage) {
+    @return mix(white, $color, $percentage);
+}
+
+/// Slightly darken a color
+/// @access public
+/// @param {Color} $color - color to shade
+/// @param {Number} $percentage - percentage of `$color` in returned color
+/// @return {Color}
+@function shade($color, $percentage) {
+    @return mix(black, $color, $percentage);
+}
+
+@mixin ellipsis($width: 100%) {
+    max-width: $width;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+@mixin unEllipsis($width: 100%) {
+    max-width: $width;
+    overflow: visible;
+    text-overflow: initial;
+    white-space: initial;
+}
+
+@mixin triangle(
+    $direction: top, // Triangle Direction (default: top)
+    $color: $color-black, // Triangle Color
+    $size: 2, // Triangle Size (default unit: REM)
+    $unit: rem, // Unit (default: REM)
+    $isocele-ratio: 1, // Isocele Ratio: 1 => equilateral 2 => Isocele
+    $mode-override: false // Override option
+) {
+    @if ($mode-override == false) {
+        width: 0;
+        height: 0;
+        border-style: solid;
+        line-height: 0;
+    }
+    @if ($direction == "bottom") {
+        border-color: $color transparent transparent transparent;
+        border-width: ($size / $isocele-ratio + $unit) ($size / 2 + $unit) 0 ($size / 2 + $unit);
+    }
+    @else if($direction == "left") {
+        border-color: transparent $color transparent transparent;
+        border-width: ($size / 2 + $unit) ($size / $isocele-ratio + $unit) ($size / 2 + $unit) 0;
+    }
+    @else if($direction == "right") {
+        border-color: transparent transparent transparent $color;
+        border-width: ($size / 2 + $unit) 0 ($size / 2 + $unit) ($size / $isocele-ratio + $unit);
+    }
+    @else if($direction == "top-left") {
+        border-color: $color transparent transparent transparent;
+        border-width: ($size + $unit) ($size + $unit) 0 0;
+    }
+    @else if($direction == "top-right") {
+        border-color: transparent $color transparent transparent;
+        border-width: 0 ($size + $unit) ($size + $unit) 0;
+    }
+    @else if($direction == "bottom-left") {
+        border-color: transparent transparent transparent $color;
+        border-width: ($size + $unit) 0 0 ($size + $unit);
+    }
+    @else if($direction == "bottom-right") {
+        border-color: transparent transparent $color transparent;
+        border-width: 0 0 ($size + $unit) ($size + $unit);
+    }
+    @else {
+        border-color: transparent transparent $color transparent;
+        border-width: 0 ($size / 2 + $unit) ($size / $isocele-ratio + $unit) ($size / 2 + $unit);
+    }
+}
+// stylelint-enable at-rule-no-unknown
+
+@mixin visuallyHidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 0.1rem;
+    margin: -0.1rem;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 0.1rem;
+}
+
+@mixin visuallyVisible {
+    clip: auto;
+    height: auto;
+    margin: auto;
+    overflow: visible;
+    position: static;
+    width: auto;
+}
+
+@mixin truncate-multilines ($lineHeight: 1.5em, $lineCount: 1, $bgColor: $color-white) {
+    overflow: hidden;
+    position: relative;
+    line-height: $lineHeight;
+    max-height: $lineHeight * $lineCount;
+    margin-right: -1em;
+    padding-right: 1em;
+
+    &::before {
+        content: '...';
+        position: absolute;
+        right: 0;
+        bottom: 0;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        right: 0;
+        width: 1em;
+        height: 1em;
+        margin-top: 0.2em;
+        background: $bgColor;
+    }
+}
+
+@keyframes shake {
+    10%,
+    90% {
+        transform: translate3d(-0.1rem, 0, 0);
+    }
+
+    20%,
+    80% {
+        transform: translate3d(0.2rem, 0, 0);
+    }
+
+    30%,
+    50%,
+    70% {
+        transform: translate3d(-0.4rem, 0, 0);
+    }
+
+    40%,
+    60% {
+        transform: translate3d(0.4rem, 0, 0);
+    }
+}

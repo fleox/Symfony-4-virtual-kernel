@@ -1,0 +1,60 @@
+/*
+Styleguide Header Main
+*/
+
+/*
+0 - Entête de page
+
+Styleguide Header Main - Header Main
+*/
+
+/*
+Entête de page
+
+Markup: /style_guide/2_molecules/_header-main.html.twig
+
+.headerMain - Entête de page
+.headerMain--white - Header Main White
+
+Styleguide Header Main - Entête de page
+*/
+
+.headerMain {
+    --headerMain-textColor: inherit;
+    --headerMainDescription-textColor: #{$color-gray-70};
+
+    color: var(--headerMain-textColor);
+
+    &--white {
+        --headerMain-textColor: #{$color-white};
+        --headerMainDescription-textColor: #{$color-gray-10};
+    }
+
+    [class^="heading"] {
+        margin-bottom: $spacing-8;
+
+        &:only-child {
+            padding-bottom: $spacing-24;
+            margin: 0;
+        }
+    }
+
+    .description {
+        color: var(--headerMainDescription-textColor);
+        padding-bottom: $spacing-20;
+
+        // stylelint-disable selector-max-specificity
+        [class$="--dark"] & {
+            color: $color-gray-10;
+        }
+        // stylelint-enable
+    }
+
+    & + .headerPage-media {
+        margin-top: $spacing-16;
+    }
+
+    @media (min-width: $breakpoint-md) {
+        text-align: center;
+    }
+}

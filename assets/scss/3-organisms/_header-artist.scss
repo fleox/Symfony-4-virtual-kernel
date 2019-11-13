@@ -1,0 +1,75 @@
+/*
+Styleguide Header Artiste
+*/
+
+/*
+0 - Header d'un artiste
+Styleguide Header Artiste - Header Artiste
+*/
+
+/*
+1 - Header d'un artiste par défaut
+
+Markup: /style_guide/3_organisms/_header-artist.html.twig
+
+.headerArtist - Classe principale du header d'un artiste
+
+Styleguide Header Artiste - Header Artiste Default
+*/
+
+.headerArtist {
+    display: flex;
+    flex-flow: column;
+    max-width: 192rem;
+    margin: auto;
+
+    @media (min-width: $breakpoint-lg) {
+        flex-flow: row;
+        align-items: stretch;
+        justify-content: center;
+    }
+
+    &-img {
+        @media (min-width: $breakpoint-lg) {
+            width: 50%;
+        }
+
+        @media (min-width: $breakpoint-xl) {
+            .ratio--16by9 {
+                padding-bottom: percentage(3 / 8);
+            }
+        }
+    }
+
+    &-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: $spacing-24;
+        background: $color-black;
+        color: $color-white;
+
+        @media (min-width: $breakpoint-lg) {
+            width: 50%;
+            padding: $spacing-12 $spacing-40;
+        }
+    }
+
+    [class^="heading"] {
+        margin-bottom: $spacing-12;
+    }
+
+    .flag {
+        padding: 0 0 0 $spacing-4;
+        background: none;
+        color: $color-white;
+    }
+
+    .share-list {
+        justify-content: left;
+
+        @media (min-width: $breakpoint-lg) {
+            justify-content: center;
+        }
+    }
+}
